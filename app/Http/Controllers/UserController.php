@@ -11,14 +11,14 @@ class UserController extends Controller
     {
     	$data['users'] = User::all();
 
-    	return view('user', $data);
+    	return view('user.user', $data);
     }
 
     public function edit($id)
     {
-    	$data['user'] = User::find($id)->first();
+    	$data['user'] = User::find($id);
 
-    	return view('edit', $data);
+    	return view('user.edit', $data);
     }
 
     public function update(Request $request, $id)

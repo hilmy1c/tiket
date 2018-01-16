@@ -5,37 +5,36 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit</div>
+                <div class="panel-heading">Create</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('user.update', ['id' => $user->id]) }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('airplane.store') }}">
                         {{ csrf_field() }}
-                        {{ method_field('PUT') }}
 
                         <div class="form-group">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="aircraft_type" class="col-md-4 control-label">Aircraft Type</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ $user->name }}" required autofocus>
+                                <input id="aircraft_type" type="text" class="form-control" name="aircraft_type" required autofocus>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="economy_seat_num" class="col-md-4 control-label">Economy Seat Number</label>
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $user->email }}" required>
+                                <input id="economy_seat_num" type="number" class="form-control" name="economy_seat_num" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone" class="col-md-4 control-label">Phone</label>
+                            <label for="business_seat_num" class="col-md-4 control-label">Business Seat Number</label>
                             <div class="col-md-6">
-                                <input id="phone" type="phone" class="form-control" name="phone" value="{{ $user->phone }}" required>
+                                <input id="business_seat_num" type="number" class="form-control" name="business_seat_num" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">Update</button>
+                                <button type="submit" class="btn btn-primary">Create</button>
                             </div>
                         </div>
                     </form>

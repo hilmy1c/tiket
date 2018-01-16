@@ -23,6 +23,12 @@ Route::get('/user', 'UserController@index')->name('user.index');
 
 Route::get('/user/{id}/edit', 'UserController@edit')->name('user.edit');
 
-Route::put('/user/{id}/update', 'UserController@update')->name('user.update');
+Route::put('/user/{id}', 'UserController@update')->name('user.update');
 
 Route::delete('/user/{id}/delete', 'UserController@destroy')->name('user.destroy');
+
+Route::resource('/airplane', 'AirplaneController');
+
+Route::resource('/airport', 'AirportController');
+
+Route::resource('/city', 'CityController');
