@@ -5,19 +5,19 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Users</div>
 
                 <div class="panel-body">
                     <table class="table table-bordered">
                         <thead>
                             <th>Id</th>
-                            <th>Nama</th>
-                            <th>Email</th>
+                            <th>Name</th>
+                            <th>E-mail</th>
                             <th>Phone</th>
-                            <th>Actions</th>
+                            <th class="text-center">Action</th>
                         </thead>
                         <tbody>
-                            @foreach ($kucing as $user)
+                            @foreach ($users as $user)
                             <tr>
                                 <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
@@ -25,7 +25,12 @@
                                 <td>{{ $user->phone }}</td>
                                 <td>
                                     <a href="{{ route('user.edit', ['id' => $user->id]) }}" class="btn btn-default">Edit</a>
-                                    <button type="submit" class="btn btn-danger">Hapus</a>
+                                    <form action="{{ route('user.destroy', ['id' => $user->id]) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+
+                                        <button type="submit" class="btn btn-danger">Hapus</a>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach
