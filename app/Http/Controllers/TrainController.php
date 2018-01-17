@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\City;
+use App\Train;
 
-class CityController extends Controller
+class TrainController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class CityController extends Controller
      */
     public function index()
     {
-        $data['cities'] = City::all();
+        $data['trains'] = Train::all();
 
-        return view('city.city', $data);
+        return view('train.train', $data);
     }
 
     /**
@@ -26,7 +26,7 @@ class CityController extends Controller
      */
     public function create()
     {
-        return view('city.create');
+        return view('train.create');
     }
 
     /**
@@ -37,12 +37,14 @@ class CityController extends Controller
      */
     public function store(Request $request)
     {
-        City::create([
-            'city' => $request->city,
-            'province' => $request->province
+        Train::create([
+            'name' => $request->name,
+            'economy_seat_num' => $request->economy_seat_num,
+            'business_seat_num' => $request->business_seat_num,
+            'executive_seat_num' => $request->executive_seat_num
         ]);
 
-        return redirect()->route('city.index');
+        return redirect()->route('train.index');
     }
 
     /**
@@ -53,10 +55,9 @@ class CityController extends Controller
      */
     public function edit($id)
     {
-        $data['city'] = City::find($id);
-        $data['provinces'] = City::orderBy('city', 'asc')->get();
+        $data['train'] = Train::find($id);
 
-        return view('city.edit', $data);
+        return view('train.edit', $data);
     }
 
     /**
@@ -68,12 +69,14 @@ class CityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        City::find($id)->update([
-            'city' => $request->city,
-            'province' => $request->province
+        Train::find($id)->update([
+            'name' => $request->name,
+            'economy_seat_num' => $request->economy_seat_num,
+            'business_seat_num' => $request->business_seat_num,
+            'executive_seat_num' => $request->executive_seat_num
         ]);
 
-        return redirect()->route('city.index');
+        return redirect()->route('train.index');
     }
 
     /**
@@ -84,8 +87,8 @@ class CityController extends Controller
      */
     public function destroy($id)
     {
-        City::destroy($id);
+        Train::destroy($id);
 
-        return redirect()->route('city.index');
+        return redirect()->route('train.index');
     }
 }

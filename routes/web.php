@@ -32,3 +32,5 @@ Route::resource('/airplane', 'AirplaneController');
 Route::resource('/airport', 'AirportController');
 
 Route::resource('/city', 'CityController');
+
+Route::resource('/train', 'TrainController');
