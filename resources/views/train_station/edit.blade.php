@@ -8,21 +8,21 @@
                 <div class="panel-heading">Edit</div>
                 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('airport.update', ['id' => $airport->id]) }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('train_station.update', ['id' => $train_station->id]) }}">
                         {{ csrf_field() }}
                         {{ method_field('PUT') }}
 
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Name</label>
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ $airport->name }}" required autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ $train_station->name }}" required autofocus>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="code" class="col-md-4 control-label">Code</label>
                             <div class="col-md-6">
-                                <input id="code" type="text" class="form-control" name="code" value="{{ $airport->code }}" required>
+                                <input id="code" type="text" class="form-control" name="code" value="{{ $train_station->code }}" required>
                             </div>
                         </div>
 
@@ -31,7 +31,7 @@
                             <div class="col-md-6">
                                 <select name="city" id="city" class="form-control">
                                     @foreach ($cities as $city)
-                                    <option value="{{ $city->city }}" {{ $airport->city == $city->city ? 'selected' : '' }}>{{ $city->city }}</option>
+                                    <option value="{{ $city->city }}" {{ $train_station->city == $city->city ? 'selected' : '' }}>{{ $city->city }}</option>
                                     @endforeach
                                 </select>
                             </div>
