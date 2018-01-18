@@ -15,6 +15,12 @@ class CreateTrainJourneysTable extends Migration
     {
         Schema::create('train_journeys', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('departure_station');
+            $table->string('arrival_station');
+            $table->string('train_number');
+            $table->date('departure_time');
+            $table->date('arrival_time');
+            $table->integer('train_id');
             $table->timestamps();
         });
     }

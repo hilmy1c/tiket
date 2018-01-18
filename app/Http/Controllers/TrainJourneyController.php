@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Flight;
+use App\TrainJourney;
 
-class FlightController extends Controller
+class TrainJourneyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class FlightController extends Controller
      */
     public function index()
     {
-        $data['flights'] = Flight::all();
+        $data['train_journeys'] = TrainJourney::all();
 
-        return view('flight.flight', $data);
+        return view('train_journey.train_journey', $data);
     }
 
     /**
@@ -26,7 +26,7 @@ class FlightController extends Controller
      */
     public function create()
     {
-        return view('flight.create');
+        return view('train_journey.create');
     }
 
     /**
@@ -37,16 +37,16 @@ class FlightController extends Controller
      */
     public function store(Request $request)
     {
-        Flight::create([
-            'flight_number' => $request->flight_number,
-            'from' => $request->from,
-            'destination' => $request->destination,
+        TrainJourney::create([
+            'departure_station' => $request->departure_station,
+            'arrival_station' => $request->arrival_station,
+            'train_number' => $request->train_number,
             'departure_time' => $request->departure_time,
             'arrival_time' => $request->arrival_time,
-            'airplane_id' => $request->airplane_id
+            'train_id' => $request->train_id
         ]);
 
-        return redirect()->route('flight.index');
+        return redirect()->route('train_journey.index');
     }
 
     /**
@@ -57,9 +57,9 @@ class FlightController extends Controller
      */
     public function edit($id)
     {
-        $data['flight'] = Flight::find($id);
+        $data['train_journey'] = TrainJourney::find($id);
 
-        return view('flight.edit', $data);
+        return view('train_journey.edit', $data);
     }
 
     /**
@@ -71,16 +71,16 @@ class FlightController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Flight::find($id)->update([
-            'flight_number' => $request->flight_number,
-            'from' => $request->from,
-            'destination' => $request->destination,
+        TrainJourney::find($id)->update([
+            'departure_station' => $request->departure_station,
+            'arrival_station' => $request->arrival_station,
+            'train_number' => $request->train_number,
             'departure_time' => $request->departure_time,
             'arrival_time' => $request->arrival_time,
-            'airplane_id' => $request->airplane_id
+            'train_id' => $request->train_id
         ]);
 
-        return redirect()->route('flight.index');
+        return redirect()->route('train_journey.index');
     }
 
     /**
@@ -91,8 +91,8 @@ class FlightController extends Controller
      */
     public function destroy($id)
     {
-        Flight::destroy($id);
+        TrainJourney::destroy($id);
 
-        return redirect()->route('flight.index');
+        return redirect()->route('train_journey.index');
     }
 }
