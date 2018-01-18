@@ -38,3 +38,5 @@ Route::resource('/train', 'TrainController');
 Route::resource('/train_station', 'TrainStationController');
 
 Route::resource('/airline', 'AirlineController');
+
+Route::resource('/flight', 'FlightController');
