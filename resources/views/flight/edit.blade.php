@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label for="destination" class="col-md-4 control-label">Destination</label>
                             <div class="col-md-6">
-                                <input id="destination" type="number" class="form-control" name="destination" value="{{ $flight->destination }}" required>
+                                <input id="destination" type="text" class="form-control" name="destination" value="{{ $flight->destination }}" required>
                             </div>
                         </div>
 
