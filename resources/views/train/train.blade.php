@@ -24,9 +24,9 @@
                             <tr>
                                 <td>{{ $train->id }}</td>
                                 <td>{{ $train->name }}</td>
-                                <td>{{ $train->economy_seat_num }}</td>
-                                <td>{{ $train->business_seat_num }}</td>
-                                <td>{{ $train->executive_seat_num }}</td>
+                                <td>{{ $train->economy_seat_number }}</td>
+                                <td>{{ $train->business_seat_number }}</td>
+                                <td>{{ $train->executive_seat_number }}</td>
                                 <td>
                                     <a href="{{ route('train.edit', ['id' => $train->id]) }}" class="btn btn-default">Edit</a>
                                     <form action="{{ route('train.destroy', ['id' => $train->id]) }}" method="POST">

@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Edit</div>
-                
+
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('airplane.update', ['id' => $airplane->id]) }}">
                         {{ csrf_field() }}
@@ -20,16 +20,16 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="economy_seat_num" class="col-md-4 control-label">Economy Seat Number</label>
+                            <label for="economy_seat_number" class="col-md-4 control-label">Economy Seat Number</label>
                             <div class="col-md-6">
-                                <input id="economy_seat_num" type="number" class="form-control" name="economy_seat_num" value="{{ $airplane->economy_seat_num }}" required>
+                                <input id="economy_seat_number" type="number" class="form-control" name="economy_seat_number" value="{{ $airplane->economy_seat_number }}" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="business_seat_num" class="col-md-4 control-label">Business Seat Number</label>
+                            <label for="business_seat_number" class="col-md-4 control-label">Business Seat Number</label>
                             <div class="col-md-6">
-                                <input id="business_seat_num" type="number" class="form-control" name="business_seat_num" value="{{ $airplane->business_seat_num }}" required>
+                                <input id="business_seat_number" type="number" class="form-control" name="business_seat_number" value="{{ $airplane->business_seat_number }}" required>
                             </div>
                         </div>
 

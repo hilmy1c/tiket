@@ -19,23 +19,23 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="economy_seat_num" class="col-md-4 control-label">Economy Seat Number</label>
+                            <label for="economy_seat_number" class="col-md-4 control-label">Economy Seat Number</label>
                             <div class="col-md-6">
-                                <input id="economy_seat_num" type="number" class="form-control" name="economy_seat_num" required>
+                                <input id="economy_seat_number" type="number" class="form-control" name="economy_seat_number" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="business_seat_num" class="col-md-4 control-label">Business Seat Number</label>
+                            <label for="business_seat_number" class="col-md-4 control-label">Business Seat Number</label>
                             <div class="col-md-6">
-                                <input id="business_seat_num" type="number" class="form-control" name="business_seat_num" required>
+                                <input id="business_seat_number" type="number" class="form-control" name="business_seat_number" required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="executive_seat_num" class="col-md-4 control-label">Executive Seat Number</label>
+                            <label for="executive_seat_number" class="col-md-4 control-label">Executive Seat Number</label>
                             <div class="col-md-6">
-                                <input id="executive_seat_num" type="number" class="form-control" name="executive_seat_num" required>
+                                <input id="executive_seat_number" type="number" class="form-control" name="executive_seat_number" required>
                             </div>
                         </div>
 

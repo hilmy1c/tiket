@@ -39,8 +39,8 @@ class AirplaneController extends Controller
     {
         Airplane::create([
             'aircraft_type' => $request->aircraft_type,
-            'economy_seat_num' => $request->economy_seat_num,
-            'business_seat_num' => $request->business_seat_num
+            'economy_seat_number' => $request->economy_seat_number,
+            'business_seat_number' => $request->business_seat_number
         ]);
 
         return redirect()->route('airplane.index');
@@ -70,8 +70,8 @@ class AirplaneController extends Controller
     {
         Airplane::find($id)->update([
             'aircraft_type' => $request->aircraft_type,
-            'economy_seat_num' => $request->economy_seat_num,
-            'business_seat_num' => $request->business_seat_num
+            'economy_seat_number' => $request->economy_seat_number,
+            'business_seat_number' => $request->business_seat_number
         ]);
 
         return redirect()->route('airplane.index');

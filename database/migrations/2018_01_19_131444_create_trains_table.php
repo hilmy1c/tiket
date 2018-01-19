@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAirplanesTable extends Migration
+class CreateTrainsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateAirplanesTable extends Migration
      */
     public function up()
     {
-        Schema::create('airplanes', function (Blueprint $table) {
+        Schema::create('trains', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('aircraft_type');
-            $table->tinyInteger('economy_seat_num');
-            $table->tinyInteger('business_seat_num');
+            $table->string('name');
+            $table->string('economy_seat_number');
+            $table->string('business_seat_number');
+            $table->string('executive_seat_number');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateAirplanesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('airplanes');
+        Schema::dropIfExists('trains');
     }
 }

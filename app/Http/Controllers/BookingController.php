@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Train;
 
-class TrainController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,7 @@ class TrainController extends Controller
      */
     public function index()
     {
-        $data['trains'] = Train::all();
-
-        return view('train.train', $data);
+        //
     }
 
     /**
@@ -26,7 +23,7 @@ class TrainController extends Controller
      */
     public function create()
     {
-        return view('train.create');
+        //
     }
 
     /**
@@ -37,14 +34,18 @@ class TrainController extends Controller
      */
     public function store(Request $request)
     {
-        Train::create([
-            'name' => $request->name,
-            'economy_seat_number' => $request->economy_seat_number,
-            'business_seat_number' => $request->business_seat_number,
-            'executive_seat_number' => $request->executive_seat_number
-        ]);
+        //
+    }
 
-        return redirect()->route('train.index');
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
     }
 
     /**
@@ -55,9 +56,7 @@ class TrainController extends Controller
      */
     public function edit($id)
     {
-        $data['train'] = Train::find($id);
-
-        return view('train.edit', $data);
+        //
     }
 
     /**
@@ -69,14 +68,7 @@ class TrainController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Train::find($id)->update([
-            'name' => $request->name,
-            'economy_seat_number' => $request->economy_seat_number,
-            'business_seat_number' => $request->business_seat_number,
-            'executive_seat_number' => $request->executive_seat_number
-        ]);
-
-        return redirect()->route('train.index');
+        //
     }
 
     /**
@@ -87,8 +79,6 @@ class TrainController extends Controller
      */
     public function destroy($id)
     {
-        Train::destroy($id);
-
-        return redirect()->route('train.index');
+        
     }
 }
