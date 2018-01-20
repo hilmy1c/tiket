@@ -46,3 +46,5 @@ Route::resource('/flight_fare', 'FlightFareController');
 Route::resource('/train_journey', 'TrainJourneyController');
 
 Route::resource('/booking_detail', 'BookingDetailController');
+
+Route::resource('/booking', 'BookingController');
