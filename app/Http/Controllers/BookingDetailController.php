@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\BookingDetail;
 
-class BookingController extends Controller
+class BookingDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $data['booking_details'] = BookingDetail::all();
+
+        return view('booking_detail.booking_detail', $data);
     }
 
     /**
@@ -23,7 +26,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        return view('booking_detail.create');
     }
 
     /**
@@ -34,18 +37,14 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        BookingDetail::create([
+            'travel_number' => $request->travel_number,
+            'status' => $request->status,
+            'fare_id' => $request->fare_id,
+            'booking_code' => $request->booking_code
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->route('booking_detail.index');
     }
 
     /**
@@ -56,7 +55,9 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['booking_detail'] = BookingDetail::find($id);
+
+        return view('booking_detail.edit', $data);
     }
 
     /**
@@ -68,7 +69,14 @@ class BookingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        BookingDetail::find($id)->update([
+            'travel_number' => $request->travel_number,
+            'status' => $request->status,
+            'fare_id' => $request->fare_id,
+            'booking_code' => $request->booking_code
+        ]);
+
+        return redirect()->route('booking_detail.index');
     }
 
     /**
@@ -79,6 +87,8 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        
+        BookingDetail::destroy($id);
+
+        return redirect()->route('booking_detail.index');
     }
 }
