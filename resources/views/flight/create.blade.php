@@ -22,7 +22,7 @@
                             <label for="airplane_id" class="col-md-4 control-label">Airplane</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="airplane_id" id="airplane_id">
-
+                                    <option value="1">1</option>
                                 </select>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                         <div class="form-group">
                             <label for="destination" class="col-md-4 control-label">Destination</label>
                             <div class="col-md-6">
-                                <input id="destination" type="number" class="form-control" name="destination" required>
+                                <input id="destination" type="text" class="form-control" name="destination" required>
                             </div>
                         </div>
 

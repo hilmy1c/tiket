@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Passenger;
+use App\BookingDetail;
 
-class PassengerController extends Controller
+class BookingDetailController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $data['passengers'] = Passenger::all();
+        $data['booking_details'] = BookingDetail::all();
 
-        return view('passenger.passenger', $data);
+        return view('booking_detail.booking_detail', $data);
     }
 
     /**
@@ -21,7 +26,7 @@ class PassengerController extends Controller
      */
     public function create()
     {
-        return view('passenger.create');
+        return view('booking_detail.create');
     }
 
     /**
@@ -32,13 +37,14 @@ class PassengerController extends Controller
      */
     public function store(Request $request)
     {
-        Passenger::create([
-            'book_det' => $request->book_det,
-            'name' => $request->name,
-            'id_no' => $request->id_no
+        BookingDetail::create([
+            'travel_number' => $request->travel_number,
+            'status' => $request->status,
+            'fare_id' => $request->fare_id,
+            'booking_code' => $request->booking_code
         ]);
 
-        return redirect()->route('passenger.index');
+        return redirect()->route('booking_detail.index');
     }
 
     /**
@@ -49,9 +55,9 @@ class PassengerController extends Controller
      */
     public function edit($id)
     {
-        $data['passengers'] = Passenger::find($id);
+        $data['booking_detail'] = BookingDetail::find($id);
 
-        return view('passenger.edit', $data);
+        return view('booking_detail.edit', $data);
     }
 
     /**
@@ -63,13 +69,14 @@ class PassengerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Passenger::find($id)->update([
-            'book_det' => $request->book_det,
-            'name' => $request->name,
-            'id_no' => $request->id_no
+        BookingDetail::find($id)->update([
+            'travel_number' => $request->travel_number,
+            'status' => $request->status,
+            'fare_id' => $request->fare_id,
+            'booking_code' => $request->booking_code
         ]);
 
-        return redirect()->route('passenger.index');
+        return redirect()->route('booking_detail.index');
     }
 
     /**
@@ -80,8 +87,8 @@ class PassengerController extends Controller
      */
     public function destroy($id)
     {
-        Passenger::destroy($id);
+        BookingDetail::destroy($id);
 
-        return redirect()->route('passenger.index');
+        return redirect()->route('booking_detail.index');
     }
 }

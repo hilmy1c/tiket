@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Booking;
 
 class BookingController extends Controller
 {
@@ -13,7 +14,9 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $data['bookings'] = Booking::all();
+
+        return view('booking.booking', $data);
     }
 
     /**
@@ -23,7 +26,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        return view('booking.create');
     }
 
     /**
@@ -34,18 +37,15 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        Booking::create([
+            'booking_code' => $request->booking_code,
+            'user_id' => $request->user_id,
+            'booking_date' => $request->booking_date,
+            'status' => $request->status,
+            'payment_status' => $request->payment_status
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->route('booking.index');
     }
 
     /**
@@ -56,7 +56,9 @@ class BookingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['booking'] = Booking::find($id);
+
+        return view('booking.edit', $data);
     }
 
     /**
@@ -68,7 +70,15 @@ class BookingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Booking::find($id)->update([
+            'booking_code' => $request->booking_code,
+            'user_id' => $request->user_id,
+            'booking_date' => $request->booking_date,
+            'status' => $request->status,
+            'payment_status' => $request->payment_status
+        ]);
+
+        return redirect()->route('booking.index');
     }
 
     /**
@@ -79,6 +89,8 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        
+        Booking::destroy($id);
+
+        return redirect()->route('booking.index');
     }
 }
