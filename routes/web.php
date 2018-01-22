@@ -19,13 +19,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/user', 'UserController@index')->name('user.index');
-
-Route::get('/user/{id}/edit', 'UserController@edit')->name('user.edit');
-
-Route::put('/user/{id}', 'UserController@update')->name('user.update');
-
-Route::delete('/user/{id}/delete', 'UserController@destroy')->name('user.destroy');
+Route::group(['prefix' => 'user'], function () {
+    Route::get('/', 'UserController@index')->name('user.index');
+    Route::get('/{id}/edit', 'UserController@edit')->name('user.edit');
+    Route::put('/{id}', 'UserController@update')->name('user.update');
+    Route::delete('/{id}/delete', 'UserController@destroy')->name('user.destroy');
+});
 
 Route::resource('/airplane', 'AirplaneController');
 
@@ -45,14 +44,16 @@ Route::resource('/flight_fare', 'FlightFareController');
 
 Route::resource('/train_journey', 'TrainJourneyController');
 
-<<<<<<< HEAD
-Route::resource('/passenger', 'PassengerController');
-
 Route::resource('/train_fare', 'TrainFareController');
 
-
-=======
 Route::resource('/booking_detail', 'BookingDetailController');
 
 Route::resource('/booking', 'BookingController');
->>>>>>> c827f0185dbc1e68dfaf0e0a8431f95cd2e9a1e2
+
+Route::group(['prefix' => 'admin'], function() {
+	Route::get('/register', 'Auth\AdminRegisterController@index')->name('admin.register');
+	Route::post('/register', 'Auth\AdminRegisterController@register');
+	Route::get('/home', 'AdminHomeController@index')->name('admin.home');
+	Route::get('/login', 'Auth\AdminLoginController@index')->name('admin.login');
+	Route::post('/login', 'Auth\AdminLoginController@login');
+});
