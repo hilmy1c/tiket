@@ -28,9 +28,8 @@ class FlightController extends Controller
      */
     public function create()
     {
-        $data['airplanes'] = Flight::with(['airplane' => function ($query) {
-            $query->with('airline');
-        }])->get();
+        $data['airplanes'] = Flight::all();
+        $data['airports'] = Airport::all();
 
         return view('flight.create', $data);
     }
@@ -64,6 +63,8 @@ class FlightController extends Controller
     public function edit($id)
     {
         $data['flight'] = Flight::find($id);
+        $data['airplanes'] = Flight::all();
+        $data['airports'] = Airport::all();
 
         return view('flight.edit', $data);
     }
