@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Airline extends Model
 {
     protected $fillable = [
-    	'name'
+    	'code', 'name',
     ];
+
+    public function airplane()
+    {
+    	return $this->hasOne('App\Airplane');
+    }
 }

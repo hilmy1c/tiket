@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Flight;
+use App\Airport;
+use App\Airplane;
+use Illuminate\Http\Request;
 
 class FlightController extends Controller
 {
@@ -14,7 +16,7 @@ class FlightController extends Controller
      */
     public function index()
     {
-        $data['flights'] = Flight::all();
+        $data['flights'] = Flight::with(['airplane.airline', 'fromAirport'])->get();
 
         return view('flight.flight', $data);
     }
@@ -26,7 +28,11 @@ class FlightController extends Controller
      */
     public function create()
     {
-        return view('flight.create');
+        $data['airplanes'] = Flight::with(['airplane' => function ($query) {
+            $query->with('airline');
+        }])->get();
+
+        return view('flight.create', $data);
     }
 
     /**
@@ -39,8 +45,8 @@ class FlightController extends Controller
     {
         Flight::create([
             'flight_number' => $request->flight_number,
-            'from' => $request->from,
-            'destination' => $request->destination,
+            'from_airport_id' => $request->from_airport_id,
+            'destination_airport_id' => $request->destination_airport_id,
             'departure_time' => $request->departure_time,
             'arrival_time' => $request->arrival_time,
             'airplane_id' => $request->airplane_id
@@ -73,8 +79,8 @@ class FlightController extends Controller
     {
         Flight::find($id)->update([
             'flight_number' => $request->flight_number,
-            'from' => $request->from,
-            'destination' => $request->destination,
+            'from_airport_id' => $request->from_airport_id,
+            'destination_airport_id' => $request->destination_airport_id,
             'departure_time' => $request->departure_time,
             'arrival_time' => $request->arrival_time,
             'airplane_id' => $request->airplane_id

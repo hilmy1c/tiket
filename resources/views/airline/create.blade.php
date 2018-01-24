@@ -12,6 +12,13 @@
                         {{ csrf_field() }}
 
                         <div class="form-group">
+                            <label for="code" class="col-md-4 control-label">Code</label>
+                            <div class="col-md-6">
+                                <input id="code" type="text" class="form-control" name="code" required autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Name</label>
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" required autofocus>

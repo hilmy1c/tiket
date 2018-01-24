@@ -13,6 +13,7 @@
                     <table class="table table-bordered">
                         <thead>
                             <th>Id</th>
+                            <th>Code</th>
                             <th>Name</th>
                             <th class="text-center">Action</th>
                         </thead>
@@ -20,6 +21,7 @@
                             @foreach ($airlines as $airline)
                             <tr>
                                 <td>{{ $airline->id }}</td>
+                                <td>{{ $airline->code }}</td>
                                 <td>{{ $airline->name }}</td>
                                 <td>
                                     <a href="{{ route('airline.edit', ['id' => $airline->id]) }}" class="btn btn-default">Edit</a>

@@ -15,6 +15,7 @@
                             <th>Id</th>
                             <th>Flight Number</th>
                             <th>Airplane</th>
+                            <th>Airline</th>
                             <th>From</th>
                             <th>Destination</th>
                             <th>Departure</th>
@@ -26,9 +27,10 @@
                             <tr>
                                 <td>{{ $flight->id }}</td>
                                 <td>{{ $flight->flight_number }}</td>
-                                <td>{{ $flight->airplane_id }}</td>
-                                <td>{{ $flight->from }}</td>
-                                <td>{{ $flight->destination }}</td>
+                                <td>{{ $flight->airplane->aircraft_type }}</td>
+                                <td>{{ $flight->airplane->airline->name }}</td>
+                                <td>{{ $flight->fromAirport->name }}</td>
+                                <td>{{ $flight->destinationAirport->name }}</td>
                                 <td>{{ $flight->departure_time }}</td>
                                 <td>{{ $flight->arrival_time }}</td>
                                 <td>

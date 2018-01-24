@@ -38,6 +38,7 @@ class AirlineController extends Controller
     public function store(Request $request)
     {
         Airline::create([
+            'code' => $request->code,
             'name' => $request->name
         ]);
 
@@ -67,6 +68,7 @@ class AirlineController extends Controller
     public function update(Request $request, $id)
     {
         Airline::find($id)->update([
+            'code' => $request->code,
             'name' => $request->name
         ]);
 

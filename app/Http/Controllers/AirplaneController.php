@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Airline;
 use App\Airplane;
+use Illuminate\Http\Request;
 
 class AirplaneController extends Controller
 {
@@ -26,7 +27,9 @@ class AirplaneController extends Controller
      */
     public function create()
     {
-        return view('airplane.create');
+        $data['airlines'] = Airline::all();
+
+        return view('airplane.create', $data);
     }
 
     /**
@@ -40,7 +43,8 @@ class AirplaneController extends Controller
         Airplane::create([
             'aircraft_type' => $request->aircraft_type,
             'economy_seat_number' => $request->economy_seat_number,
-            'business_seat_number' => $request->business_seat_number
+            'business_seat_number' => $request->business_seat_number,
+            'airline_id' => $request->airline_id,
         ]);
 
         return redirect()->route('airplane.index');
@@ -55,6 +59,7 @@ class AirplaneController extends Controller
     public function edit($id)
     {
         $data['airplane'] = Airplane::find($id);
+        $data['airlines'] = Airline::all();
 
         return view('airplane.edit', $data);
     }
@@ -71,7 +76,8 @@ class AirplaneController extends Controller
         Airplane::find($id)->update([
             'aircraft_type' => $request->aircraft_type,
             'economy_seat_number' => $request->economy_seat_number,
-            'business_seat_number' => $request->business_seat_number
+            'business_seat_number' => $request->business_seat_number,
+            'airline_id' => $request->airline_id,
         ]);
 
         return redirect()->route('airplane.index');

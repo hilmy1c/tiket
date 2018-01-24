@@ -17,7 +17,7 @@ class AdminLoginController extends Controller
 
     public function __construct()
     {
-    	$this->middleware('guest')->except('logout');
+    	$this->middleware('guest:admin')->except('logout');
     }
 
     public function index()
@@ -39,5 +39,12 @@ class AdminLoginController extends Controller
     	throw ValidationException::withMessages([
             'email' => [trans('auth.failed')],
         ]);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('admin')->logout();
+
+        return redirect('/');
     }
 }

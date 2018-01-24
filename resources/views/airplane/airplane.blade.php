@@ -16,6 +16,7 @@
                             <th>Aircraft Type</th>
                             <th>Economy Seat Number</th>
                             <th>Business Seat Number</th>
+                            <th>Airline Id</th>
                             <th class="text-center">Action</th>
                         </thead>
                         <tbody>
@@ -25,6 +26,7 @@
                                 <td>{{ $airplane->aircraft_type }}</td>
                                 <td>{{ $airplane->economy_seat_number }}</td>
                                 <td>{{ $airplane->business_seat_number }}</td>
+                                <td>{{ $airplane->airline_id }}</td>
                                 <td>
                                     <a href="{{ route('airplane.edit', ['id' => $airplane->id]) }}" class="btn btn-default">Edit</a>
                                     <form action="{{ route('airplane.destroy', ['id' => $airplane->id]) }}" method="POST">
