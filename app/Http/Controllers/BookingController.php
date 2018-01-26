@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\User;
 use App\Booking;
+use Illuminate\Http\Request;
 
 class BookingController extends Controller
 {
@@ -26,7 +27,9 @@ class BookingController extends Controller
      */
     public function create()
     {
-        return view('booking.create');
+        $data['users'] = User::all();
+
+        return view('booking.create', $data);
     }
 
     /**
@@ -57,6 +60,7 @@ class BookingController extends Controller
     public function edit($id)
     {
         $data['booking'] = Booking::find($id);
+        $data['users'] = User::all();
 
         return view('booking.edit', $data);
     }
