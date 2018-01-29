@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -46,9 +46,9 @@ Route::resource('/train_journey', 'TrainJourneyController');
 
 Route::resource('/train_fare', 'TrainFareController');
 
-Route::resource('/booking_detail', 'BookingDetailController');
-
 Route::resource('/booking', 'BookingController');
+
+Route::get('/booking/detail', 'BookingDetailController@index')->name('booking.detail');
 
 Route::group(['prefix' => 'admin'], function() {
 	Route::get('/register', 'Auth\AdminRegisterController@index')->name('admin.register');
@@ -58,3 +58,5 @@ Route::group(['prefix' => 'admin'], function() {
 	Route::post('/login', 'Auth\AdminLoginController@login');
 	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 });
+
+Route::get('/flight/search', 'FlightController@search')->name('flight.search');

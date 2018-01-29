@@ -12,6 +12,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/plugins/icheck/square/blue.css" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="/plugins/icheck/icheck.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -28,8 +34,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a href="/" class="navbar-brand">
+                        <img src="{{ asset('img/logo.png') }}" alt="Rajatiket">
                     </a>
                 </div>
 
@@ -74,7 +80,13 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $("input").iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue'
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+.navbar {
+	margin-bottom: 0;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 60px;
+    height: 60px;
+    padding-top: 0;
+}
+
+.navbar-brand img {
+	height: 35px;
+	margin-top: 10px;
+}
+
+.my-container {
+	padding-left: 185px;
+    padding-right: 185px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.banner {
+	background-color: #2196f3;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.welcome-message {
+	color: #fff;
+	text-align: center;
+}
+
+.my-nav-pills li a {
+	color: #333;
+	padding: 10px 20px 10px 20px;
+}
+
+.my-icon {
+	vertical-align: middle;
+	width: 25px;
+}
+
+.ft-side-nav {
+	background-color: #f7f7f7;
+}
