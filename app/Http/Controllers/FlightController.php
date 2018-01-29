@@ -28,7 +28,7 @@ class FlightController extends Controller
      */
     public function create()
     {
-        $data['airplanes'] = Flight::all();
+        $data['airplanes'] = Airplane::with('airline')->get();
         $data['airports'] = Airport::all();
 
         return view('flight.create', $data);
@@ -101,5 +101,10 @@ class FlightController extends Controller
         Flight::destroy($id);
 
         return redirect()->route('flight.index');
+    }
+
+    public function search($from, $to)
+    {
+        
     }
 }

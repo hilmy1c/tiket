@@ -23,7 +23,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="airplane_id" id="airplane_id">
                                     @foreach ($airplanes as $airplane)
-                                    <option value="{{ $airplane->id }}">{{ $airplane->aircraft_type }}</option>
+                                    <option value="{{ $airplane->id }}">{{ $airplane->airline->name }} : {{ $airplane->aircraft_type }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -34,7 +34,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="from_airport_id" id="from_airport_id">
                                     @foreach ($airports as $airport)
-                                    <option value="{{ $airport->id }}">{{ $airport->name }}</option>
+                                    <option value="{{ $airport->id }}">{{ $airport->city }} : {{ $airport->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -45,7 +45,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="destination_airport_id" id="destination_airport_id">
                                 @foreach ($airports as $airport)
-                                <option value="{{ $airport->id }}">{{ $airport->name }}</option>
+                                <option value="{{ $airport->id }}">{{ $airport->city }} : {{ $airport->name }}</option>
                                 @endforeach
                                 </select>
                             </div>

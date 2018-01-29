@@ -8,7 +8,7 @@
                 <div class="panel-heading">Edit</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('booking.store', ['id' => $booking->id]) }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('booking.update', ['id' => $booking->id]) }}">
                         {{ csrf_field() }}
 
                         <div class="form-group">
@@ -32,21 +32,17 @@
                         <div class="form-group">
                             <label for="booking_date" class="col-md-4 control-label">Booking Date</label>
                             <div class="col-md-6">
-                                <input id="booking_date" type="date" class="form-control" name="booking_date" value="{{ $booking->booking_date }}" required autofocus>
+                                <input id="booking_date" type="date" format="yyyy-mm-dd" class="form-control" name="booking_date" value="{{ $booking->booking_date }}" required autofocus>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="status" class="col-md-4 control-label">Status</label>
+                            <label for="is_paid" class="col-md-4 control-label">Is Paid</label>
                             <div class="col-md-6">
-                                <input id="status" type="text" class="form-control" name="status" value="{{ $booking->status }}" required autofocus>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="payment_status" class="col-md-4 control-label">Payment Status</label>
-                            <div class="col-md-6">
-                                <input id="payment_status" type="text" class="form-control" name="payment_status" value="{{ $booking->payment_status }}" required autofocus>
+                                <select name="is_paid" id="is_paid" class="form-control">
+                                    <option value="0" {{ $booking->is_paid == false ? 'selected' : '' }}>False</option>
+                                    <option value="1" {{ $booking->is_paid == true ? 'selected' : '' }}>True</option>
+                                </select>
                             </div>
                         </div>
 

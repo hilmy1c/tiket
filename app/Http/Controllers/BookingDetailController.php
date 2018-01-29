@@ -2,19 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\BookingDetail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingDetailController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $data['booking_details'] = BookingDetail::all();
+        $data['booking_details'] = BookingDetail::find($id);
 
         return view('booking_detail.booking_detail', $data);
     }

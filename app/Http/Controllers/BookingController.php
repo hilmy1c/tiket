@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $data['bookings'] = Booking::all();
+        $data['bookings'] = Booking::with('user')->get();
 
         return view('booking.booking', $data);
     }
@@ -27,9 +33,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        $data['users'] = User::all();
-
-        return view('booking.create', $data);
+        return view('booking.create');
     }
 
     /**
@@ -42,10 +46,9 @@ class BookingController extends Controller
     {
         Booking::create([
             'booking_code' => $request->booking_code,
-            'user_id' => $request->user_id,
-            'booking_date' => $request->booking_date,
-            'status' => $request->status,
-            'payment_status' => $request->payment_status
+            'user_id' => Auth::user()->id,
+            'booking_date' => date('Y-m-d'),
+            'is_paid' => false,
         ]);
 
         return redirect()->route('booking.index');
@@ -78,8 +81,7 @@ class BookingController extends Controller
             'booking_code' => $request->booking_code,
             'user_id' => $request->user_id,
             'booking_date' => $request->booking_date,
-            'status' => $request->status,
-            'payment_status' => $request->payment_status
+            'is_paid' => $request->is_paid
         ]);
 
         return redirect()->route('booking.index');
