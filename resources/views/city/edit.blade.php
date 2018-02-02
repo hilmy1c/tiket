@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit</div>
+                <div class="panel-heading">Edit City</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('city.update', ['id' => $city->id]) }}">

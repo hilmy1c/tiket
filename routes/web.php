@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', 'UserController@index')->name('user.index');
@@ -59,4 +55,6 @@ Route::group(['prefix' => 'admin'], function() {
 	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 });
 
-Route::get('/flight/search', 'FlightController@search')->name('flight.search');
+Route::post('/flight/search', 'FlightController@search')->name('flight.search');
+
+Route::post('/flight/get_flight_number/{id}', 'FlightController@getFlightNumber');

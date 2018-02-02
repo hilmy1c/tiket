@@ -17,8 +17,9 @@ class CreateBookingDetailsTable extends Migration
             $table->increments('id');
             $table->integer('travel_number');
             $table->string('status');
-            $table->char('fare_id');
-            $table->string('booking_code');
+            $table->integer('flight_fare_id')->unsigned()->nullable();
+            $table->integer('train_fare_id')->unsigned()->nullable();
+            $table->integer('booking_id')->unsigned()->nullable();
             $table->timestamps();
         });
     }

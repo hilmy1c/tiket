@@ -18,6 +18,7 @@ class CreateAirplanesTable extends Migration
             $table->string('aircraft_type');
             $table->tinyInteger('economy_seat_number');
             $table->tinyInteger('business_seat_number');
+            $table->integer('airline_id')->unsigned()->unsigned()->nullable();
             $table->timestamps();
         });
     }

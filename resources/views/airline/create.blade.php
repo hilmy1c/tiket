@@ -1,15 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Create</div>
+                <div class="panel-heading">Create Airline</div>
 
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('airline.store') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('airline.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
+
+                        <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
+                            <label for="image" class="col-md-4 control-label">Image</label>
+                            <div class="col-md-6">
+                                <input id="image" type="file" class="form-control" name="image" autofocus>
+
+                                @if ($errors->has('image'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('image') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <label for="code" class="col-md-4 control-label">Code</label>
