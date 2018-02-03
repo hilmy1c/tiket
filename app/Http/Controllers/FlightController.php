@@ -63,7 +63,7 @@ class FlightController extends Controller
     public function edit($id)
     {
         $data['flight'] = Flight::find($id);
-        $data['airplanes'] = Flight::all();
+        $data['airplanes'] = Airplane::with('airline')->get();
         $data['airports'] = Airport::all();
 
         return view('flight.edit', $data);
@@ -103,8 +103,20 @@ class FlightController extends Controller
         return redirect()->route('flight.index');
     }
 
-    public function search($from, $to)
+    public function search()
     {
-        
+        $data['flights'] = Flight::with('airplane.airline')->get();
+
+        return view('flight-list', $data);
+    }
+
+    public function getFlightNumber($id)
+    {
+        $airplane = Airplane::find($id);
+        $flight = Flight::orderBy('created_at', 'desc')->first();
+
+        $n = $flight == null ? 1 : intval(substr($flight->flight_number, 2, 3)) + 1;
+
+        echo $airplane->airline->code . str_pad($n, 3, 0, STR_PAD_LEFT);
     }
 }

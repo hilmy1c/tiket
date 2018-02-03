@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', 'UserController@index')->name('user.index');
@@ -46,9 +42,9 @@ Route::resource('/train_journey', 'TrainJourneyController');
 
 Route::resource('/train_fare', 'TrainFareController');
 
-Route::resource('/booking_detail', 'BookingDetailController');
-
 Route::resource('/booking', 'BookingController');
+
+Route::get('/booking/detail', 'BookingDetailController@index')->name('booking.detail');
 
 Route::group(['prefix' => 'admin'], function() {
 	Route::get('/register', 'Auth\AdminRegisterController@index')->name('admin.register');
@@ -58,3 +54,7 @@ Route::group(['prefix' => 'admin'], function() {
 	Route::post('/login', 'Auth\AdminLoginController@login');
 	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 });
+
+Route::post('/flight/search', 'FlightController@search')->name('flight.search');
+
+Route::post('/flight/get_flight_number/{id}', 'FlightController@getFlightNumber');

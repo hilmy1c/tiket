@@ -15,7 +15,7 @@ class AirplaneController extends Controller
      */
     public function index()
     {
-        $data['airplanes'] = Airplane::all();
+        $data['airplanes'] = Airplane::with('airline')->get();
 
         return view('airplane.airplane', $data);
     }

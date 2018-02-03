@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Airline;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class AirlineController extends Controller
 {
@@ -37,7 +38,14 @@ class AirlineController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'image' => 'required|mimes:jpeg,jpg,png|max:1000'
+        ]);
+
+        $path = $request->file('image')->store('public/img');
+
         Airline::create([
+            'image' => $path,
             'code' => $request->code,
             'name' => $request->name
         ]);
