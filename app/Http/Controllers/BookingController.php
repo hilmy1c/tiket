@@ -30,6 +30,7 @@ class BookingController extends Controller
     public function create(Request $request, $id)
     {
         $data['flight'] = Flight::find($id);
+        $data['class'] = $request->class;
 
         return view('booking.create', $data);
     }
