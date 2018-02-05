@@ -5,7 +5,7 @@
     <div class="my-container">
         <h3 style="color: #fff">{{ $fromAirport->city->city }} - {{ $fromAirport->name }} Airport ({{ $fromAirport->code }}) &rarr; {{ $destinationAirport->city->city }} - {{ $destinationAirport->name }} Airport ({{ $destinationAirport->code }})</h3>
         <div class="flight-detail" style="color: #fff">
-            {{ date('l, d F Y', strtotime($date)) }} | {{ implode(', ', $passengers) }} | {{ $class }}
+            {{ date('l, d F Y', strtotime($date)) }} | {{ $adult_number }} Dewasa, {{ $child_number }} Anak, {{ $baby_number }} Bayi | {{ $class }}
             <button class="btn btn-white pull-right" id="ganti-pencarian">Ganti Pencarian</button>
         </div>
     </div>
@@ -325,8 +325,23 @@
                 </div>
                 <div class="col-md-2">
                     <h4 class="text-warning">Rp. {{ $flight->fare }}</h4>
+                    
+                    <form action="{{ route('flight.show', ['id' => $flight->id]) }}" method="GET">
+                        {{ csrf_field() }}
+                        
+                        <input type="hidden" name="timeRange" value="{{ $flight->timeRange }}">
+                        <input type="hidden" name="class" value="{{ $class }}">
+                        <input type="hidden" name="adult_number" value="{{ $adult_number }}">
+                        <input type="hidden" name="child_number" value="{{ $child_number }}">
+                        <input type="hidden" name="baby_number" value="{{ $baby_number }}">
+                        <input type="hidden" name="adult_fare" value="{{ $flight->adult_fare }}">
+                        <input type="hidden" name="child_fare" value="{{ $flight->child_fare }}">
+                        <input type="hidden" name="baby_fare" value="{{ $flight->baby_fare }}">
+                        <input type="hidden" name="departure_time" value="{{ $date }}">
+                        <input type="hidden" name="fare" value="{{ $flight->fare }}">
 
-                    <button class="btn btn-sm btn-warning col-md-12">Pilih</button>
+                        <button type="submit" class="btn btn-sm btn-warning col-md-12">Pilih</button>
+                    </form>
                 </div>
             </div>
         </div>

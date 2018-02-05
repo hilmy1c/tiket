@@ -442,3 +442,23 @@ a.text-warning:focus {
 	margin: 0 auto;
 	margin-bottom: 15px;
 }
+
+.airplane-airline {
+	margin-top: 15px;
+	]margin-bottom: 15px;
+}
+
+.detail-list {
+	display: inline-block;;
+	margin-right: 20px;
+}
+
+.harga-total {
+	border-top: 1px solid #ddd;
+	padding-top: 15px;
+	background-color: #f7f7f7;
+}
+
+.list-harga {
+	padding-bottom: 15px;
+}

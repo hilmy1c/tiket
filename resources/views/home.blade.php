@@ -288,8 +288,8 @@
                                     <div class="form-group col-md-6">
                                         <label for="kelas">Kelas Penerbangan:</label>
                                         <select name="class" id="kelas" class="input-sm form-control">
-                                            <option value="Ekonomi">Ekonomi</option>
-                                            <option value="Bisnis">Bisnis</option>
+                                            <option value="economy">Ekonomi</option>
+                                            <option value="business">Bisnis</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">

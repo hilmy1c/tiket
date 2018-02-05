@@ -34,6 +34,23 @@ class FlightController extends Controller
         return view('flight.create', $data);
     }
 
+    public function show(Request $request, $id)
+    {
+        $data['flight'] = Flight::find($id);
+        $data['date'] = $request->departure_time;
+        $data['class'] = $request->class;
+        $data['fare'] = $request->fare;
+        $data['timeRange'] = $request->timeRange;
+        $data['adult_number'] = $request->adult_number;
+        $data['child_number'] = $request->child_number;
+        $data['baby_number'] = $request->baby_number;
+        $data['adult_fare'] = number_format($request->adult_fare, 0, '', '.');
+        $data['child_fare'] = number_format($request->child_fare, 0, '', '.');
+        $data['baby_fare'] = number_format($request->baby_fare, 0, '', '.');
+
+        return view('flight-detail', $data);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -115,18 +132,21 @@ class FlightController extends Controller
 
         foreach ($data['flights'] as $flight) {
             $prevVal = 0;
-            foreach ($flight->flightFares->where('class', 'economy') as $flightFare) {
+            foreach ($flight->flightFares->where('class', $request->class) as $flightFare) {
                 switch ($flightFare->passenger) {
                     case 'adult':
                         $prevVal = $this->unformatNumber($flightFare->fare) * intval($request->adult_number) + $prevVal;
+                        $flight->adult_fare = $this->unformatNumber($flightFare->fare) * intval($request->adult_number);
                         break;
 
                     case 'child':
                         $prevVal = $this->unformatNumber($flightFare->fare) * intval($request->child_number) + $prevVal;
+                        $flight->child_fare = $this->unformatNumber($flightFare->fare) * intval($request->child_number);
                         break;
 
                     case 'baby':
                         $prevVal = $this->unformatNumber($flightFare->fare) * intval($request->baby_number) + $prevVal;
+                        $flight->baby_fare = $this->unformatNumber($flightFare->fare) * intval($request->baby_number);
                         break;
                 }
             }
@@ -142,8 +162,10 @@ class FlightController extends Controller
         $data['fromAirport'] = Airport::find($request->from);
         $data['destinationAirport'] = Airport::find($request->destination);
         $data['date'] = $request->departure_time;
-        $data['passengers'] = [$request->adult_number . ' Dewasa' , $request->child_number . ' Anak', $request->baby_number . ' Bayi'];
-        $data['class'] = $request->class;
+        $data['adult_number'] = $request->adult_number;
+        $data['child_number'] = $request->child_number;
+        $data['baby_number'] = $request->baby_number;
+        $data['class'] = ucwords($request->class);
 
         return view('flight-list', $data);
     }
