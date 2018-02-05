@@ -330,32 +330,32 @@
         </div>
         <div class="col-md-8">
             <div class="col-md-4">
-                <a href="">
+                <a href="https://www.airasia.com/id">
                     <img src="/img/partners/air_asia.png" alt="" class="partners-logo">
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="" class="partners-logo-container">
+                <a href="https://www.citilink.co.id/" class="partners-logo-container">
                     <img src="/img/partners/citilink.png" alt="" class="partners-logo">
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="" class="partners-logo-container">
+                <a href="https://www.garuda-indonesia.com/id" class="partners-logo-container">
                     <img src="/img/partners/garuda_indonesia.png" alt="" class="partners-logo">
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="" class="partners-logo-container">
+                <a href="http://www.lionair.co.id/id" class="partners-logo-container">
                     <img src="/img/partners/lion_air.png" alt="" class="partners-logo">
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="" class="partners-logo-container">
+                <a href="https://www.sriwijayaair.co.id/" class="partners-logo-container">
                     <img src="/img/partners/sriwijaya_air.png" alt="" class="partners-logo">
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="" class="partners-logo-container">
+                <a href="https://kai.id/" class="partners-logo-container">
                     <img src="/img/partners/pt_kai.png" alt="" class="partners-logo">
                 </a>
             </div>
