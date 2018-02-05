@@ -101,9 +101,19 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
+            <div class="row" style="margin-top: 20px">
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            
+                        </div>
+                    </div>
+                </div>
 
-        @yield('content')
-
+                @yield('content')
+            </div>
+        </div>
         <div class="footer">
             <div class="my-container">
                 <div class="row" style="padding-bottom: 30px">
