@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="col-md-9">
+    <h4><strong>Flights</strong></h4>
     <div class="panel panel-default">
-        <div class="panel-heading">Flights</div>
-
         <div class="panel-body">
             <a href="{{ route('flight.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
 

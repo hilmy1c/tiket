@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="col-md-9">
+    <h4><strong>Cities</strong></h4>
     <div class="panel panel-default">
-        <div class="panel-heading">Cities</div>
-
         <div class="panel-body">
             <a href="{{ route('city.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
 

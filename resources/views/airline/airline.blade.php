@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="col-md-9">
+    <h4><strong>Airlines</strong></h4>
     <div class="panel panel-default">
-        <div class="panel-heading">Airlines</div>
-
         <div class="panel-body">
             <a href="{{ route('airline.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
 
