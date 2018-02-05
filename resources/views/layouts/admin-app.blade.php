@@ -107,16 +107,19 @@
                     <nav class="sidebar-menu-container">
                         <ul class="sidebar-menu">
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/combo-chart.png" class="my-icon" alt="">Dashboard</a>
+                                <a href="{{ route('admin.home') }}"><img src="/img/icons/sidebar/combo-chart.png" class="my-icon" alt="">Dashboard</a>
                             </li>
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/pilot-hat.png" class="my-icon" alt="">Airlines</a>
+                                <a href="{{ route('airline.index') }}">
+                                    <img src="/img/icons/sidebar/pilot-hat.png" class="my-icon" alt="">Airlines</a>
                             </li>
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/airplane-blue.png" class="my-icon" alt="">Airplanes</a>
+                                <a href="{{ route('airplane.index') }}">
+                                    <img src="/img/icons/sidebar/airplane-blue.png" class="my-icon" alt="">Airplanes</a>
                             </li>
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/runway.png" class="my-icon" alt="">Airports</a>
+                                <a href="{{ route('airport.index') }}">
+                                    <img src="/img/icons/sidebar/runway.png" class="my-icon" alt="">Airports</a>
                             </li>
                             <li>
                                 <a href="javascript:" data-toggle="collapse" data-target="#sub-menu">
@@ -127,24 +130,26 @@
                                         <a href="">Data</a>
                                     </li>
                                     <li>
-                                        <a href="">Details</a>
+                                        <a href="{{ route('booking.detail') }}">Details</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/skycrapers.png" class="my-icon" alt="">Cities</a>
+                                <a href="{{ route('city.index') }}">
+                                    <img src="/img/icons/sidebar/skycrapers.png" class="my-icon" alt="">Cities</a>
                             </li>
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/luggage-trolly.png" class="my-icon" alt="">Flights</a>
+                                <a href="{{ route('flight.index') }}">
+                                    <img src="/img/icons/sidebar/luggage-trolly.png" class="my-icon" alt="">Flights</a>
                             </li>
                             <li>
                                 <a href="javascript:" data-toggle="collapse" data-target="#sub-menu2"><img src="/img/icons/sidebar/price.png" class="my-icon" alt="">Fares <span class="pull-right"><i class="caret"></i></span></a>
                                 <ul class="sidebar-menu collapse my-collapse" id="sub-menu2">
                                     <li>
-                                        <a href="">Flights</a>
+                                        <a href="{{ route('flight_fare.index') }}">Flights</a>
                                     </li>
                                     <li>
-                                        <a href="">Trains</a>
+                                        <a href="{{ route('train_fare.index') }}">Trains</a>
                                     </li>
                                 </ul>
                             </li>
@@ -152,13 +157,16 @@
                                 <a href=""><img src="/img/icons/sidebar/traveler.png" class="my-icon" alt="">Passengers</a>
                             </li>
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/train.png" class="my-icon" alt="">Train</a>
+                                <a href="{{ route('train.index') }}">
+                                    <img src="/img/icons/sidebar/train.png" class="my-icon" alt="">Train</a>
                             </li>
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/train-track.png" class="my-icon" alt="">Train Journeys</a>
+                                <a href="{{ route('train_journey.index') }}">
+                                    <img src="/img/icons/sidebar/train-track.png" class="my-icon" alt="">Train Journeys</a>
                             </li>
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/railway-station.png" class="my-icon" alt="">Train Stations</a>
+                                <a href="{{ route('train_station.index') }}">
+                                    <img src="/img/icons/sidebar/railway-station.png" class="my-icon" alt="">Train Stations</a>
                             </li>
                         </ul>
                     </nav>

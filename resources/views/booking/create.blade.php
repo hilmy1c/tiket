@@ -1,9 +1,7 @@
 @extends('layouts.admin-app')
 
 @section('content')
-<div class="my-container" style="margin-top: 20px">
-    <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
             <h4><strong>Data Pemesan</strong></h4>
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Data Pemesan</strong></div>
@@ -43,7 +41,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4"></div>
-    </div>
-</div>
+    <div class="col-md-4"></div>
 @endsection
+
