@@ -101,14 +101,67 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="my-container">
             <div class="row" style="margin-top: 20px">
                 <div class="col-md-3">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            
-                        </div>
-                    </div>
+                    <nav class="sidebar-menu-container">
+                        <ul class="sidebar-menu">
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/combo-chart.png" class="my-icon" alt="">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/pilot-hat.png" class="my-icon" alt="">Airlines</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/airplane-blue.png" class="my-icon" alt="">Airplanes</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/runway.png" class="my-icon" alt="">Airports</a>
+                            </li>
+                            <li>
+                                <a href="javascript:" data-toggle="collapse" data-target="#sub-menu">
+                                    <img src="/img/icons/sidebar/booking.png" class="my-icon" alt="">Bookings <span class="pull-right"><i class="caret"></i></span>
+                                </a>
+                                <ul class="sidebar-menu collapse my-collapse" id="sub-menu">
+                                    <li>
+                                        <a href="">Data</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Details</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/skycrapers.png" class="my-icon" alt="">Cities</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/luggage-trolly.png" class="my-icon" alt="">Flights</a>
+                            </li>
+                            <li>
+                                <a href="javascript:" data-toggle="collapse" data-target="#sub-menu2"><img src="/img/icons/sidebar/price.png" class="my-icon" alt="">Fares <span class="pull-right"><i class="caret"></i></span></a>
+                                <ul class="sidebar-menu collapse my-collapse" id="sub-menu2">
+                                    <li>
+                                        <a href="">Flights</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Trains</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/traveler.png" class="my-icon" alt="">Passengers</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/train.png" class="my-icon" alt="">Train</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/train-track.png" class="my-icon" alt="">Train Journeys</a>
+                            </li>
+                            <li>
+                                <a href=""><img src="/img/icons/sidebar/railway-station.png" class="my-icon" alt="">Train Stations</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
 
                 @yield('content')
@@ -166,178 +219,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        var adult = 1, child = 0, baby = 0;
-        
-        $(document).ready(function () {
-            $("input").iCheck({
-                checkboxClass: 'icheckbox_square-blue',
-                radioClass: 'iradio_square-blue'
-            });
-
-            $('.date').datepicker({
-                setDate: new Date(),
-                format: 'yyyy-mm-dd',
-                autoclose: true
-            });
-
-            $(".money").keyup(function(event) {
-                if (event.which >= 37 && event.which <= 40) return;
-                
-                $(this).val(function(index, value) {
-                    return value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-                });
-
-                if ($(this).attr('id') == 'economy_adult') {
-                    var valChild = unformatUang($(this).val()) * 75 / 100,
-                        valBaby = unformatUang($(this).val()) * 50 / 100;
-
-                    $("#economy_child").val(formatUang(valChild));
-                    $("#economy_baby").val(formatUang(valBaby));
-                }
-
-                if ($(this).attr('id') == 'business_adult') {
-                    var valChild = unformatUang($(this).val()) * 75 / 100,
-                        valBaby = unformatUang($(this).val()) * 50 / 100;
-
-                    $("#business_child").val(formatUang(valChild));
-                    $("#business_baby").val(formatUang(valBaby));
-                }
-            });
-
-            $(".dropdown-sidebar li").first().addClass('active');
-            $(".dropdown-sidebar li:nth-child(1)").addClass('active');
-
-            $("#penumpang").focusin(function(event) {
-                $(this).parent().find('.input-group-addon').addClass('open');
-            });
-
-            $(".close").click(function(event) {
-                $(this).closest('.input-group-addon').removeClass('open');
-            });
-
-            $("#kota-asal, #kota-tujuan").focusin(function(event) {
-                $(this).parent().find('.input-group-addon').addClass('open');
-            });
-
-            $("#is-pulang-pergi").on('ifToggled', function (event) {
-                $("#pulang-pergi").toggle();
-            });
-
-            $("#done").click(function(event) {
-                $("#penumpang").parent().find('.input-group-addon').removeClass('open');
-            });
-
-            $(".plus").click(function(event) {
-                var input = $(this).closest('.input-group').find('input');
-
-                input.val(function (i, oldval) {
-                    return ++oldval;
-                });
-
-                switch (input.attr('id')) {
-                    case 'dewasa':
-                        adult = $("#dewasa").val();
-                        break;
-
-                    case 'anak':
-                        child = $("#anak").val();
-                        break;
-
-                    case 'bayi':
-                        baby = $("#bayi").val();
-                        break;
-                }
-
-                setPassengerValue();
-            });
-
-            $(".minus").click(function(event) {
-                var input = $(this).closest('.input-group').find('input');
-
-                input.val(function (i, oldval) {
-                    if ($(this).val() < 1) {
-                        return $(this).val();
-                    }
-
-                    return --oldval;
-                });
-
-                switch (input.attr('id')) {
-                    case 'dewasa':
-                        adult = $("#dewasa").val();
-                        break;
-
-                    case 'anak':
-                        child = $("#anak").val();
-                        break;
-
-                    case 'bayi':
-                        baby = $("#bayi").val();
-                        break;
-                }
-
-                setPassengerValue();
-            });
-
-            $(".cities-list a").click(function(event) {
-                var input = $(this).closest('.input-group').find('input.form-control'),
-                    inputHidden = $(this).closest('.input-group').find('input[type=hidden]');
-
-                input.val($(this).data('input'));
-                inputHidden.val($(this).data('id'));
-
-                input.parent().find('.input-group-addon').removeClass('open');
-            });
-
-            $(".dropdown-sidebar li").click(function(event) {
-                $(".dropdown-sidebar li").removeClass('active');
-                $(this).addClass('active');
-
-                $(".cities").css('display', 'none');
-
-                switch ($(this).data('island')) {
-                    case 'jawa':
-                        $(".cities:nth-child(1)").css('display', 'block');
-                        break;
-
-                    case 'sumatera':
-                        $(".cities:nth-child(2)").css('display', 'block');
-                        break;
-
-                    case 'kalimantan':
-                        $(".cities:nth-child(3)").css('display', 'block');
-                        break;
-
-                    case 'sulawesi':
-                        $(".cities:nth-child(4)").css('display', 'block');
-                        break;
-
-                    case 'bali & nusa tenggara':
-                        $(".cities:nth-child(5)").css('display', 'block');
-                        break;
-
-                    case 'maluku & papua':
-                        $(".cities:nth-child(6)").css('display', 'block');
-                        break;
-                }
-            });
-        });
-
-        function setPassengerValue() {
-            var text = adult + " Dewasa, " + child + " Anak, " + baby + " Bayi";
-
-            $("#penumpang").val(text);
-        }
-
-        function formatUang(text) {
-            return text.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-        }
-        
-        function unformatUang(text) {
-            return parseInt(text.split('.').join(""));
-        }
-    </script>
 </body>
 </html>

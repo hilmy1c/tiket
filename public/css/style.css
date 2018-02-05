@@ -462,3 +462,47 @@ a.text-warning:focus {
 .list-harga {
 	padding-bottom: 15px;
 }
+
+.sidebar-menu-container {
+	border: 1px solid #d3e0e9;
+	background-color: #fff;
+	border-radius: 3px;
+	margin-bottom: 20px;
+}
+
+.sidebar-menu {
+	padding: 0;
+}
+
+.sidebar-menu li {
+	list-style: none;
+}
+
+.sidebar-menu li:last-child {
+	padding-bottom: 0;
+}
+
+.sidebar-menu li a {
+	color: #777;
+	font-weight: bold;
+	text-decoration: none;
+	display: block;
+	padding: 10px 20px 10px 20px;
+}
+
+.sidebar-menu li a:hover {
+	background-color: #f7f7f7;
+}
+
+.sidebar-menu li .my-icon {
+	margin-right: 15px;
+}
+
+.my-collapse li a {
+	background-color: #f7f7f7;
+	padding-left: 60px;
+}
+
+.my-collapse li a:hover {
+	background-color: #ddd;
+}
