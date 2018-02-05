@@ -15,11 +15,18 @@
     <link href="/css/style.css" rel="stylesheet">
     <link href="/plugins/icheck/square/blue.css" rel="stylesheet">
     <link href="/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet">
+    <link href="/plugins/datatable/css/datatables.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/plugins/datatable/css/datatables.css">
+    <link rel="stylesheet" type="text/css" href="/plugins/Responsive-2.2.1/css/responsive.bootstrap.css">
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript" src="/plugins/icheck/icheck.min.js"></script>
     <script type="text/javascript" src="/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="/plugins/datatable/js/datatables.min.js"></script>
+    <script type="text/javascript" src="/plugins/datatable/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="/plugins/Responsive-2.2.1/js/dataTables.responsive.js"></script>
 </head>
 <body>
     <div id="app">
@@ -227,5 +234,10 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".table").DataTable();
+        });
+    </script>
 </body>
 </html>
