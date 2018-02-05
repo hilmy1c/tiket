@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="col-md-9">
+    <h4><strong>Create Airplane</strong></h4>
     <div class="panel panel-default">
-        <div class="panel-heading">Create Airplane</div>
-
         <div class="panel-body">
             <form class="form-horizontal" method="POST" action="{{ route('airplane.store') }}">
                 {{ csrf_field() }}

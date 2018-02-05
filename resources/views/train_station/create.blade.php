@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="col-md-9">
+    <h4><strong>Create Station</strong></h4>
     <div class="panel panel-default">
-        <div class="panel-heading">Create</div>
-
         <div class="panel-body">
             <form class="form-horizontal" method="POST" action="{{ route('train_station.store') }}">
                 {{ csrf_field() }}

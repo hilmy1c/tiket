@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="col-md-9">
+    <h4><strong>Flight Fare</strong></h4>
     <div class="panel panel-default">
-        <div class="panel-heading">Flight Fares</div>
-
         <div class="panel-body">
             <div class="table-responsive">
                 <table class="table table-bordered">

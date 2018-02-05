@@ -2,9 +2,8 @@
 
 @section('content')
 <div class="col-md-9">
+    <h4><strong>Edit Station</strong></h4>
     <div class="panel panel-default">
-        <div class="panel-heading">Edit</div>
-        
         <div class="panel-body">
             <form class="form-horizontal" method="POST" action="{{ route('train_station.update', ['id' => $train_station->id]) }}">
                 {{ csrf_field() }}
