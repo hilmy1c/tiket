@@ -506,3 +506,7 @@ a.text-warning:focus {
 .my-collapse li a:hover {
 	background-color: #ddd;
 }
+
+.text-grey {
+	color: #a4aaae;
+}

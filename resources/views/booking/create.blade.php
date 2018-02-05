@@ -1,7 +1,9 @@
-@extends('layouts.admin-app')
+@extends('layouts.app')
 
 @section('content')
-        <div class="col-md-9">
+<div class="my-container" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-8">
             <h4><strong>Data Pemesan</strong></h4>
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Data Pemesan</strong></div>
@@ -41,6 +43,23 @@
                 </div>
             </div>
         </div>
-    <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h4><strong>Pesanan Anda</strong></h4>
+            <div class="panel panel-default">
+                <div class="panel-heading"><strong>{{ $flight->fromAirport->city->city }} <img src="/img/icons/swipe_right.png" class="my-icon" alt=""> {{ $flight->destinationAirport->city->city }}</strong></div>
+                <div class="panel-body">
+                    <strong>{{ date('l, d F Y', strtotime($flight->departure_time)) }}</strong>
+                    <div class="airplane-airline">
+                        <img src="{{ Storage::url($flight->airplane->airline->image) }}" alt="" width="70px" style="margin-right: 20px;">
+                        <p style="display: inline-block;">
+                            <strong>{{ $flight->airplane->airline->name }}</strong><br>
+                            <small class="text-grey">{{ $class }}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 

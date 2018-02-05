@@ -5,7 +5,7 @@
     <h4><strong>Train Stations</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('train_station.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
+            <a href="{{ route('train.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
 
             <div class="table-responsive">
                 <table class="table table-bordered">
@@ -29,14 +29,14 @@
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="btn btn-danger">Delete</a>
+                                    <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-            <div>
+            </div>
         </div>
     </div>
 </div>

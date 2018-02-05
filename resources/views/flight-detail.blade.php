@@ -93,6 +93,7 @@
 				{{ csrf_field() }}
 
 				<input type="hidden" name="flight_id" value="{{ $flight->id }}">
+				<input type="hidden" name="class" value="{{ $class }}">
 
 				<button type="submit" class="btn btn-warning col-md-12" style="margin-bottom: 20px;">Lanjut Pembayaran</button>
 			</form>
