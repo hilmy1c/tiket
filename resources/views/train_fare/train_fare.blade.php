@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Train Fare</strong></h4>
+    <h4><strong>Train Fares</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
             <a href="{{ route('train_fare.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>

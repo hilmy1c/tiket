@@ -146,10 +146,10 @@
                                 <a href="javascript:" data-toggle="collapse" data-target="#sub-menu2"><img src="/img/icons/sidebar/price.png" class="my-icon" alt="">Fares <span class="pull-right"><i class="caret"></i></span></a>
                                 <ul class="sidebar-menu collapse my-collapse" id="sub-menu2">
                                     <li>
-                                        <a href="{{ route('flight_fare.index') }}">Flights</a>
+                                        <a href="{{ route('flight_fare.index') }}">Flight</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('train_fare.index') }}">Trains</a>
+                                        <a href="{{ route('train_fare.index') }}">Train</a>
                                     </li>
                                 </ul>
                             </li>
