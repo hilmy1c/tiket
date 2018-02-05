@@ -49,12 +49,33 @@
                 <div class="panel-heading"><strong>{{ $flight->fromAirport->city->city }} <img src="/img/icons/swipe_right.png" class="my-icon" alt=""> {{ $flight->destinationAirport->city->city }}</strong></div>
                 <div class="panel-body">
                     <strong>{{ date('l, d F Y', strtotime($flight->departure_time)) }}</strong>
-                    <div class="airplane-airline">
+                    <div class="airplane-airline" style="margin-bottom: 15px">
                         <img src="{{ Storage::url($flight->airplane->airline->image) }}" alt="" width="70px" style="margin-right: 20px;">
                         <p style="display: inline-block;">
                             <strong>{{ $flight->airplane->airline->name }}</strong><br>
                             <small class="text-grey">{{ $class }}</small>
                         </p>
+                    </div>
+                    <div class="row" style="position: relative;">
+                        <div class="vertical-line"></div>
+                        <div class="col-md-6 time-range">
+                            <div class="circle-invert"></div>
+                            <strong style="display: block">{{ date('H:i', strtotime($flight->departure_time)) }}</strong>
+                            <small class="text-grey">{{ date('d M Y', strtotime($flight->departure_time)) }}</small>
+                        </div>
+                        <div class="col-md-6">
+                            <strong style="display: block">{{ $flight->fromAirport->city->city }} ({{ $flight->fromAirport->code }})</strong>
+                            <small class="text-grey">{{ $flight->fromAirport->name }} Airport</small>
+                        </div>
+                        <div class="col-md-6 time-range">
+                            <div class="circle-blue"></div>
+                            <strong style="display: block">{{ date('H:i', strtotime($flight->arrival_time)) }}</strong>
+                            <small class="text-grey">{{ date('d M Y', strtotime($flight->arrival_time)) }}</small>
+                        </div>
+                        <div class="col-md-6">
+                            <strong style="display: block">{{ $flight->destinationAirport->city->city }} ({{ $flight->destinationAirport->code }})</strong>
+                            <small class="text-grey">{{ $flight->destinationAirport->name }} Airport</small>
+                        </div>
                     </div>
                 </div>
             </div>

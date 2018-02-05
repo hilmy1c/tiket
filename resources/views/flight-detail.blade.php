@@ -26,24 +26,24 @@
 					<div class="airplane-airline">
 						<img src="{{ Storage::url($flight->airplane->airline->image) }}" alt="" width="100px" style="margin-right: 20px;">
 						<p style="display: inline-block;">
-							{{ $flight->airplane->airline->name .' '. $flight->flight_number }}<br>
-							{{ $class }}
+							<strong>{{ $flight->airplane->airline->name .' '. $flight->flight_number }}</strong><br>
+							<small class="text-grey">{{ $class }}</small>
 						</p>
 					</div>
 					<div class="detail-list">
-						<h4>{{ date('H:i', strtotime($flight->arrival_time)) }}</h4>
-                		<small>{{ $flight->fromAirport->city->city }} ({{ $flight->fromAirport->code }})</small>
+						<h4><strong>{{ date('H:i', strtotime($flight->arrival_time)) }}</strong></h4>
+                		<small class="text-grey">{{ $flight->fromAirport->city->city }} ({{ $flight->fromAirport->code }})</small>
 					</div>
 					<div class="detail-list" style="transform: translateY(-50%);">
 						&rarr;
 					</div>
 					<div class="detail-list">
-						<h4>{{ date('H:i', strtotime($flight->departure_time)) }}</h4>
-                		<small>{{ $flight->destinationAirport->city->city }} ({{ $flight->destinationAirport->code }})</small>
+						<h4><strong>{{ date('H:i', strtotime($flight->departure_time)) }}</strong></h4>
+                		<small class="text-grey">{{ $flight->destinationAirport->city->city }} ({{ $flight->destinationAirport->code }})</small>
 					</div>
 					<div class="detail-list">
-						<h4>{{ $timeRange }}</h4>
-	                    <small>langsung</small>
+						<h4><strong>{{ $timeRange }}</strong></h4>
+	                    <small class="text-grey">langsung</small>
 					</div>
 				</div>
 			</div>

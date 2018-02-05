@@ -32,12 +32,12 @@
                             <td>{{ date('Y-m-d H:i', strtotime($flight->departure_time)) }}</td>
                             <td>{{ date('Y-m-d H:i', strtotime($flight->arrival_time)) }}</td>
                             <td>
-                                <a href="{{ route('flight.edit', ['id' => $flight->id]) }}" class="btn btn-default">Edit</a>
-                                <form action="{{ route('flight.destroy', ['id' => $flight->id]) }}" method="POST">
+                                <a href="{{ route('flight.edit', ['id' => $flight->id]) }}" class="btn btn-sm btn-default">Edit</a>
+                                <form action="{{ route('flight.destroy', ['id' => $flight->id]) }}" method="POST" class="inline">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
                             </td>
                         </tr>

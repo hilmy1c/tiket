@@ -56,6 +56,65 @@ fieldset[disabled] .btn-primary.focus {
 	color: #2196f3;
 	background-color: #fff;
 }
+
+.btn-danger {
+	color: #fff;
+	background-color: #d33333;
+	border-color: #d33333;
+}
+.btn-danger:focus,
+.btn-danger.focus {
+	color: #fff;
+	background-color: #d33333;
+	border-color: #d33333;
+}
+.btn-danger:hover {
+	color: #fff;
+	background-color: #d33333;
+	border-color: #d33333;
+}
+.btn-danger:active,
+.btn-danger.active,
+.open > .dropdown-toggle.btn-danger {
+	color: #fff;
+	background-color: #d33333;
+	border-color: #d33333;
+}
+.btn-danger:active:hover,
+.btn-danger.active:hover,
+.open > .dropdown-toggle.btn-danger:hover,
+.btn-danger:active:focus,
+.btn-danger.active:focus,
+.open > .dropdown-toggle.btn-danger:focus,
+.btn-danger:active.focus,
+.btn-danger.active.focus,
+.open > .dropdown-toggle.btn-danger.focus {
+	color: #fff;
+	background-color: #d33333;
+	border-color: #d33333;
+}
+.btn-danger:active,
+.btn-danger.active,
+.open > .dropdown-toggle.btn-danger {
+	background-image: none;
+}
+.btn-danger.disabled:hover,
+.btn-danger[disabled]:hover,
+fieldset[disabled] .btn-danger:hover,
+.btn-danger.disabled:focus,
+.btn-danger[disabled]:focus,
+fieldset[disabled] .btn-danger:focus,
+.btn-danger.disabled.focus,
+.btn-danger[disabled].focus,
+fieldset[disabled] .btn-danger.focus {
+	background-color: #d33333;
+	border-color: #d33333;
+}
+.btn-danger .badge {
+	color: #d33333;
+	background-color: #fff;
+}
+
 .btn-warning {
 	color: #fff;
 	background-color: #ffa000;
@@ -118,9 +177,18 @@ fieldset[disabled] .btn-warning.focus {
 	background-color: #2196f3;
 }
 
-a.bg-primary:hover,
-a.bg-primary:focus {
+a.bg-danger:hover,
+a.bg-danger:focus {
 	background-color: #2196f3;
+}
+.bg-danger {
+	color: #fff;
+	background-color: ##d33333;
+}
+
+a.bg-danger:hover,
+a.bg-danger:focus {
+	background-color: ##d33333;
 }
 
 .dropdown .dropdown-menu > li > a {
@@ -174,6 +242,14 @@ a.text-warning:focus {
 
 .form-control {
 	box-shadow: none;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+	background-color: #2196f3;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
+	background-color: #d33333;
 }
 
 .my-dropdown-menu {
@@ -509,4 +585,41 @@ a.text-warning:focus {
 
 .text-grey {
 	color: #a4aaae;
+}
+
+.time-range {
+	padding-left: 40px;
+}
+
+.circle-invert {
+	border: 1px solid #2196f3;
+	background-color: #fff;
+}
+
+.circle-blue {
+	border: 1px solid #2196f3;
+	background-color: #2196f3;
+}
+
+.circle-blue, .circle-invert {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 15px;
+}
+
+.vertical-line {
+	height: 40%;
+	border-left: 1px solid #ddd;
+	position: absolute;
+	left: 19px;
+	top: 50%;
+	transform: translateY(-68%);
+}
+
+.inline {
+	display: inline-block;
 }
