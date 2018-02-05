@@ -103,7 +103,7 @@
         </nav>
 
         @yield('content')
-
+        
         <div class="footer">
             <div class="my-container">
                 <div class="row" style="padding-bottom: 30px">

@@ -49,8 +49,6 @@ Route::resource('/train_journey', 'TrainJourneyController');
 
 Route::resource('/train_fare', 'TrainFareController');
 
-Route::resource('/booking', 'BookingController');
-
 Route::get('/booking/detail', 'BookingDetailController@index')->name('booking.detail');
 
 Route::group(['prefix' => 'admin'], function() {
@@ -60,6 +58,10 @@ Route::group(['prefix' => 'admin'], function() {
 	Route::get('/login', 'Auth\AdminLoginController@index')->name('admin.login');
 	Route::post('/login', 'Auth\AdminLoginController@login');
 	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+});
+
+Route::group(['prefix' => 'booking'], function () {
+    Route::get('/{id}/create', 'BookingController@create')->name('booking.create');
 });
 
 Route::post('/flight/search', 'FlightController@search')->name('flight.search');
