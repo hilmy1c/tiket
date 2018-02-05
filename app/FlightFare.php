@@ -7,8 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class FlightFare extends Model
 {
     protected $fillable = [
-        'class', 'flight_number', 'fare'
+        'class', 'passenger', 'flight_id', 'fare'
     ];
+
+    public function flight()
+    {
+    	return $this->belongsTo('App\Flight');
+    }
 
     public function booking_detail()
     {

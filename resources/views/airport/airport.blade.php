@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -24,7 +24,7 @@
                                 <td>{{ $airport->id }}</td>
                                 <td>{{ $airport->name }}</td>
                                 <td>{{ $airport->code }}</td>
-                                <td>{{ $airport->city }}</td>
+                                <td>{{ $airport->city->city }}</td>
                                 <td>
                                     <a href="{{ route('airport.edit', ['id' => $airport->id]) }}" class="btn btn-default">Edit</a>
                                     <form action="{{ route('airport.destroy', ['id' => $airport->id]) }}" method="POST">

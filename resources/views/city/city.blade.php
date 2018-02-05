@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -15,6 +15,7 @@
                             <th>Id</th>
                             <th>City</th>
                             <th>Province</th>
+                            <th>Island</th>
                             <th class="text-center">Action</th>
                         </thead>
                         <tbody>
@@ -23,6 +24,7 @@
                                 <td>{{ $city->id }}</td>
                                 <td>{{ $city->city }}</td>
                                 <td>{{ $city->province }}</td>
+                                <td>{{ $city->island }}</td>
                                 <td>
                                     <a href="{{ route('city.edit', ['id' => $city->id]) }}" class="btn btn-default">Edit</a>
                                     <form action="{{ route('city.destroy', ['id' => $city->id]) }}" method="POST">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\City;
+use App\Airport;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,6 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+    	$data['jawa'] = Airport::all();
+        $data['sumatera'] = Airport::all();
+
+        return view('home', $data);
     }
 }

@@ -43,10 +43,10 @@ class AirportController extends Controller
         Airport::create([
             'name' => $request->name,
             'code' => $request->code,
-            'city' => $request->city
+            'city_id' => $request->city
         ]);
 
-        return redirect()->route('airport.index');
+        return redirect()->back();
     }
 
     /**
@@ -75,7 +75,7 @@ class AirportController extends Controller
         Airport::find($id)->update([
             'name' => $request->name,
             'code' => $request->code,
-            'city' => $request->city
+            'city_id' => intval($request->city)
         ]);
 
         return redirect()->route('airport.index');

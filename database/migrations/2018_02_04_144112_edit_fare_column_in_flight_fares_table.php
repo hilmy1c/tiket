@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DropStatusColumnInBookingsTable extends Migration
+class EditFareColumnInFlightFaresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class DropStatusColumnInBookingsTable extends Migration
      */
     public function up()
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            $table->dropColumn('status');
+        Schema::table('flight_fares', function (Blueprint $table) {
+            $table->string('fare')->change();
         });
     }
 
@@ -25,8 +25,8 @@ class DropStatusColumnInBookingsTable extends Migration
      */
     public function down()
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            
+        Schema::table('flight_fares', function (Blueprint $table) {
+            //
         });
     }
 }

@@ -39,7 +39,8 @@ class CityController extends Controller
     {
         City::create([
             'city' => $request->city,
-            'province' => $request->province
+            'province' => $request->province,
+            'island' => $request->island,
         ]);
 
         return redirect()->route('city.index');
@@ -70,7 +71,8 @@ class CityController extends Controller
     {
         City::find($id)->update([
             'city' => $request->city,
-            'province' => $request->province
+            'province' => $request->province,
+            'island' => $request->island,
         ]);
 
         return redirect()->route('city.index');

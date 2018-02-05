@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Flight;
 use App\FlightFare;
+use Illuminate\Http\Request;
 
 class FlightFareController extends Controller
 {
@@ -14,7 +15,7 @@ class FlightFareController extends Controller
      */
     public function index()
     {
-        $data['flight_fares'] = FlightFare::all();
+        $data['flight_fares'] = FlightFare::with('flight')->get();
 
         return view('flight_fare.flight_fare', $data);
     }
@@ -24,9 +25,11 @@ class FlightFareController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('flight_fare.create');
+        $data['flight'] = Flight::where('flight_number', $id)->first();
+
+        return view('flight_fare.create', $data);
     }
 
     /**
@@ -37,10 +40,43 @@ class FlightFareController extends Controller
      */
     public function store(Request $request)
     {
-        FlightFare::create([
-            'class' => $request->class,
-            'flight_number' => $request->flight_number,
-            'fare' => $request->fare
+        FlightFare::insert([
+            [
+                'flight_id' => $request->flight_id,
+                'class' => 'economy',
+                'passenger' => 'adult',
+                'fare' => $request->economy_adult,
+            ],
+            [
+                'flight_id' => $request->flight_id,
+                'class' => 'economy',
+                'passenger' => 'child',
+                'fare' => $request->economy_child,
+            ],
+            [
+                'flight_id' => $request->flight_id,
+                'class' => 'economy',
+                'passenger' => 'baby',
+                'fare' => $request->economy_baby,
+            ],
+            [
+                'flight_id' => $request->flight_id,
+                'class' => 'business',
+                'passenger' => 'adult',
+                'fare' => $request->business_adult,
+            ],
+            [
+                'flight_id' => $request->flight_id,
+                'class' => 'business',
+                'passenger' => 'child',
+                'fare' => $request->business_child,
+            ],
+            [
+                'flight_id' => $request->flight_id,
+                'class' => 'business',
+                'passenger' => 'baby',
+                'fare' => $request->business_baby,
+            ],
         ]);
 
         return redirect()->route('flight_fare.index');
@@ -69,8 +105,6 @@ class FlightFareController extends Controller
     public function update(Request $request, $id)
     {
         FlightFare::find($id)->update([
-            'class' => $request->class,
-            'flight_number' => $request->flight_number,
             'fare' => $request->fare
         ]);
 

@@ -1,91 +1,81 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
 
+<div class="banner" style="height: 300px; overflow: visible;">
+    <div class="my-container" style="position: relative;">
+        <h2 class="welcome-message">Bergabung jadi member Rajatiket dan nikmati beragam keuntungannya!</h2>
+        <p class="welcome-message">Daftar via registrasi yang mudah dan aman</p>
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
                 <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                    <h3 class="panel-title">Gabung Jadi Member Rajatiket!</h3>
+                    <form method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name">Name</label>
+                            <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                            @if ($errors->has('name'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
+                            @endif
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email">E-Mail</label>
+                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @else
+                                <span class="help-block"><strong>Data Anda dilindungi dan tidak akan disebarluaskan.</strong></span>
+                            @endif
                         </div>
 
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                            <label for="phone" class="col-md-4 control-label">Phone</label>
+                            <label for="phone">Phone</label>
+                            <input id="phone" type="number" class="form-control" name="phone" value="{{ old('phone') }}">
 
-                            <div class="col-md-6">
-                                <input id="phone" type="number" class="form-control" name="phone" value="{{ old('phone') }}" required>
-
-                                @if ($errors->has('phone'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('phone') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                            @if ($errors->has('phone'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('phone') }}</strong>
+                                </span>
+                            @endif
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password">Password</label>
+                            <input id="password" type="password" class="form-control" name="password">
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                            @endif
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
+                            <label for="password-confirm">Confirm Password</label>
+                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
+                            <button type="submit" class="btn btn-warning col-md-12">Daftar</button>
                         </div>
                     </form>
+                    <p class="text-center" style="margin-top: 70px">Sudah memiliki akun? <a href="#">Log in</a></p>
                 </div>
             </div>
+            <p class="text-center">Dengan melakukan pendaftaran, saya setuju dengan Kebijakan Privasi dan Syarat & Ketentuan Rajatiket.</p>
+            <span class="panel-sign">&copy; {{ date('Y') }} Rajatiket</span>
         </div>
     </div>
+</div>
+<div class="bg-default" style="height: 535px">
 </div>
 @endsection

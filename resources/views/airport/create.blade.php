@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Create</div>
+                <div class="panel-heading">Create Airport</div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('airport.store') }}">
@@ -30,7 +30,7 @@
                             <div class="col-md-6">
                                 <select name="city" id="city" class="form-control">
                                     @foreach ($cities as $city)
-                                        <option value="{{ $city->city }}">{{ $city->city }}</option>
+                                        <option value="{{ $city->id }}">{{ $city->city }}</option>
                                     @endforeach
                                 </select>
                             </div>

@@ -1,15 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Flight Fares</div>
 
                 <div class="panel-body">
-                    <a href="{{ route('flight_fare.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
-
                     <table class="table table-bordered">
                         <thead>
                             <th>Id</th>
@@ -23,8 +21,8 @@
                             <tr>
                                 <td>{{ $flight_fare->id }}</td>
                                 <td>{{ $flight_fare->class }}</td>
-                                <td>{{ $flight_fare->flight_number }}</td>
-                                <td>{{ $flight_fare->fare }}</td>
+                                <td>{{ $flight_fare->flight->flight_number }}</td>
+                                <td>Rp. {{ $flight_fare->fare }}</td>
                                 <td>
                                     <a href="{{ route('flight_fare.edit', ['id' => $flight_fare->id]) }}" class="btn btn-default">Edit</a>
                                     <form action="{{ route('flight_fare.destroy', ['id' => $flight_fare->id]) }}" method="POST">

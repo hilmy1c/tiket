@@ -18,8 +18,7 @@ class CreateBookingsTable extends Migration
             $table->string('booking_code');
             $table->integer('user_id')->unsigned()->nullable();
             $table->date('booking_date');
-            $table->string('status');
-            $table->string('payment_status');
+            $table->boolean('is_paid')->default(false);
             $table->timestamps();
         });
     }

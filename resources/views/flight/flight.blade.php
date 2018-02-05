@@ -30,8 +30,8 @@
                                     <td>{{ $flight->flight_number }}</td>
                                     <td>{{ $flight->airplane->aircraft_type }}</td>
                                     <td><img src="{{ Storage::url($flight->airplane->airline->image) }}" alt="" class="my-icon"> {{ $flight->airplane->airline->name }}</td>
-                                    <td>{{ $flight->fromAirport->city }} - ({{ $flight->fromAirport->code }}) {{ $flight->fromAirport->name }}</td>
-                                    <td>{{ $flight->destinationAirport->city }} - ({{ $flight->destinationAirport->code }}){{ $flight->destinationAirport->name }}</td>
+                                    <td>{{ $flight->fromAirport->city->city }} - ({{ $flight->fromAirport->code }}) {{ $flight->fromAirport->name }}</td>
+                                    <td>{{ $flight->destinationAirport->city->city }} - ({{ $flight->destinationAirport->code }}){{ $flight->destinationAirport->name }}</td>
                                     <td>{{ date('Y-m-d H:i', strtotime($flight->departure_time)) }}</td>
                                     <td>{{ date('Y-m-d H:i', strtotime($flight->arrival_time)) }}</td>
                                     <td>

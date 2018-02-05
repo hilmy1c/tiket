@@ -36,7 +36,14 @@ Route::resource('/airline', 'AirlineController');
 
 Route::resource('/flight', 'FlightController');
 
-Route::resource('/flight_fare', 'FlightFareController');
+Route::group(['prefix' => 'flight_fare'], function () {
+    Route::get('/', 'FlightFareController@index')->name('flight_fare.index');
+    Route::get('/{id}/create', 'FlightFareController@create')->name('flight_fare.create');
+    Route::post('/store', 'FlightFareController@store')->name('flight_fare.store');
+    Route::get('/{id}/edit', 'FlightFareController@edit')->name('flight_fare.edit');
+    Route::put('/{id}', 'FlightFareController@update')->name('flight_fare.update');
+    Route::delete('/{id}', 'FlightFareController@destroy')->name('flight_fare.destroy');
+});
 
 Route::resource('/train_journey', 'TrainJourneyController');
 

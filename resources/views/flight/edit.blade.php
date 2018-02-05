@@ -35,7 +35,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="from_airport_id" id="from_airport_id">
                                     @foreach ($airports as $airport)
-                                    <option value="{{ $airport->id }}" {{ ($flight->destination_airport_id == $airport->id) ? 'selected' : '' }}>{{ $airport->city }} - ({{ $airport->code }}) {{ $airport->name }}</option>
+                                    <option value="{{ $airport->id }}" {{ ($flight->destination_airport_id == $airport->id) ? 'selected' : '' }}>{{ $airport->city->city }} - ({{ $airport->code }}) {{ $airport->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -46,7 +46,7 @@
                             <div class="col-md-6">
                                 <select class="form-control" name="destination_airport_id" id="destination_airport_id">
                                     @foreach ($airports as $airport)
-                                    <option value="{{ $airport->id }}" {{ ($flight->destination_airport_id == $airport->id) ? 'selected' : '' }}>{{ $airport->city }} - ({{ $airport->code }}) {{ $airport->name }}</option>
+                                    <option value="{{ $airport->id }}" {{ ($flight->destination_airport_id == $airport->id) ? 'selected' : '' }}>{{ $airport->city->city }} - ({{ $airport->code }}) {{ $airport->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
