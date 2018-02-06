@@ -91,17 +91,36 @@
                             <div class="row">
                                 <div class="col-md-2">
                                     <select name="day" id="day" class="form-control">
-                                        
+                                        <?php
+                                            $day=31;
+                                                for ($a=01;$a<=$day;$a++)
+                                                    {
+                                                     echo "<option value='$a'>$a</option>";
+                                                    }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <select name="month" id="month" class="form-control">
-                                        
+                                        <?php
+                                            $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+                                            $jlh_bln=count($bulan);
+                                                    for($c=0; $c<$jlh_bln; $c+=1)
+                                                    {
+                                                        echo"<option value=$bulan[$c]> $bulan[$c] </option>";
+                                                    }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-md-3">
                                     <select name="year" id="year" class="form-control">
-                                        
+                                        <?php
+                                            $now=date('Y');
+                                                for ($a=1950;$a<=$now;$a++)
+                                                    {
+                                                     echo "<option value='$a'>$a</option>";
+                                                    }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -143,17 +162,36 @@
                             <div class="row">
                                 <div class="col-md-2">
                                     <select name="day" id="day" class="form-control">
-                                        
+                                        <?php
+                                            $day=31;
+                                                for ($a=01;$a<=$day;$a++)
+                                                    {
+                                                     echo "<option value='$a'>$a</option>";
+                                                    }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-md-4">
                                     <select name="month" id="month" class="form-control">
-                                        
+                                        <?php
+                                            $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+                                            $jlh_bln=count($bulan);
+                                                    for($c=0; $c<$jlh_bln; $c+=1)
+                                                    {
+                                                        echo"<option value=$bulan[$c]> $bulan[$c] </option>";
+                                                    }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-md-3">
                                     <select name="year" id="year" class="form-control">
-                                        
+                                        <?php
+                                            $now=date('Y');
+                                                for ($a=1950;$a<=$now;$a++)
+                                                    {
+                                                     echo "<option value='$a'>$a</option>";
+                                                    }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
