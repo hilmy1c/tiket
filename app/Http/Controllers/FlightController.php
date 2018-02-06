@@ -159,6 +159,10 @@ class FlightController extends Controller
             $flight->timeRange = $interval->format('%h')." Jam ".$interval->format('%i')." Menit"; 
         }
 
+        $data['from'] = $request->from;
+        $data['destination'] = $request->destination;
+        $data['kotaAsal'] = $request->kota_asal;
+        $data['kotaTujuan'] = $request->kota_tujuan;
         $data['fromAirport'] = Airport::find($request->from);
         $data['destinationAirport'] = Airport::find($request->destination);
         $data['date'] = $request->departure_time;

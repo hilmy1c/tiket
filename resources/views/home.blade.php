@@ -105,7 +105,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="text" id="kota-asal" name="kota-asal" class="form-control" autocomplete="off">
+                                            <input type="text" id="kota-asal" name="kota_asal" class="form-control" autocomplete="off">
                                             <input type="hidden" name="from">
                                         </div>
                                     </div>
@@ -185,7 +185,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="text" id="kota-tujuan" name="kota-tujuan" class="input-sm form-control" autocomplete="off">
+                                            <input type="text" id="kota-tujuan" name="kota_tujuan" class="input-sm form-control" autocomplete="off">
                                             <input type="hidden" name="destination">
                                         </div>
                                     </div>
@@ -282,7 +282,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <input type="text" id="penumpang" name="penumpang" class="input-sm form-control" value="1 Dewasa, 0 Anak, 0 Bayi" autocomplete="off">
+                                            <input type="text" id="penumpang" name="penumpang" class="input-sm form-control" autocomplete="off">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">

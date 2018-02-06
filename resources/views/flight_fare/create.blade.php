@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="col-md-9">
+    <h4><strong>Create Flight Fare {{ $flight->flight_number }}</strong></h4>
     <div class="panel panel-default">
-        <div class="panel-heading">Create Flight Fare <strong>{{ $flight->flight_number }}</strong></div>
 
         <div class="panel-body">
             <form class="form-horizontal" method="POST" action="{{ route('flight_fare.store') }}">
@@ -86,5 +86,39 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(".money").keyup(function(event) {
+        if (event.which >= 37 && event.which <= 40) return;
+        
+        $(this).val(function(index, value) {
+            return value.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        });
+
+        if ($(this).attr('id') == 'economy_adult') {
+            var valChild = unformatUang($(this).val()) * 75 / 100,
+                valBaby = unformatUang($(this).val()) * 50 / 100;
+
+            $("#economy_child").val(formatUang(valChild));
+            $("#economy_baby").val(formatUang(valBaby));
+        }
+
+        if ($(this).attr('id') == 'business_adult') {
+            var valChild = unformatUang($(this).val()) * 75 / 100,
+                valBaby = unformatUang($(this).val()) * 50 / 100;
+
+            $("#business_child").val(formatUang(valChild));
+            $("#business_baby").val(formatUang(valBaby));
+        }
+    });
+
+    function formatUang(text) {
+        return text.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    }
+    
+    function unformatUang(text) {
+        return parseInt(text.split('.').join(""));
+    }
+</script>
 @endsection
 

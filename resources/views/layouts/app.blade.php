@@ -160,9 +160,11 @@
     </div>
 
     <script>
-        var adult = 1, child = 0, baby = 0;
+        var adult = $("#dewasa").val(), child = $("#anak").val(), baby = $("#bayi").val();
         
         $(document).ready(function () {
+            $("#penumpang").val(adult + " Dewasa, " + child + " Anak, " + baby + " Bayi");
+
             $("input").iCheck({
                 checkboxClass: 'icheckbox_square-blue',
                 radioClass: 'iradio_square-blue'

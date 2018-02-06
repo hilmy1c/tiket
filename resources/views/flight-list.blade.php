@@ -96,8 +96,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="text" id="kota-asal" name="kota-asal" class="form-control" autocomplete="off">
-                                    <input type="hidden" name="from">
+                                    <input type="text" id="kota-asal" name="kota_asal" class="form-control" value="{{ $kotaAsal }}" autocomplete="off">
+                                    <input type="hidden" name="from" value="{{ $from }}">
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
@@ -176,8 +176,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="text" id="kota-tujuan" name="kota-tujuan" class="input-sm form-control" autocomplete="off">
-                                    <input type="hidden" name="destination">
+                                    <input type="text" id="kota-tujuan" name="kota-tujuan" class="input-sm form-control" value="{{ $kotaTujuan }}" autocomplete="off">
+                                    <input type="hidden" name="destination" value="{{ $destination }}">
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
@@ -273,7 +273,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    <input type="text" id="penumpang" name="penumpang" class="input-sm form-control" value="1 Dewasa, 0 Anak, 0 Bayi" autocomplete="off">
+                                    <input type="text" id="penumpang" name="penumpang" class="input-sm form-control" autocomplete="off">
                                 </div>
                             </div>
                             <div class="form-group col-md-6">

@@ -31,18 +31,18 @@
 						</p>
 					</div>
 					<div class="detail-list">
-						<h4><strong>{{ date('H:i', strtotime($flight->arrival_time)) }}</strong></h4>
+						<h4>{{ date('H:i', strtotime($flight->departure_time)) }}</h4>
                 		<small class="text-grey">{{ $flight->fromAirport->city->city }} ({{ $flight->fromAirport->code }})</small>
 					</div>
 					<div class="detail-list" style="transform: translateY(-50%);">
 						&rarr;
 					</div>
 					<div class="detail-list">
-						<h4><strong>{{ date('H:i', strtotime($flight->departure_time)) }}</strong></h4>
+						<h4>{{ date('H:i', strtotime($flight->arrival_time)) }}</h4>
                 		<small class="text-grey">{{ $flight->destinationAirport->city->city }} ({{ $flight->destinationAirport->code }})</small>
 					</div>
 					<div class="detail-list">
-						<h4><strong>{{ $timeRange }}</strong></h4>
+						<h4>{{ $timeRange }}</h4>
 	                    <small class="text-grey">langsung</small>
 					</div>
 				</div>
