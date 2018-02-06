@@ -14,23 +14,25 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="/plugins/icheck/square/blue.css" rel="stylesheet">
     <link href="/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet">
-    <link href="/plugins/datatable/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="/plugins/datatable/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="/plugins/datatable/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="/plugins/datatable/css/dataTables.searchHighlight.css" rel="stylesheet">
+    <link href="/plugins/datatables/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="/plugins/datatables/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="/plugins/datatables/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="/plugins/datatables/css/dataTables.searchHighlight.css" rel="stylesheet">
+    <link href="/plugins/select2/select2.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript" src="/plugins/icheck/icheck.min.js"></script>
     <script type="text/javascript" src="/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script type="text/javascript" src="/plugins/datatable/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="/plugins/datatable/js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript" src="/plugins/datatable/js/dataTables.fixedHeader.min.js"></script>
-    <script type="text/javascript" src="/plugins/datatable/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" src="/plugins/datatable/js/responsive.bootstrap.min.js"></script>
-    <script type="text/javascript" src="/plugins/datatable/js/dataTables.searchHighlight.min.js"></script>
-    <script type="text/javascript" src="/plugins/datatable/js/jquery.highlight.js"></script>
+    <script type="text/javascript" src="/plugins/datatables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/plugins/datatables/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="/plugins/datatables/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" src="/plugins/datatables/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="/plugins/datatables/js/responsive.bootstrap.min.js"></script>
+    <script type="text/javascript" src="/plugins/datatables/js/dataTables.searchHighlight.min.js"></script>
+    <script type="text/javascript" src="/plugins/datatables/js/jquery.highlight.js"></script>
+    <script type="text/javascript" src="/plugins/select2/select2.min.js"></script>
 </head>
 <body>
     <div id="app">

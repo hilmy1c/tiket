@@ -12,14 +12,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
     <link href="/plugins/icheck/square/blue.css" rel="stylesheet">
     <link href="/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.css" rel="stylesheet">
+    <link href="/plugins/select2/select2.min.css" rel="stylesheet">
+    <link href="/plugins/select2/select2-bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript" src="/plugins/icheck/icheck.min.js"></script>
     <script type="text/javascript" src="/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="/plugins/select2/select2.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -163,6 +166,10 @@
             $("input").iCheck({
                 checkboxClass: 'icheckbox_square-blue',
                 radioClass: 'iradio_square-blue'
+            });
+
+            $(".select2").select2({
+                theme: "bootstrap"
             });
 
             $('.date').datepicker({
