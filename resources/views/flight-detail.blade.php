@@ -94,6 +94,9 @@
 
 				<input type="hidden" name="flight_id" value="{{ $flight->id }}">
 				<input type="hidden" name="class" value="{{ $class }}">
+				<input type="hidden" name="adult_number" value="{{ $adult_number }}">
+                <input type="hidden" name="child_number" value="{{ $child_number }}">
+                <input type="hidden" name="baby_number" value="{{ $baby_number }}">
 
 				<button type="submit" class="btn btn-warning col-md-12" style="margin-bottom: 20px;">Lanjut Pembayaran</button>
 			</form>

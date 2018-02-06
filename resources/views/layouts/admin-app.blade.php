@@ -187,52 +187,9 @@
                 
             </div>
         </div>
-        <div class="footer">
+        <div class="footer" style="padding-top: 0">
             <div class="my-container">
-                <div class="row" style="padding-bottom: 30px">
-                    <div class="col-md-4 text-center">
-                        <img src="/img/logo.png" alt="" class="footer-icon" width="150px"><br><br>
-                        <img src="/img/icons/24_hours_black.png" alt="" style="vertical-align: middle; transform: translateY(-15%)">
-                        <p class="text-left" style="display: inline-block">
-                            <small>Hubungi Costumer Service</small><br>
-                            <strong class="text-warning">+62-852-3223-2097</strong><br>
-                            <small class="text-warning">cs@rajatiket.com</small>
-                        </p>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <h4>Produk</h4>
-                                <ul class="footer-menu">
-                                    <li><a href="">Tiket</a></li>
-                                    <li><a href="">Pesawat</a></li>
-                                    <li><a href="">Kereta Api</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Tentang</h4>
-                                <ul class="footer-menu">
-                                    <li><a href="">Cara Pesan</a></li>
-                                    <li><a href="">Hubungi Kami</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Lainnya</h4>
-                                <ul class="footer-menu">
-                                    <li><a href="">Cek Pesanan</a></li>
-                                    <li><a href="">Syarat & Ketentuan</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-3">
-                                <h4>Follow Kami di</h4>
-                                <ul class="footer-menu">
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-sign">
+                <div class="footer-sign" style="border-top: none">
                     Copyright &copy; PT. Rajatiket Jaya. All Rights Reserved
                 </div>
             </div>

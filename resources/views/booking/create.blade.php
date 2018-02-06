@@ -32,16 +32,141 @@
             </div>
 
             <h4><strong>Data Wisatawan</strong></h4>
-            <div class="panel panel-default">
-                <div class="panel-heading"></div>
-                <div class="panel-body">
-                    <span class="text-warning">Nama lengkap (sesuai KTP/SIM/Paspor)</span>
-                    <div class="form-group">
-                        <label for="">Titel</label>
-                        <input type="email" name="" class="form-control">
+            @if ($adult_number != 0)
+                @for ($i = 1; $i <= $adult_number; $i++)
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong>Dewasa {{ $i }}</strong></div>
+                    <div class="panel-body">
+                        <span class="text-warning" style="display: inline-block; margin-bottom: 15px">Nama lengkap (sesuai KTP/SIM/Paspor)</span>
+                        <div class="form-group">
+                            <label for="">Titel</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select name="titel" class="form-control" id="titel">
+                                        <option value="Tuan">Tuan</option>
+                                        <option value="Nyonya">Nyonya</option>
+                                        <option value="Nona">Nona</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nama Lengkap</label>
+                            <input type="text" name="fullname" class="form-control">
+                            <span class="help-block">
+                                <strong>(tanpa gelar dan tanda baca)</strong>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
+                @endfor
+            @endif
+
+            @if ($child_number != 0)
+                @for ($i = 1; $i <= $child_number; $i++)
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong>Anak {{ $i }}</strong></div>
+                    <div class="panel-body">
+                        <span class="text-warning" style="display: inline-block; margin-bottom: 15px">Nama lengkap (sesuai KTP/SIM/Paspor)</span>
+                        <div class="form-group">
+                            <label for="">Titel</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select name="titel" class="form-control" id="titel">
+                                        <option value="Tuan">Tuan</option>
+                                        <option value="Nona">Nona</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nama Lengkap</label>
+                            <input type="text" name="fullname" class="form-control">
+                            <span class="help-block">
+                                <strong>(tanpa gelar dan tanda baca)</strong>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tanggal Lahir</label>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <select name="day" id="day" class="form-control">
+                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="month" id="month" class="form-control">
+                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="year" id="year" class="form-control">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <span class="help-block">
+                                <strong>Penumpang Anak (2 - 11 tahun)</strong>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                @endfor
+            @endif
+
+            @if ($baby_number != 0)
+                @for ($i = 1; $i <= $baby_number; $i++)
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong>Bayi {{ $i }}</strong></div>
+                    <div class="panel-body">
+                        <span class="text-warning" style="display: inline-block; margin-bottom: 15px">Nama lengkap (sesuai KTP/SIM/Paspor)</span>
+                        <div class="form-group">
+                            <label for="">Titel</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select name="titel" class="form-control" id="titel">
+                                        <option value="Tuan">Tuan</option>
+                                        <option value="Nona">Nona</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Nama Lengkap</label>
+                            <input type="text" name="fullname" class="form-control">
+                            <span class="help-block">
+                                <strong>(tanpa gelar dan tanda baca)</strong>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tanggal Lahir</label>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <select name="day" id="day" class="form-control">
+                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="month" id="month" class="form-control">
+                                        
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="year" id="year" class="form-control">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <span class="help-block">
+                                <strong>Penumpang Bayi (di bawah 2 tahun)</strong>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                @endfor
+            @endif
+
+            <button class="btn btn-primary pull-right" style="margin-bottom: 20px; padding-left: 20px; padding-right: 20px">Lanjutkan</button>
         </div>
         <div class="col-md-4">
             <h4><strong>Pesanan Anda</strong></h4>
