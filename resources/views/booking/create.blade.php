@@ -200,11 +200,20 @@
                                 <div class="col-md-4">
                                     <select name="month" id="month" class="form-control">
                                         <?php
-                                        $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-                                        $jlh_bln=count($bulan);
-                                        for($c=0; $c<$jlh_bln; $c+=1) {
-                                            echo"<option value=$bulan[$c]> $bulan[$c] </option>";
-                                        }
+                                            $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+                                            $jlh_bln=count($bulan);
+                                            $m = 01;
+                                            for($c=0; $c<$jlh_bln; $c+=1)
+                                            {
+                                                if ($m == date('m')) {
+                                                    $select = 'selected';
+                                                } else {
+                                                    $select = ' ';
+                                                }
+
+                                                echo"<option value='$c' ".$select."> $bulan[$c] </option>";
+                                                $m++;
+                                            }
                                         ?>
                                     </select>
                                 </div>
