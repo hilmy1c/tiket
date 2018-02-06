@@ -24,12 +24,12 @@
                             <td>{{ $train_fare->train_number }}</td>
                             <td>{{ $train_fare->fare }}</td>
                             <td>
-                                <a href="{{ route('train_fare.edit', ['id' => $train_fare->id]) }}" class="btn btn-default">Edit</a>
-                                <form action="{{ route('train_fare.destroy', ['id' => $train_fare->id]) }}" method="POST">
+                                <a href="{{ route('train_fare.edit', ['id' => $train_fare->id]) }}" class="btn btn-sm btn-default">Edit</a>
+                                <form action="{{ route('train_fare.destroy', ['id' => $train_fare->id]) }}" method="POST" class="inline">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
                             </td>
                         </tr>
