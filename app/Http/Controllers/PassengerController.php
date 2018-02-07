@@ -22,7 +22,7 @@ class PassengerController extends Controller
     public function store(Request $request)
     {
     	Passenger::create([
-
+    		
     	]);
     }
 }

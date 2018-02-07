@@ -12,10 +12,10 @@
                 <input type="hidden" name="adult_number" value="{{ $adult_number }}">
                 <input type="hidden" name="child_number" value="{{ $child_number }}">
                 <input type="hidden" name="baby_number" value="{{ $baby_number }}">
+                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <div class="panel panel-default">
                     <div class="panel-heading"><strong>Data Pemesan</strong></div>
                     <div class="panel-body">
-                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                         <div class="form-group">
                             <label for="">Nama Lengkap</label>
                             <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}">
