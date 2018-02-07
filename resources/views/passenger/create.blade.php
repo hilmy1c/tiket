@@ -8,12 +8,17 @@
             <form action="{{ route('passenger.store') }}" method="POST">
                 {{ csrf_field() }}
 
+                <input type="hidden" name="booking_code" value="{{ $booking_code }}">
+                <input type="hidden" name="adult_number" value="{{ $adult_number }}">
+                <input type="hidden" name="child_number" value="{{ $child_number }}">
+                <input type="hidden" name="baby_number" value="{{ $baby_number }}">
                 <div class="panel panel-default">
                     <div class="panel-heading"><strong>Data Pemesan</strong></div>
                     <div class="panel-body">
+                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                         <div class="form-group">
                             <label for="">Nama Lengkap</label>
-                            <input type="text" name="" class="form-control">
+                            <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}">
                             <span class="help-block"><strong>Sesuai KTP/paspor/SIM (tanpa tanda baca atau gelar)</strong></span>
                         </div>
                         <div class="row">
@@ -21,13 +26,13 @@
                                 <label for="">No. Handphone</label>
                                 <div class="input-group">
                                     <span class="input-group-addon">+62</span>
-                                    <input type="text" name="" class="form-control">
+                                    <input type="text" name="phone" class="form-control" value="{{ substr(Auth::user()->phone, 1) }}">
                                 </div>
                                 <span class="help-block"><strong>Contoh: +62812345678, (+62) Kode Negara dan No. Handphone 0812345678</strong></span>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="">Email</label>
-                                <input type="email" name="" class="form-control">
+                                <input type="email" name="email" class="form-control" value="{{ Auth::user()->email }}">
                                 <span class="help-block"><strong>Contoh: email@example.com</strong></span>
                             </div>
                         </div>
@@ -42,10 +47,10 @@
                         <div class="panel-body">
                             <span class="text-warning" style="display: inline-block; margin-bottom: 15px">Nama lengkap (sesuai KTP/SIM/Paspor)</span>
                             <div class="form-group">
-                                <label for="">Titel</label>
+                                <label>Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="titel" class="form-control" id="titel">
+                                        <select name="adult_titel_{{ $i }}" class="form-control">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nyonya">Nyonya</option>
                                             <option value="Nona">Nona</option>
@@ -55,7 +60,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Lengkap</label>
-                                <input type="text" name="fullname" class="form-control">
+                                <input type="text" name="adult_fullname_{{ $i }}" class="form-control">
                                 <span class="help-block">
                                     <strong>(tanpa gelar dan tanda baca)</strong>
                                 </span>
@@ -72,10 +77,10 @@
                         <div class="panel-body">
                             <span class="text-warning" style="display: inline-block; margin-bottom: 15px">Nama lengkap (sesuai KTP/SIM/Paspor)</span>
                             <div class="form-group">
-                                <label for="">Titel</label>
+                                <label>Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="titel" class="form-control" id="titel">
+                                        <select name="child_titel_{{ $i }}" class="form-control">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nona">Nona</option>
                                         </select>
@@ -84,7 +89,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Lengkap</label>
-                                <input type="text" name="fullname" class="form-control">
+                                <input type="text" name="child_fullname_{{ $i }}" class="form-control">
                                 <span class="help-block">
                                     <strong>(tanpa gelar dan tanda baca)</strong>
                                 </span>
@@ -93,7 +98,7 @@
                                 <label for="">Tanggal Lahir</label>
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <select name="day" id="day" class="form-control select2">
+                                        <select name="child_day_{{ $i }}" class="form-control select2">
                                             <?php
                                             $day=31;
                                             for ($a=01;$a<=$day;$a++)
@@ -110,7 +115,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <select name="month" id="month" class="form-control select2">
+                                        <select name="child_month_{{ $i }}" class="form-control select2">
                                             <?php
                                                 $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
                                                 $jlh_bln=count($bulan);
@@ -130,7 +135,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-3">
-                                        <select name="year" id="year" class="form-control">
+                                        <select name="child_year_{{ $i }}" class="form-control">
                                             <?php
                                             $now=date('Y');
                                             for ($a=1950;$a<=$now;$a++) 
@@ -166,7 +171,7 @@
                                 <label for="">Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="titel" class="form-control" id="titel">
+                                        <select name="baby_titel_{{ $i }}" class="form-control">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nona">Nona</option>
                                         </select>
@@ -175,7 +180,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="">Nama Lengkap</label>
-                                <input type="text" name="fullname" class="form-control">
+                                <input type="text" name="baby_fullname_{{ $i }}" class="form-control">
                                 <span class="help-block">
                                     <strong>(tanpa gelar dan tanda baca)</strong>
                                 </span>
@@ -184,7 +189,7 @@
                                 <label for="">Tanggal Lahir</label>
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <select name="day" id="day" class="form-control select2">
+                                        <select name="baby_day_{{ $i }}" class="form-control select2">
                                             <?php
                                             $day=31;
                                             for ($a=01;$a<=$day;$a++) 
@@ -201,7 +206,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <select name="month" id="month" class="form-control">
+                                        <select name="baby_month_{{ $i }}" class="form-control">
                                             <?php
                                                 $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
                                                 $jlh_bln=count($bulan);
@@ -221,7 +226,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-3">
-                                        <select name="year" id="year" class="form-control">
+                                        <select name="baby_year_{{ $i }}" class="form-control">
                                             <?php
                                             $now=date('Y');
                                             for ($a=1950;$a<=$now;$a++) 

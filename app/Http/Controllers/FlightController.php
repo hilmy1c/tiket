@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Flight;
+use App\Booking;
 use App\Airport;
 use App\Airplane;
 use Illuminate\Http\Request;
@@ -47,6 +48,7 @@ class FlightController extends Controller
         $data['adult_fare'] = number_format($request->adult_fare, 0, '', '.');
         $data['child_fare'] = number_format($request->child_fare, 0, '', '.');
         $data['baby_fare'] = number_format($request->baby_fare, 0, '', '.');
+        $data['booking_code'] = $this->getBookingCode();
 
         return view('flight-detail', $data);
     }
@@ -189,5 +191,32 @@ class FlightController extends Controller
         $array = explode('.', $text);
 
         return intval(join('', $array));
+    }
+
+    public function getBookingCode()
+    {
+        $length_abjad = "2";
+        $length_angka = "4";
+
+        $huruf = "ABCDEFGHJKLMNOPQRSTUVWXYZ";
+
+        $i = 1;
+        $text = "";
+        while ($i <= $length_abjad) {
+            $text .= $huruf{mt_rand(0, strlen($huruf))};
+            $i++;
+        }
+
+        $datejam = date("His");
+        $time_md5 = rand(time(), $datejam);
+        $cut = substr($time_md5, 0, $length_angka); 
+
+        $acak = str_shuffle($text.$cut);
+
+        if (Booking::where('booking_code', $acak)->first() > 0) {
+            $acak = $this->getBookingCode();
+        }
+
+        return $acak;
     }
 }

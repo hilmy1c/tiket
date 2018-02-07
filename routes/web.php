@@ -70,4 +70,5 @@ Route::post('/flight/get_flight_number/{id}', 'FlightController@getFlightNumber'
 
 Route::group(['prefix' => 'passenger'], function () {
     Route::get('/{id}/create', 'PassengerController@create')->name('passenger.create');
+    Route::post('/store', 'PassengerController@store')->name('passenger.store');
 });
