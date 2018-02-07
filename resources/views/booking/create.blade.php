@@ -127,7 +127,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3">
-                                    <select name="year" id="year" class="form-control">
+                                    <select name="year" id="year" class="form-control select2">
                                         <?php
                                         $now=date('Y');
                                         for ($a=1950;$a<=$now;$a++) 
@@ -198,7 +198,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4">
-                                    <select name="month" id="month" class="form-control">
+                                    <select name="month" id="month" class="form-control select2">
                                         <?php
                                             $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
                                             $jlh_bln=count($bulan);
@@ -218,7 +218,7 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3">
-                                    <select name="year" id="year" class="form-control">
+                                    <select name="year" id="year" class="form-control select2">
                                         <?php
                                         $now=date('Y');
                                         for ($a=1950;$a<=$now;$a++) 
