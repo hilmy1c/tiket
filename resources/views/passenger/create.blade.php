@@ -80,7 +80,7 @@
                                 <label>Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="child_titel_{{ $i }}" class="form-control">
+                                        <select name="child_titel_{{ $i }}" class="form-control select2">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nona">Nona</option>
                                         </select>
@@ -135,7 +135,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-3">
-                                        <select name="child_year_{{ $i }}" class="form-control">
+                                        <select name="child_year_{{ $i }}" class="form-control select2">
                                             <?php
                                             $now=date('Y');
                                             for ($a=1950;$a<=$now;$a++) 
@@ -171,7 +171,7 @@
                                 <label for="">Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="baby_titel_{{ $i }}" class="form-control">
+                                        <select name="baby_titel_{{ $i }}" class="form-control select2">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nona">Nona</option>
                                         </select>
@@ -206,7 +206,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-4">
-                                        <select name="baby_month_{{ $i }}" class="form-control">
+                                        <select name="baby_month_{{ $i }}" class="form-control select2">
                                             <?php
                                                 $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
                                                 $jlh_bln=count($bulan);
@@ -226,7 +226,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-3">
-                                        <select name="baby_year_{{ $i }}" class="form-control">
+                                        <select name="baby_year_{{ $i }}" class="form-control select2">
                                             <?php
                                             $now=date('Y');
                                             for ($a=1950;$a<=$now;$a++) 
