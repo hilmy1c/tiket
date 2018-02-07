@@ -176,7 +176,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="text" id="kota-tujuan" name="kota-tujuan" class="input-sm form-control" value="{{ $kotaTujuan }}" autocomplete="off">
+                                    <input type="text" id="kota-tujuan" name="kota_tujuan" class="input-sm form-control" value="{{ $kotaTujuan }}" autocomplete="off">
                                     <input type="hidden" name="destination" value="{{ $destination }}">
                                 </div>
                             </div>
@@ -279,8 +279,8 @@
                             <div class="form-group col-md-6">
                                 <label for="kelas">Kelas Penerbangan:</label>
                                 <select name="class" id="kelas" class="input-sm form-control">
-                                    <option value="Ekonomi">Ekonomi</option>
-                                    <option value="Bisnis">Bisnis</option>
+                                    <option value="economy">Ekonomi</option>
+                                    <option value="business">Bisnis</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-6">

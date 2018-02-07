@@ -89,7 +89,7 @@
 				</div>
 			</div>
 
-			<form action="{{ route('booking.create', ['id' => $flight->id]) }}" method="GET">
+			<form action="{{ route('passenger.create', ['id' => $flight->id]) }}" method="GET">
 				{{ csrf_field() }}
 
 				<input type="hidden" name="flight_id" value="{{ $flight->id }}">

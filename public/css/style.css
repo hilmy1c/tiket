@@ -617,7 +617,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 	position: absolute;
 	left: 19px;
 	top: 50%;
-	transform: translateY(-68%);
+	transform: translateY(-50%);
 }
 
 .inline {
