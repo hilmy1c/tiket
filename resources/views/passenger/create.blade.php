@@ -3,8 +3,8 @@
 @section('content')
 <div class="my-container" style="margin-top: 20px">
     <div class="row">
-        <h4><strong>Data Pemesan</strong></h4>
         <div class="col-md-8">
+            <h4><strong>Data Pemesan</strong></h4>
             <form action="{{ route('passenger.store') }}" method="POST">
                 {{ csrf_field() }}
 
@@ -59,7 +59,7 @@
                                 <label>Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="adult_titel_{{ $i }}" class="form-control">
+                                        <select name="adult_appellation_{{ $i }}" class="form-control">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nyonya">Nyonya</option>
                                             <option value="Nona">Nona</option>
@@ -89,7 +89,7 @@
                                 <label>Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="child_titel_{{ $i }}" class="form-control">
+                                        <select name="child_appellation_{{ $i }}" class="form-control">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nona">Nona</option>
                                         </select>
@@ -180,7 +180,7 @@
                                 <label for="">Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="baby_titel_{{ $i }}" class="form-control">
+                                        <select name="baby_appellation_{{ $i }}" class="form-control">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nona">Nona</option>
                                         </select>

@@ -626,7 +626,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .alert-info {
 	background-color: #E3F2FD;
-	color: #333;
+	color: #777;
 	border-color: #2196f3;
 }
 
@@ -637,4 +637,46 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 .alert-default {
 	background-color: #fff;
 	border-color: #ddd;
+}
+
+.alert-list {
+	padding-bottom: 15px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.bank-icon {
+	width: 70px;
+	vertical-align: middle;
+}
+
+.booking-price-list {
+	margin-bottom: 15px;
+}
+
+.horizontal-line {
+	border-bottom: 1px solid #ddd;
+}
+
+.booking-price-total {
+	font-size: 16px;
+}
+
+.text-black {
+	color: #333;
+}
+
+.booking-passenger-list {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: bold;
+}
+
+.booking-passenger-list:nth-child(odd) {
+	background-color: #f7f7f7;
+}
+
+.booking-sub-title2 {
+	margin-bottom: 10px;
+	display: inline-block;
 }

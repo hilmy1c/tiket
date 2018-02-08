@@ -60,6 +60,7 @@ class PassengerController extends Controller
             for ($i=1; $i <= $request->adult_number; $i++) {
             	Passenger::create([
             		'booking_code' => $request->booking_code,
+                    'appellation' => $request->{'adult_appellation_' . $i},
                     'name' => $request->{'adult_fullname_' . $i},
                     'status' => 'Dewasa'
             	]);
@@ -70,6 +71,7 @@ class PassengerController extends Controller
             for ($i=1; $i <= $request->child_number; $i++) { 
                 Passenger::create([
                     'booking_code' => $request->booking_code,
+                    'appellation' => $request->{'child_appellation_' . $i},
                     'name' => $request->{'child_fullname_' . $i},
                     'status' => 'Anak',
                     'birthday' => $request->{'child_year_' . $i} . '-' .$request->{'child_month_' . $i} . '-' . $request->{'child_day_' . $i},
@@ -81,6 +83,7 @@ class PassengerController extends Controller
             for ($i=1; $i <= $request->baby_number; $i++) { 
                 Passenger::create([
                     'booking_code' => $request->booking_code,
+                    'appellation' => $request->{'baby_appellation_' . $i},
                     'name' => $request->{'baby_fullname_' . $i},
                     'status' => 'Bayi',
                     'birthday' => $request->{'baby_year_' . $i} . '-' . $request->{'baby_month_' . $i} . '-' . $request->{'baby_day_' . $i},

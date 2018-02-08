@@ -29,4 +29,9 @@ class Flight extends Model
     {
     	return $this->belongsTo('App\Airport', 'destination_airport_id');
     }
+
+    public function bookingDetail()
+    {
+        return $this->hasMany('App\BookingDetail', 'flight_number', 'flight_number');
+    }
 }
