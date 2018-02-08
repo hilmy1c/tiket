@@ -24,7 +24,12 @@ class PassengerController extends Controller
         $data['adult_number'] = $request->adult_number;
         $data['child_number'] = $request->child_number;
         $data['baby_number'] = $request->baby_number;
+        $data['adult_fare'] = $request->adult_fare;
+        $data['child_fare'] = $request->child_fare;
+        $data['baby_fare'] = $request->baby_fare;
         $data['booking_code'] = $request->booking_code;
+        $data['flight_number'] = $request->flight_number;
+        $data['fare_total'] = $request->fare_total;
 
         return view('passenger.create', $data);
     }
@@ -37,12 +42,16 @@ class PassengerController extends Controller
             'booking_date' => date('Y-m-d'),
         ]);
 
-        $booking_id = Booking::all()->orderBy('id', 'desc')->first();
-
         BookingDetail::create([
-            'travel_number' => $request->flight_number,
-            'flight_fare_total' => $request->flight_fare_total,
-            'booking_id' =>  $booking_id
+            'flight_number' => $request->flight_number,
+            'flight_fare_total' => $request->fare,
+            'booking_id' =>  Booking::orderBy('id', 'desc')->first()->id,
+            'adult_number' => $request->adult_number,
+            'child_number' => $request->child_number,
+            'baby_number' => $request->baby_number,
+            'adult_fare' => $request->adult_fare,
+            'child_fare' => $request->child_fare,
+            'baby_fare' => $request->baby_fare
         ]);
 
         if ($request->adult_number != 0) {

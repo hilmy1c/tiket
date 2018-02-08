@@ -13,6 +13,15 @@
                 <input type="hidden" name="child_number" value="{{ $child_number }}">
                 <input type="hidden" name="baby_number" value="{{ $baby_number }}">
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                <input type="hidden" name="fare" value="{{ $fare_total }}">
+                <input type="hidden" name="flight_number" value="{{ $flight_number }}">
+                <input type="hidden" name="adult_number" value="{{ $adult_number }}">
+                <input type="hidden" name="child_number" value="{{ $child_number }}">
+                <input type="hidden" name="baby_number" value="{{ $baby_number }}">
+                <input type="hidden" name="adult_fare" value="{{ $adult_fare }}">
+                <input type="hidden" name="child_fare" value="{{ $child_fare }}">
+                <input type="hidden" name="baby_fare" value="{{ $baby_fare }}">
+
                 <div class="panel panel-default">
                     <div class="panel-heading"><strong>Data Pemesan</strong></div>
                     <div class="panel-body">
@@ -128,7 +137,7 @@
                                                         $select = ' ';
                                                     }
 
-                                                    echo"<option value='$c' ".$select."> $bulan[$c] </option>";
+                                                    echo"<option value='$m' ".$select."> $bulan[$c] </option>";
                                                     $m++;
                                                 }
                                             ?>
@@ -219,7 +228,7 @@
                                                         $select = ' ';
                                                     }
 
-                                                    echo"<option value='$c' ".$select."> $bulan[$c] </option>";
+                                                    echo"<option value='$m' ".$select."> $bulan[$c] </option>";
                                                     $m++;
                                                 }
                                             ?>

@@ -92,12 +92,15 @@
 			<form action="{{ route('passenger.create', ['id' => $flight->id]) }}" method="GET">
 				{{ csrf_field() }}
 
-				<input type="hidden" name="flight_id" value="{{ $flight->id }}">
-				<input type="hidden" name="class" value="{{ $class }}">
+				<input type="hidden" name="flight_number" value="{{ $flight->flight_number }}">
 				<input type="hidden" name="adult_number" value="{{ $adult_number }}">
                 <input type="hidden" name="child_number" value="{{ $child_number }}">
                 <input type="hidden" name="baby_number" value="{{ $baby_number }}">
                 <input type="hidden" name="booking_code" value="{{ $booking_code }}">
+                <input type="hidden" name="adult_fare" value="{{ $adult_fare }}">
+                <input type="hidden" name="child_fare" value="{{ $child_fare }}">
+                <input type="hidden" name="baby_fare" value="{{ $baby_fare }}">
+                <input type="hidden" name="fare_total" value="{{ $fare }}">
 
 				<button type="submit" class="btn btn-warning col-md-12" style="margin-bottom: 20px;">Lanjut Pembayaran</button>
 			</form>

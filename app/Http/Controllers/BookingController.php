@@ -95,4 +95,9 @@ class BookingController extends Controller
 
         return redirect()->route('booking.index');
     }
+
+    public function payment(Request $request)
+    {
+        
+    }
 }

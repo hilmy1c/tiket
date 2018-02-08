@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddNullableToFlightFareTotalColumnInBookingDetailsTable extends Migration
+class EditTrainJourneysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddNullableToFlightFareTotalColumnInBookingDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::table('booking_details', function (Blueprint $table) {
-            //
+        Schema::table('train_journeys', function (Blueprint $table) {
+            $table->string('train_number')->index()->change();
         });
     }
 
@@ -25,7 +25,7 @@ class AddNullableToFlightFareTotalColumnInBookingDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::table('booking_details', function (Blueprint $table) {
+        Schema::table('train_journeys', function (Blueprint $table) {
             //
         });
     }

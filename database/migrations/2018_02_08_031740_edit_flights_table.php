@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class EditBookingDetailsTable extends Migration
+class EditFlightsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class EditBookingDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::table('booking_details', function (Blueprint $table) {
-            $table->renameColumn('fare_total', 'flight_fare_total');
-            $table->string('train_fare_total')->nullable();
+        Schema::table('flights', function (Blueprint $table) {
+            $table->string('flight_number')->index()->change();
         });
     }
 
@@ -26,7 +25,7 @@ class EditBookingDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::table('booking_details', function (Blueprint $table) {
+        Schema::table('flights', function (Blueprint $table) {
             //
         });
     }

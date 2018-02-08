@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class EditBookingDetailsTable extends Migration
+class AddIsPaidToBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class EditBookingDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::table('booking_details', function (Blueprint $table) {
-            $table->dropColumn('train_fare_id');
-            $table->renameColumn('flight_fare_id', 'fare_total');
+        Schema::table('bookings', function (Blueprint $table) {
+            $table->boolean('is_paid')->default(false);
         });
     }
 
@@ -26,7 +25,7 @@ class EditBookingDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::table('booking_details', function (Blueprint $table) {
+        Schema::table('bookings', function (Blueprint $table) {
             //
         });
     }
