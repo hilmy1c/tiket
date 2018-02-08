@@ -80,7 +80,7 @@
                                 <label>Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="child_titel_{{ $i }}" class="form-control select2">
+                                        <select name="child_titel_{{ $i }}" class="form-control">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nona">Nona</option>
                                         </select>
@@ -171,7 +171,7 @@
                                 <label for="">Titel</label>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <select name="baby_titel_{{ $i }}" class="form-control select2">
+                                        <select name="baby_titel_{{ $i }}" class="form-control">
                                             <option value="Tuan">Tuan</option>
                                             <option value="Nona">Nona</option>
                                         </select>

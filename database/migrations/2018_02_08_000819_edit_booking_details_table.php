@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkToBookingDetailsTable extends Migration
+class EditBookingDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,8 @@ class AddFkToBookingDetailsTable extends Migration
     public function up()
     {
         Schema::table('booking_details', function (Blueprint $table) {
-            $table->foreign('booking_id')->references('id')->on('bookings')->onDelete('set null');
-            $table->foreign('flight_fare_id')->references('id')->on('flight_fares')->onDelete('set null');
-        	$table->foreign('train_fare_id')->references('id')->on('train_fares')->onDelete('set null');
+            $table->dropColumn('train_fare_id');
+            $table->renameColumn('flight_fare_id', 'fare_total');
         });
     }
 

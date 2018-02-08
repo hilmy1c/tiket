@@ -14,9 +14,4 @@ class Booking extends Model
     {
     	return $this->belongsTo('App\User');
     }
-
-    public function bookingDetail()
-    {
-    	return $this->hasOne('App\BookingDetail');
-    }
 }

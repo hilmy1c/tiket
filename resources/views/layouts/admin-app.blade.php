@@ -167,7 +167,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href=""><img src="/img/icons/sidebar/traveler.png" class="my-icon" alt="">Passengers</a>
+                                <a href="{{ route('passenger.index') }}"><img src="/img/icons/sidebar/traveler.png" class="my-icon" alt="">Passengers</a>
                             </li>
                             <li>
                                 <a href="{{ route('train.index') }}">

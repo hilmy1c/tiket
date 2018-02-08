@@ -69,6 +69,9 @@ Route::post('/flight/search', 'FlightController@search')->name('flight.search');
 Route::post('/flight/get_flight_number/{id}', 'FlightController@getFlightNumber');
 
 Route::group(['prefix' => 'passenger'], function () {
+    Route::get('/', 'PassengerController@index')->name('passenger.index');
     Route::get('/{id}/create', 'PassengerController@create')->name('passenger.create');
+    Route::get('/{id}/edit', 'PassengerController@edit')->name('passenger.edit');
+    Route::delete('/{id}', 'PassengerController@destroy')->name('passenger.destroy');
     Route::post('/store', 'PassengerController@store')->name('passenger.store');
 });
