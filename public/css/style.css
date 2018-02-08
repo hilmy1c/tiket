@@ -623,3 +623,18 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 .inline {
 	display: inline-block;
 }
+
+.alert-info {
+	background-color: #E3F2FD;
+	color: #333;
+	border-color: #2196f3;
+}
+
+.booking-sub-title {
+	font-size: 17px;
+}
+
+.alert-default {
+	background-color: #fff;
+	border-color: #ddd;
+}

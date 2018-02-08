@@ -62,6 +62,7 @@ Route::group(['prefix' => 'admin'], function() {
 
 Route::group(['prefix' => 'booking'], function () {
     Route::get('/{id}/create', 'BookingController@create')->name('booking.create');
+    Route::get('/{id}/payment', 'BookingController@payment')->name('booking.payment');
 });
 
 Route::post('/flight/search', 'FlightController@search')->name('flight.search');

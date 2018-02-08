@@ -3,8 +3,8 @@
 @section('content')
 <div class="my-container" style="margin-top: 20px">
     <div class="row">
+        <h4><strong>Data Pemesan</strong></h4>
         <div class="col-md-8">
-            <h4><strong>Data Pemesan</strong></h4>
             <form action="{{ route('passenger.store') }}" method="POST">
                 {{ csrf_field() }}
 

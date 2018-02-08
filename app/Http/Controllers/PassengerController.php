@@ -42,10 +42,12 @@ class PassengerController extends Controller
             'booking_date' => date('Y-m-d'),
         ]);
 
+        $booking_id = Booking::orderBy('id', 'desc')->first()->id;
+
         BookingDetail::create([
             'flight_number' => $request->flight_number,
             'flight_fare_total' => $request->fare,
-            'booking_id' =>  Booking::orderBy('id', 'desc')->first()->id,
+            'booking_id' =>  $booking_id,
             'adult_number' => $request->adult_number,
             'child_number' => $request->child_number,
             'baby_number' => $request->baby_number,
@@ -86,6 +88,6 @@ class PassengerController extends Controller
             }
         }
 
-        return redirect()->back();
+        return redirect()->route('booking.payment', ['id' => $booking_id]);
     }
 }

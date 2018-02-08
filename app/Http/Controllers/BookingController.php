@@ -96,8 +96,10 @@ class BookingController extends Controller
         return redirect()->route('booking.index');
     }
 
-    public function payment(Request $request)
+    public function payment($id)
     {
-        
+        $data['bookings'] = Booking::find($id);
+
+        return view('booking-payment', $data);
     }
 }
