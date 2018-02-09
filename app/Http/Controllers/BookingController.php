@@ -92,4 +92,13 @@ class BookingController extends Controller
 
         return view('booking-payment', $data);
     }
+
+    public function getBookingAccount(Request $request, $id)
+    {
+        Booking::find($id)->update([
+
+        ]);
+
+        return view();
+    }
 }

@@ -181,6 +181,10 @@
                                 <a href="{{ route('train_station.index') }}">
                                     <img src="/img/icons/sidebar/railway-station.png" class="my-icon" alt="">Train Stations</a>
                             </li>
+                            <li>
+                                <a href="{{ route('bank_account.index') }}">
+                                    <img src="/img/icons/sidebar/bank.png" class="my-icon" alt="">Bank Accounts</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>

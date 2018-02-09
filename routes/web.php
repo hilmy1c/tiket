@@ -63,6 +63,7 @@ Route::group(['prefix' => 'admin'], function() {
 Route::group(['prefix' => 'booking'], function () {
     Route::get('/{id}/create', 'BookingController@create')->name('booking.create');
     Route::get('/{id}/payment', 'BookingController@payment')->name('booking.payment');
+    Route::get('/{id}/get_bank_account', 'BookingController@getBankAccount')->name('booking.get_bank_account');
 });
 
 Route::post('/flight/search', 'FlightController@search')->name('flight.search');
@@ -75,4 +76,13 @@ Route::group(['prefix' => 'passenger'], function () {
     Route::get('/{id}/edit', 'PassengerController@edit')->name('passenger.edit');
     Route::delete('/{id}', 'PassengerController@destroy')->name('passenger.destroy');
     Route::post('/store', 'PassengerController@store')->name('passenger.store');
+});
+
+Route::group(['prefix' => 'bank_account'], function () {
+    Route::get('/', 'BankAccountController@index')->name('bank_account.index');
+    Route::get('/create', 'BankAccountController@create')->name('bank_account.create');
+    Route::post('/store', 'BankAccountController@store')->name('bank_account.store');
+    Route::get('/{id}/edit', 'BankAccountController@edit')->name('bank_account.edit');
+    Route::delete('/{id}', 'BankAccountController@destroy')->name('bank_account.destroy');
+    Route::put('/{id}', 'BankAccountController@update')->name('bank_account.update');
 });

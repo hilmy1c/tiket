@@ -25,7 +25,6 @@
                         <td>{{ $booking->booking_date }}</td>
                         <td>{{ $booking->is_paid == true ? 'Sudah dibayar' : 'Belum dibayar' }}</td>
                         <td>
-                            <a href="{{ route('booking.detail', ['id' => $booking->id]) }}" class="btn btn-sm btn-primary">Detail</a>
                             <a href="{{ route('booking.edit', ['id' => $booking->id]) }}" class="btn btn-sm btn-default">Edit</a>
                             <form action="{{ route('booking.destroy', ['id' => $booking->id]) }}" method="POST" class="inline">
                                 {{ csrf_field() }}
