@@ -105,8 +105,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="text" id="kota-asal" name="kota_asal" class="form-control" autocomplete="off">
-                                            <input type="hidden" name="from">
+                                            <input type="text" id="kota-asal" name="kota_asal" class="form-control" value="{{ $startAirport->city->city }} ({{ $startAirport->code }})" autocomplete="off">
+                                            <input type="hidden" name="from" value="{{ $startAirport->id }}">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
@@ -185,8 +185,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <input type="text" id="kota-tujuan" name="kota_tujuan" class="input-sm form-control" autocomplete="off">
-                                            <input type="hidden" name="destination">
+                                            <input type="text" id="kota-tujuan" name="kota_tujuan" class="input-sm form-control" value="{{ $endAirport->city->city }} ({{ $endAirport->code }})" autocomplete="off">
+                                            <input type="hidden" name="destination" value="{{ $endAirport->id }}">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-12">

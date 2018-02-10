@@ -10,7 +10,9 @@
             		<strong class="text-primary">Selesaikan pembayaran dalam 00:42:34</strong>
             	</div>
             	<div class="panel-body">
-                    <form method="{{ route('booking.get_bank_account', ['id' => {{ $booking->id }}]) }}" action="GET">
+                    <form action="{{ route('booking.bank_account', ['id' => $booking->id]) }}" method="GET">
+                        {{ csrf_field() }}
+
                 		<div class="alert alert-info" style="position: relative">
                 			<div class="row">
     	            			<img src="/img/icons/info-blue.png" alt="" class="my-icon" style="position: absolute; top: 50%; transform: translateY(-50%); left: 22px">
@@ -20,31 +22,24 @@
     	            		</div>
                 		</div>
                 		<h4 class="booking-sub-title">Pilih Rekening Tujuan</h4>
+                        @foreach ($bank_accounts as $bank_account)
                 		<div class="alert alert-default alert-list">
-    						<input type="radio" name="bank" id="" checked>&nbsp;&nbsp;&nbsp;BCA <img src="/img/partners/bca.png" alt="" class="bank-icon pull-right">
+    						<input type="radio" name="bank_id" value="{{ $bank_account->id }}" class="radio-bank">&nbsp;&nbsp;&nbsp;{{ $bank_account->bank_name }} <img src="{{ Storage::url($bank_account->image) }}" alt="" class="bank-icon pull-right">
                 		</div>
-                		<div class="alert alert-default alert-list">
-    						<input type="radio" name="bank" id="">&nbsp;&nbsp;&nbsp;Mandiri <img src="/img/partners/mandiri.png" alt="" class="bank-icon pull-right">
-                		</div>
-                		<div class="alert alert-default alert-list">
-    						<input type="radio" name="bank" id="">&nbsp;&nbsp;&nbsp;BRI <img src="/img/partners/bri.png" alt="" class="bank-icon pull-right">
-                		</div>
-                		<div class="alert alert-default alert-list">
-    						<input type="radio" name="bank" id="">&nbsp;&nbsp;&nbsp;BNI <img src="/img/partners/bni.png" alt="" class="bank-icon pull-right">
-                		</div>
+                        @endforeach
                 		<div class="row bg-default" style="border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin-bottom: 10px">
                 			<div class="col-md-12" style="margin-bottom: 15px">
                 				<h4 class="booking-sub-title">Rincian Harga</h4>
                 			</div>
-                			@if ($booking->bookingDetail->baby_number != 0)
+                			@if ($booking->bookingDetail->adult_number != 0)
                 			<div class="col-md-12 booking-price-list">
-                				{{ $booking->bookingDetail->flight->airplane->airline->name }} (Dewasa) x{{ $booking->bookingDetail->baby_number }}
+                				{{ $booking->bookingDetail->flight->airplane->airline->name }} (Dewasa) x{{ $booking->bookingDetail->adult_number }}
                 				<span class="pull-right">Rp {{ $booking->bookingDetail->adult_fare }}</span>
                 			</div>
                 			@endif
-                			@if ($booking->bookingDetail->baby_number != 0)
+                			@if ($booking->bookingDetail->child_number != 0)
                 			<div class="col-md-12 booking-price-list">
-                				{{ $booking->bookingDetail->flight->airplane->airline->name }} (Anak) x{{ $booking->bookingDetail->baby_number }}
+                				{{ $booking->bookingDetail->flight->airplane->airline->name }} (Anak) x{{ $booking->bookingDetail->child_number }}
                 				<span class="pull-right">Rp {{ $booking->bookingDetail->child_fare }}</span>
                 			</div>
                 			@endif
@@ -100,5 +95,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(".radio-bank").eq(0).prop('checked', true);
+</script>
 @endsection
 

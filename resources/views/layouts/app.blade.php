@@ -20,9 +20,11 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="/plugins/moment.js"></script>
     <script type="text/javascript" src="/plugins/icheck/icheck.min.js"></script>
     <script type="text/javascript" src="/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script type="text/javascript" src="/plugins/select2/select2.min.js"></script>
+    <script type="text/javascript" src="/plugins/jquery.countdown/jquery.countdown.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -85,12 +87,19 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu user-dropdown-menu" style="width: 250px">
+                                    <li>
+                                        <a href="{{ route('user.booking_history', ['id' => Auth::id()]) }}">
+                                            <img src="/img/icons/sidebar/purchase-order.png" alt="" class="my-icon">&nbsp;&nbsp;
+                                            Pesanan Saya
+                                        </a>
+                                    </li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            <img src="/img/icons/logout.png" alt="" class="my-icon">&nbsp;&nbsp;Logout
+                                            <img src="/img/icons/logout.png" alt="" class="my-icon">&nbsp;&nbsp;
+                                            Logout
                                         </a>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

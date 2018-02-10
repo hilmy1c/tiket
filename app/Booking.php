@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     protected $fillable = [
-        'booking_code', 'user_id', 'booking_date', 'status', 'payment_status', 'is_paid'
+        'booking_code', 'user_id', 'booking_date', 'status', 'payment_status', 'is_paid', 'bank_account_id'
     ];
 
     public function user()
@@ -23,5 +23,10 @@ class Booking extends Model
     public function passengers()
     {
         return $this->hasMany('App\Passenger', 'booking_code', 'booking_code');
+    }
+
+    public function bankAccount()
+    {
+        return  $this->belongsTo('App\BankAccount');
     }
 }

@@ -79,7 +79,7 @@ class FlightFareController extends Controller
             ],
         ]);
 
-        return redirect()->route('flight_fare.index');
+        return redirect()->route('flight.index');
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFkBankAccountToBookingsTable extends Migration
+class EditPaymentStatusInBookingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,7 @@ class AddFkBankAccountToBookingsTable extends Migration
     public function up()
     {
         Schema::table('bookings', function (Blueprint $table) {
-            $table->integer('booking_account_id')->unsigned()->nullable();
-            $table->foreign('booking_account_id')->references('id')->on('bookings')->onDelete('set null');
+            $table->string('payment_status')->default('Belum Dibayar')->change();
         });
     }
 

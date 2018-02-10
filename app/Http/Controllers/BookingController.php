@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Flight;
 use App\Booking;
+use App\BankAccount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -89,16 +90,28 @@ class BookingController extends Controller
     public function payment($id)
     {
         $data['booking'] = Booking::find($id);
+        $data['bank_accounts'] = BankAccount::all();
 
         return view('booking-payment', $data);
     }
 
-    public function getBookingAccount(Request $request, $id)
+    public function getBankAccount(Request $request, $id)
     {
         Booking::find($id)->update([
-
+            'bank_account_id' => $request->bank_id
         ]);
 
-        return view();
+        $data['booking'] = Booking::find($id);
+
+        return view('bank-account-detail', $data);
+    }
+
+    public function updatePaymentStatus($id)
+    {
+        Booking::find($id)->update([
+            'payment_status' => 'Menunggu Konfirmasi'
+        ]);
+
+        return redirect('/');
     }
 }

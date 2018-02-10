@@ -183,12 +183,16 @@ a.bg-danger:focus {
 }
 .bg-danger {
 	color: #fff;
-	background-color: ##d33333;
+	background-color: #d33333;
 }
 
 a.bg-danger:hover,
 a.bg-danger:focus {
-	background-color: ##d33333;
+	background-color: #d33333;
+}
+
+.label-danger {
+	background-color: #d33333;
 }
 
 .dropdown .dropdown-menu > li > a {
@@ -679,4 +683,48 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 .booking-sub-title2 {
 	margin-bottom: 10px;
 	display: inline-block;
+}
+
+.bank-account-row {
+	margin-bottom: 10px;
+}
+
+.custom-grey-btn {
+	background-color: #f7f7f7;
+	color: #2196f3;
+	border-color: #f7f7f7;
+	font-weight: bold;
+}
+
+.custom-grey-btn:hover {
+	color: #2196f3;
+}
+
+.num-payment-guide {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background-color: #073E68;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	margin-right: 5px;
+}
+
+.user-dropdown-menu li {
+	padding-top: 5px;
+	padding-bottom: 5px; 
+}
+
+.user-menu {
+	padding: 0;
+}
+
+.user-menu li {
+	list-style: none;
+}
+
+.bold {
+	font-weight: bolder;
 }
