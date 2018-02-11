@@ -2,19 +2,19 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Cities</strong></h4>
+    <h4><strong>Kota</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('city.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
+            <a href="{{ route('city.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
 
             
             <table class="table table-bordered">
                 <thead>
                     <th>Id</th>
-                    <th>City</th>
-                    <th>Province</th>
-                    <th>Island</th>
-                    <th class="text-center">Action</th>
+                    <th>Kota</th>
+                    <th>Provinsi</th>
+                    <th>Pulau</th>
+                    <th class="text-center">Aksi</th>
                 </thead>
                 <tbody>
                     @foreach ($cities as $city)
@@ -29,7 +29,7 @@
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
 
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                             </form>
                         </td>
                     </tr>

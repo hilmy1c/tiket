@@ -2,19 +2,19 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Bank Accounts</strong></h4>
+    <h4><strong>Akun Bank</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('bank_account.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
+            <a href="{{ route('bank_account.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
 
             <table class="table table-bordered">
                 <thead>
                     <th>Id</th>
-                    <th>Owner</th>
-                    <th>Account</th>
-                    <th>Bank Name</th>
-                    <th>Image</th>
-                    <th class="text-center">Action</th>
+                    <th>Pemilik</th>
+                    <th>Akun</th>
+                    <th>Nama Bank</th>
+                    <th>Gambar</th>
+                    <th class="text-center">Aksi</th>
                 </thead>
                 <tbody>
                     @foreach ($bank_accounts as $bank_account)
@@ -30,7 +30,7 @@
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
 
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                             </form>
                         </td>
                     </tr>

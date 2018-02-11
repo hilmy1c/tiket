@@ -124,15 +124,15 @@
                             </li>
                             <li>
                                 <a href="{{ route('airline.index') }}">
-                                    <img src="/img/icons/sidebar/pilot-hat.png" class="my-icon" alt="">Airlines</a>
+                                    <img src="/img/icons/sidebar/pilot-hat.png" class="my-icon" alt="">Maskapai</a>
                             </li>
                             <li>
                                 <a href="{{ route('airplane.index') }}">
-                                    <img src="/img/icons/sidebar/airplane-blue.png" class="my-icon" alt="">Airplanes</a>
+                                    <img src="/img/icons/sidebar/airplane-blue.png" class="my-icon" alt="">Pesawat</a>
                             </li>
                             <li>
                                 <a href="{{ route('airport.index') }}">
-                                    <img src="/img/icons/sidebar/runway.png" class="my-icon" alt="">Airports</a>
+                                    <img src="/img/icons/sidebar/runway.png" class="my-icon" alt="">Bandara</a>
                             </li>
                             <li>
                                 <a href="javascript:" data-toggle="collapse" data-target="#sub-menu">
@@ -149,41 +149,41 @@
                             </li>
                             <li>
                                 <a href="{{ route('city.index') }}">
-                                    <img src="/img/icons/sidebar/skycrapers.png" class="my-icon" alt="">Cities</a>
+                                    <img src="/img/icons/sidebar/skycrapers.png" class="my-icon" alt="">Kota</a>
                             </li>
                             <li>
                                 <a href="{{ route('flight.index') }}">
-                                    <img src="/img/icons/sidebar/luggage-trolly.png" class="my-icon" alt="">Flights</a>
+                                    <img src="/img/icons/sidebar/luggage-trolly.png" class="my-icon" alt="">Penerbangan</a>
                             </li>
                             <li>
-                                <a href="javascript:" data-toggle="collapse" data-target="#sub-menu2"><img src="/img/icons/sidebar/price.png" class="my-icon" alt="">Fares <span class="pull-right"><i class="caret"></i></span></a>
+                                <a href="javascript:" data-toggle="collapse" data-target="#sub-menu2"><img src="/img/icons/sidebar/price.png" class="my-icon" alt="">Tarif <span class="pull-right"><i class="caret"></i></span></a>
                                 <ul class="sidebar-menu collapse my-collapse" id="sub-menu2">
                                     <li>
-                                        <a href="{{ route('flight_fare.index') }}">Flight</a>
+                                        <a href="{{ route('flight_fare.index') }}">Penerbangan</a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('train_fare.index') }}">Train</a>
+                                        <a href="{{ route('train_fare.index') }}">Kereta</a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{ route('passenger.index') }}"><img src="/img/icons/sidebar/traveler.png" class="my-icon" alt="">Passengers</a>
+                                <a href="{{ route('passenger.index') }}"><img src="/img/icons/sidebar/traveler.png" class="my-icon" alt="">Penumpang</a>
                             </li>
                             <li>
                                 <a href="{{ route('train.index') }}">
-                                    <img src="/img/icons/sidebar/train.png" class="my-icon" alt="">Train</a>
+                                    <img src="/img/icons/sidebar/train.png" class="my-icon" alt="">Kereta</a>
                             </li>
                             <li>
                                 <a href="{{ route('train_journey.index') }}">
-                                    <img src="/img/icons/sidebar/train-track.png" class="my-icon" alt="">Train Journeys</a>
+                                    <img src="/img/icons/sidebar/train-track.png" class="my-icon" alt="">Perjalanan Kereta</a>
                             </li>
                             <li>
                                 <a href="{{ route('train_station.index') }}">
-                                    <img src="/img/icons/sidebar/railway-station.png" class="my-icon" alt="">Train Stations</a>
+                                    <img src="/img/icons/sidebar/railway-station.png" class="my-icon" alt="">Stasiun Kereta</a>
                             </li>
                             <li>
                                 <a href="{{ route('bank_account.index') }}">
-                                    <img src="/img/icons/sidebar/bank.png" class="my-icon" alt="">Bank Accounts</a>
+                                    <img src="/img/icons/sidebar/bank.png" class="my-icon" alt="">Akun Bank</a>
                             </li>
                         </ul>
                     </nav>

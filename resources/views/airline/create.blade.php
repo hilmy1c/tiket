@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Create Airlines</strong></h4>
+    <h4><strong>Tambah Maskapai</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
             <form class="form-horizontal" method="POST" action="{{ route('airline.store') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
-                <div class="form-group {{ $errors->has('image') ? 'has-error' : '' }}">
-                    <label for="image" class="col-md-4 control-label">Image</label>
+                <div class="form-group">
+                    <label for="image" class="col-md-4 control-label">Gambar</label>
                     <div class="col-md-6">
                         <input id="image" type="file" class="form-control" name="image" autofocus>
 
@@ -22,14 +22,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="code" class="col-md-4 control-label">Code</label>
+                    <label for="code" class="col-md-4 control-label">Kode</label>
                     <div class="col-md-6">
                         <input id="code" type="text" class="form-control" name="code" required autofocus>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="name" class="col-md-4 control-label">Name</label>
+                    <label for="name" class="col-md-4 control-label">Nama</label>
                     <div class="col-md-6">
                         <input id="name" type="text" class="form-control" name="name" required autofocus>
                     </div>
@@ -37,7 +37,7 @@
 
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-4">
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
                     </div>
                 </div>
             </form>

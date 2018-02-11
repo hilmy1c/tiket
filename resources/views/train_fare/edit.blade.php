@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Edit</strong></h4>
+    <h4><strong>Edit Tarif</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
             <form class="form-horizontal" method="POST" action="{{ route('train_fare.update', ['id' => $train_fare->id]) }}">
@@ -10,7 +10,7 @@
                 {{ method_field('PUT') }}
 
                 <div class="form-group">
-                    <label for="class" class="col-md-4 control-label">Class</label>
+                    <label for="class" class="col-md-4 control-label">Kelas</label>
                     <div class="col-md-6">
                         <select class="form-control" name="class" id="class">
                             <option value="Economy" {{ $train_fare->class == 'Economy' ? 'selected' : '' }}>Economy</option>
@@ -20,14 +20,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="train_number" class="col-md-4 control-label">Train Number</label>
+                    <label for="train_number" class="col-md-4 control-label">Nomer Kereta</label>
                     <div class="col-md-6">
                         <input id="train_number" type="text" class="form-control" name="train_number" value="{{ $train_fare->train_number }}" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="fare" class="col-md-4 control-label">Fare</label>
+                    <label for="fare" class="col-md-4 control-label">Tarif</label>
                     <div class="col-md-6">
                         <input id="fare" type="text" class="form-control" name="fare" value="{{ $train_fare->fare }}" required>
                     </div>

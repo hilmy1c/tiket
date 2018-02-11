@@ -2,21 +2,21 @@
 
 @section('content')
     <div class="col-md-9">
-        <h4><strong>Create City</strong></h4>
+        <h4><strong>Tambah Kota</strong></h4>
         <div class="panel panel-default">
             <div class="panel-body">
                 <form class="form-horizontal" method="POST" action="{{ route('city.store') }}">
                     {{ csrf_field() }}
 
                     <div class="form-group">
-                        <label for="city" class="col-md-4 control-label">City</label>
+                        <label for="city" class="col-md-4 control-label">Kota</label>
                         <div class="col-md-6">
                             <input id="city" type="text" class="form-control" name="city" required autofocus>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="province" class="col-md-4 control-label">Province</label>
+                        <label for="province" class="col-md-4 control-label">Provinsi</label>
                         <div class="col-md-6">
                             <select name="province" id="province" class="form-control">
                                 <optgroup label="Sumatera">
@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="island" class="col-md-4 control-label">Island</label>
+                        <label for="island" class="col-md-4 control-label">Pulau</label>
                         <div class="col-md-6">
                             <select name="island" id="island" class="form-control">
                                 <option value="Jawa">Jawa</option>

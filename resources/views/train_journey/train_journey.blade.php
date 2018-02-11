@@ -2,21 +2,21 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Train Journeys</strong></h4>
+    <h4><strong>Perjalanan Kereta</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('train_journey.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
+            <a href="{{ route('train_journey.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
 
             <table class="table table-bordered">
                 <thead>
                     <th>Id</th>
-                    <th>Departure Station</th>
-                    <th>Arrival Station</th>
-                    <th>Train Number</th>
-                    <th>Train</th>
-                    <th>Departure Time</th>
-                    <th>Arrival Time</th>
-                    <th class="text-center">Action</th>
+                    <th>Stasiun Keberangkatan</th>
+                    <th>Stasiun kedatangan</th>
+                    <th>Nomor Kereta</th>
+                    <th>Kereta</th>
+                    <th>Waktu Keberangkatan</th>
+                    <th>Waktu Tiba</th>
+                    <th class="text-center">Aksi</th>
                 </thead>
                 <tbody>
                     @foreach ($train_journeys as $train_journey)
@@ -34,7 +34,7 @@
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
 
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                             </form>
                         </td>
                     </tr>

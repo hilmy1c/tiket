@@ -2,23 +2,23 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Flights</strong></h4>
+    <h4><strong>Penerbangan</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('flight.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
+            <a href="{{ route('flight.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
 
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <th>Id</th>
-                        <th>Flight Number</th>
-                        <th>Airplane</th>
-                        <th>Airline</th>
-                        <th>From</th>
-                        <th>Destination</th>
-                        <th>Departure Time</th>
-                        <th>Arrival Time</th>
-                        <th class="text-center">Action</th>
+                        <th>No. Penerbangan</th>
+                        <th>Pesawat</th>
+                        <th>Maskapai</th>
+                        <th>Dari</th>
+                        <th>Tujuan</th>
+                        <th>Waktu Keberangkatan</th>
+                        <th>Waktu TIba</th>
+                        <th class="text-center">Aksi</th>
                     </thead>
                     <tbody>
                         @foreach ($flights as $flight)
@@ -37,7 +37,7 @@
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                                 </form>
                             </td>
                         </tr>

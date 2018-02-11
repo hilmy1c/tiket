@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-9">
     <div class="panel panel-default">
-        <div class="panel-heading">Edit Flight Fare {{ $flight_fare->class }} ({{ $flight_fare->passenger }}) <strong>{{ $flight_fare->flight->flight_number }}</strong></div>
+        <div class="panel-heading">Edit Tarif Penerbangan {{ $flight_fare->class }} ({{ $flight_fare->passenger }}) <strong>{{ $flight_fare->flight->flight_number }}</strong></div>
 
         <div class="panel-body">
             <form class="form-horizontal" method="POST" action="{{ route('flight_fare.update', ['id' => $flight_fare->id]) }}">
@@ -11,7 +11,7 @@
                 {{ method_field('PUT') }}
 
                 <div class="form-group">
-                    <label for="fare" class="col-md-4 control-label">Fare</label>
+                    <label for="fare" class="col-md-4 control-label">Tarif</label>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Rp.</span>

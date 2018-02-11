@@ -2,19 +2,19 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Trains</strong></h4>
+    <h4><strong>Kereta</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('train.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
+            <a href="{{ route('train.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
 
             <table class="table table-bordered">
                 <thead>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Economy Seat Number</th>
-                    <th>Business Seat Number</th>
-                    <th>Executive Seat Number</th>
-                    <th class="text-center">Action</th>
+                    <th>Nama</th>
+                    <th>Jumlah Kursi Ekonomi</th>
+                    <th>Jumlah Kursi Bisnis</th>
+                    <th>Jumlah Kursi Eksekutif</th>
+                    <th class="text-center">Aksi</th>
                 </thead>
                 <tbody>
                     @foreach ($trains as $train)
@@ -30,7 +30,7 @@
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
 
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                             </form>
                         </td>
                     </tr>

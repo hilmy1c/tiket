@@ -2,18 +2,18 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Airports</strong></h4>
+    <h4><strong>Bandara</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('airport.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
+            <a href="{{ route('airport.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
         
             <table class="table table-bordered">
                 <thead>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Code</th>
-                    <th>City</th>
-                    <th class="text-center">Action</th>
+                    <th>Nama</th>
+                    <th>Kode</th>
+                    <th>Kota</th>
+                    <th class="text-center">Aksi</th>
                 </thead>
                 <tbody>
                     @foreach ($airports as $airport)
@@ -28,7 +28,7 @@
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
 
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                             </form>
                         </td>
                     </tr>

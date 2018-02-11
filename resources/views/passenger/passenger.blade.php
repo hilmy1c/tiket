@@ -2,16 +2,16 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Passengers</strong></h4>
+    <h4><strong>Penumpang</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
             <table class="table table-bordered">
                 <thead>
                     <th>Id</th>
-                    <th>Name</th>
+                    <th>Nama</th>
                     <th>Status</th>
-                    <th>Booking Code</th>
-                    <th class="text-center">Action</th>
+                    <th>Kode Booking</th>
+                    <th class="text-center">Aksi</th>
                 </thead>
                 <tbody>
                     @foreach ($passengers as $passenger)
@@ -26,7 +26,7 @@
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
 
-                                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                             </form>
                         </td>
                     </tr>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Create Flight Fare {{ $flight->flight_number }}</strong></h4>
+    <h4><strong>Tambah Tarif Penerbangan {{ $flight->flight_number }}</strong></h4>
     <div class="panel panel-default">
 
         <div class="panel-body">
@@ -11,11 +11,11 @@
 
                 <input type="hidden" name="flight_id" value="{{ $flight->id }}">
 
-                <h4 class="text-center">Economy Class</h4>
+                <h4 class="text-center">Kelas Ekonomi</h4>
                 <div class="divider"></div>
 
                 <div class="form-group">
-                    <label for="economy_adult" class="col-md-4 control-label">Adult</label>
+                    <label for="economy_adult" class="col-md-4 control-label">Dewasa</label>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Rp.</span>
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="economy_child" class="col-md-4 control-label">Child</label>
+                    <label for="economy_child" class="col-md-4 control-label">Anak-Anak</label>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Rp.</span>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="economy_baby" class="col-md-4 control-label">Baby</label>
+                    <label for="economy_baby" class="col-md-4 control-label">Bayi</label>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Rp.</span>
@@ -44,11 +44,11 @@
                     </div>
                 </div>
 
-                <h4 class="text-center">Business Class</h4>
+                <h4 class="text-center">Kelas Bisnis</h4>
                 <div class="divider"></div>
 
                 <div class="form-group">
-                    <label for="business_adult" class="col-md-4 control-label">Adult</label>
+                    <label for="business_adult" class="col-md-4 control-label">Dewasa</label>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Rp.</span>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="business_child" class="col-md-4 control-label">Child</label>
+                    <label for="business_child" class="col-md-4 control-label">Anak-Anak</label>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Rp.</span>
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="business_baby" class="col-md-4 control-label">Baby</label>
+                    <label for="business_baby" class="col-md-4 control-label">Bayi</label>
                     <div class="col-md-6">
                         <div class="input-group">
                             <span class="input-group-addon">Rp.</span>

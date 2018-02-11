@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Train Fares</strong></h4>
+    <h4><strong>Tarif Kereta</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
             <a href="{{ route('train_fare.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
@@ -11,10 +11,10 @@
                 <table class="table table-bordered">
                     <thead>
                         <th>Id</th>
-                        <th>Class</th>
-                        <th>Train Number</th>
-                        <th>Fare</th>
-                        <th class="text-center">Action</th>
+                        <th>Kelas</th>
+                        <th>Nomer Kereta</th>
+                        <th>Tarif</th>
+                        <th class="text-center">Aksi</th>
                     </thead>
                     <tbody>
                         @foreach ($train_fares as $train_fare)
@@ -29,7 +29,7 @@
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
 
-                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                                 </form>
                             </td>
                         </tr>
