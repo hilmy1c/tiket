@@ -21,6 +21,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::put('/{id}', 'UserController@update')->name('user.update');
     Route::delete('/{id}/delete', 'UserController@destroy')->name('user.destroy');
     Route::get('/{id}/booking_history', 'UserController@bookingHistory')->name('user.booking_history');
+    Route::get('/{id}/history_detail', 'BookingController@historyDetail')->name('user.history_detail');
 });
 
 Route::resource('/airplane', 'AirplaneController');
@@ -62,10 +63,13 @@ Route::group(['prefix' => 'admin'], function() {
 });
 
 Route::group(['prefix' => 'booking'], function () {
+    Route::get('/', 'BookingController@index')->name('booking.index');
     Route::get('/{id}/create', 'BookingController@create')->name('booking.create');
     Route::get('/{id}/payment', 'BookingController@payment')->name('booking.payment');
     Route::get('/{id}/bank_account', 'BookingController@getBankAccount')->name('booking.bank_account');
     Route::put('/{id}/update_payment', 'BookingController@updatePaymentStatus')->name('booking.update_payment');
+    Route::get('/{id}', 'BookingController@delete')->name('booking.delete');
+    Route::delete('/{id}', 'BookingController@destroy')->name('booking.destroy');
 });
 
 Route::post('/flight/search', 'FlightController@search')->name('flight.search');

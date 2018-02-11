@@ -174,6 +174,11 @@
         $(document).ready(function () {
             $("#penumpang").val(adult + " Dewasa, " + child + " Anak, " + baby + " Bayi");
 
+            $('[data-toggle="popover"]').popover({
+                html: true,
+                placement: "bottom"
+            });
+
             $("input").iCheck({
                 checkboxClass: 'icheckbox_square-blue',
                 radioClass: 'iradio_square-blue'

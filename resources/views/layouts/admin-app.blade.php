@@ -140,7 +140,7 @@
                                 </a>
                                 <ul class="sidebar-menu collapse my-collapse" id="sub-menu">
                                     <li>
-                                        <a href="">Data</a>
+                                        <a href="{{ route('booking.index') }}">Data</a>
                                     </li>
                                     <li>
                                         <a href="{{ route('booking.detail') }}">Details</a>

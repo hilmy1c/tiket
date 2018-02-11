@@ -18,7 +18,7 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $data['bookings'] = Booking::with('user')->get();
+        $data['bookings'] = Booking::all();
 
         return view('booking.booking', $data);
     }
@@ -84,7 +84,7 @@ class BookingController extends Controller
     {
         Booking::destroy($id);
 
-        return redirect()->route('booking.index');
+        return redirect()->back();
     }
 
     public function payment($id)
@@ -113,5 +113,26 @@ class BookingController extends Controller
         ]);
 
         return redirect('/');
+    }
+
+    public function delete($id)
+    {
+        Booking::destroy($id);
+
+        return redirect()->back();
+    }
+
+    public function detail($id)
+    {
+        $data['booking'] = Booking::find($id);
+
+        return view('booking-detail', $data);
+    }
+
+    public function historyDetail($id)
+    {
+        $data['booking'] = Booking::find($id);
+
+        return view('user-booking-detail', $data);
     }
 }

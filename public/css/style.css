@@ -59,26 +59,26 @@ fieldset[disabled] .btn-primary.focus {
 
 .btn-danger {
 	color: #fff;
-	background-color: #d33333;
-	border-color: #d33333;
+	background-color: #F34646;
+	border-color: #F34646;
 }
 .btn-danger:focus,
 .btn-danger.focus {
 	color: #fff;
-	background-color: #d33333;
-	border-color: #d33333;
+	background-color: #F34646;
+	border-color: #F34646;
 }
 .btn-danger:hover {
 	color: #fff;
-	background-color: #d33333;
-	border-color: #d33333;
+	background-color: #F34646;
+	border-color: #F34646;
 }
 .btn-danger:active,
 .btn-danger.active,
 .open > .dropdown-toggle.btn-danger {
 	color: #fff;
-	background-color: #d33333;
-	border-color: #d33333;
+	background-color: #F34646;
+	border-color: #F34646;
 }
 .btn-danger:active:hover,
 .btn-danger.active:hover,
@@ -90,8 +90,8 @@ fieldset[disabled] .btn-primary.focus {
 .btn-danger.active.focus,
 .open > .dropdown-toggle.btn-danger.focus {
 	color: #fff;
-	background-color: #d33333;
-	border-color: #d33333;
+	background-color: #F34646;
+	border-color: #F34646;
 }
 .btn-danger:active,
 .btn-danger.active,
@@ -107,11 +107,11 @@ fieldset[disabled] .btn-danger:focus,
 .btn-danger.disabled.focus,
 .btn-danger[disabled].focus,
 fieldset[disabled] .btn-danger.focus {
-	background-color: #d33333;
-	border-color: #d33333;
+	background-color: #F34646;
+	border-color: #F34646;
 }
 .btn-danger .badge {
-	color: #d33333;
+	color: #F34646;
 	background-color: #fff;
 }
 
@@ -183,16 +183,16 @@ a.bg-danger:focus {
 }
 .bg-danger {
 	color: #fff;
-	background-color: #d33333;
+	background-color: #F34646;
 }
 
 a.bg-danger:hover,
 a.bg-danger:focus {
-	background-color: #d33333;
+	background-color: #F34646;
 }
 
 .label-danger {
-	background-color: #d33333;
+	background-color: #F34646;
 }
 
 .dropdown .dropdown-menu > li > a {
@@ -253,7 +253,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
 }
 
 table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
-	background-color: #d33333;
+	background-color: #F34646;
 }
 
 .my-dropdown-menu {
@@ -420,6 +420,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 .footer-menu li a {
 	text-decoration: none;
 	color: #333;
+	font-weight: bolder;
 }
 
 .footer-sign {
@@ -727,4 +728,85 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .bold {
 	font-weight: bolder;
+}
+
+.popover-text {
+	text-decoration: none;
+	display: inline-block;
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.popover-text:hover {
+	text-decoration: none;
+	background-color: #f7f7f7;
+}
+
+.popover-text:focus {
+	color: #777;
+	text-decoration: none;
+}
+
+.popover {
+	width: 205px;
+	padding: 0px;
+}
+
+.popover-content {
+	padding: 0;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.label-warning {
+	background-color: #ffa000;
+}
+
+.label-success {
+	background-color: #00A651;
+}
+
+.btn-success {
+	background-color: #00A651;
+}
+
+.user-sidebar-menu {
+	padding: 0;
+	border-top: 1px solid #ddd;
+}
+
+.user-sidebar-menu li {
+	list-style: none;
+}
+
+.user-sidebar-menu li a {
+	display: inline-block;
+	color: #777;
+	text-decoration: none;
+	font-weight: bolder;
+	padding-top: 10px;
+	padding-bottom: 10px; 
+	width: 100%;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+
+.user-sidebar-menu li a.active {
+	background-color: #fff;
+	border-left: 3px solid #2196f3;
+}
+
+.text-danger {
+	color: #F34646;
+}
+
+.popover-text.text-danger:hover {
+	color: #F34646;
+}
+
+.popover-text.text-black:hover {
+	color: #333;
 }

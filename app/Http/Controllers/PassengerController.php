@@ -53,7 +53,10 @@ class PassengerController extends Controller
             'baby_number' => $request->baby_number,
             'adult_fare' => $request->adult_fare,
             'child_fare' => $request->child_fare,
-            'baby_fare' => $request->baby_fare
+            'baby_fare' => $request->baby_fare,
+            'customer_name' => $request->customer_name,
+            'customer_phone' => '+62' . $request->customer_phone,
+            'customer_email' => $request->customer_email
         ]);
 
         if ($request->adult_number != 0) {
