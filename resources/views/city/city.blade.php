@@ -7,7 +7,6 @@
         <div class="panel-body">
             <a href="{{ route('city.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
 
-            
             <table class="table table-bordered">
                 <thead>
                     <th>Id</th>

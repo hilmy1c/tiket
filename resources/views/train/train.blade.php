@@ -14,6 +14,7 @@
                     <th>Jumlah Kursi Ekonomi</th>
                     <th>Jumlah Kursi Bisnis</th>
                     <th>Jumlah Kursi Eksekutif</th>
+                    <th>Jenis Lokomotif</th>
                     <th class="text-center">Aksi</th>
                 </thead>
                 <tbody>
@@ -24,6 +25,7 @@
                         <td>{{ $train->economy_seat_number }}</td>
                         <td>{{ $train->business_seat_number }}</td>
                         <td>{{ $train->executive_seat_number }}</td>
+                        <td>{{ $train->locomotive_type }}</td>
                         <td>
                             <a href="{{ route('train.edit', ['id' => $train->id]) }}" class="btn btn-sm btn-default">Edit</a>
                             <form action="{{ route('train.destroy', ['id' => $train->id]) }}" method="POST" class="inline">

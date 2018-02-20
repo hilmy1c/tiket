@@ -43,7 +43,7 @@ class TrainStationController extends Controller
         TrainStation::create([
             'name' => $request->name,
             'code' => $request->code,
-            'city' => $request->city
+            'city_id' => $request->city
         ]);
 
         return redirect()->route('train_station.index');
@@ -75,7 +75,7 @@ class TrainStationController extends Controller
         TrainStation::find($id)->update([
             'name' => $request->name,
             'code' => $request->code,
-            'city' => $request->city
+            'city_id' => $request->city
         ]);
 
         return redirect()->route('train_station.index');

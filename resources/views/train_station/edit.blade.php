@@ -28,7 +28,7 @@
                     <div class="col-md-6">
                         <select name="city" id="city" class="form-control">
                             @foreach ($cities as $city)
-                            <option value="{{ $city->city }}" {{ $train_station->city == $city->city ? 'selected' : '' }}>{{ $city->city }}</option>
+                            <option value="{{ $city->id }}" {{ $train_station->city_id == $city->id ? 'selected' : '' }}>{{ $city->city }}</option>
                             @endforeach
                         </select>
                     </div>

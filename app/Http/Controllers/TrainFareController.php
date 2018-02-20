@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\TrainFare;
+use App\TrainJourney;
+use Illuminate\Http\Request;
 
 class TrainFareController extends Controller
 {
@@ -23,9 +24,11 @@ class TrainFareController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('train_fare.create');
+        $data['train_journey'] = TrainJourney::find($id);
+
+        return view('train_fare.create', $data);
     }
 
     /**
@@ -36,10 +39,43 @@ class TrainFareController extends Controller
      */
     public function store(Request $request)
     {
-        TrainFare::create([
-            'class'=>$request->class,
-            'train_number'=>$request->train_number,
-            'fare'=>$request->fare
+        TrainFare::insert([
+            [
+                'train_journey_id' => $request->train_journey_id,
+                'class' => 'economy',
+                'passenger' => 'adult',
+                'fare' => $request->economy_adult,
+            ],
+            [
+                'train_journey_id' => $request->train_journey_id,
+                'class' => 'economy',
+                'passenger' => 'baby',
+                'fare' => $request->economy_baby,
+            ],
+            [
+                'train_journey_id' => $request->train_journey_id,
+                'class' => 'business',
+                'passenger' => 'adult',
+                'fare' => $request->business_adult,
+            ],
+            [
+                'train_journey_id' => $request->train_journey_id,
+                'class' => 'business',
+                'passenger' => 'baby',
+                'fare' => $request->business_baby,
+            ],
+            [
+                'train_journey_id' => $request->train_journey_id,
+                'class' => 'executive',
+                'passenger' => 'adult',
+                'fare' => $request->executive_adult,
+            ],
+            [
+                'train_journey_id' => $request->train_journey_id,
+                'class' => 'executive',
+                'passenger' => 'baby',
+                'fare' => $request->executive_baby,
+            ],
         ]); 
 
         return redirect()->route('train_fare.index');

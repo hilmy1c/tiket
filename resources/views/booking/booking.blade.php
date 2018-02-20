@@ -22,18 +22,28 @@
                         <td>{{ $booking->booking_code }}</td>
                         <td>{{ $booking->user->name }}</td>
                         <td>{{ $booking->booking_date }}</td>
-                        <td>{{ $booking->payment_status }}</td>
+                        <td>
+                            <div class="label {{ ($booking->payment_status == 'Belum Dibayar') ? 'label-danger' : (($booking->payment_status == 'Menunggu Konfirmasi') ? 'label-warning' : 'label-success') }} bold">{{ $booking->payment_status }}</div>
+                        </td>
                         <td><img src="{{ Storage::url($booking->bankAccount->image) }}" alt="" width="50px"></td>
                         <td>
                             @switch ($booking->payment_status)
                                 @case ('Menunggu Konfirmasi')
-                                    <form action="">
-                                        <button type="submit" class="btn btn-sm btn-success">Konfirmasi Pembayaran</button>
+                                    <form action="{{ route('booking.confirm_payment', ['id' => $booking->id]) }}" method="POST" class="inline">
+                                        {{ csrf_field() }}
+
+                                        <button type="submit" class="btn btn-sm btn-default">Konfirmasi Pembayaran</button>
+                                    </form>
+
+                                    <form action="{{ route('booking.unconfirm_payment', ['id' => $booking->id]) }}" method="POST" class="inline">
+                                        {{ csrf_field() }}
+
+                                        <button type="submit" class="btn btn-sm btn-danger">Jangan konfirmasi</button>
                                     </form>
                                     @break
                             
                                 @case ('Belum Dibayar')
-                                    <form action="{{ route('booking.destroy', ['id' => $booking->id]) }}" method="POST" class="form-inline">
+                                    <form action="{{ route('booking.destroy', ['id' => $booking->id]) }}" method="POST" class="inline">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE')}}
 
@@ -42,7 +52,7 @@
                                     @break
 
                                 @case ('Sudah Dibayar')
-                                    <form action="{{ route('booking.destroy', ['id' => $booking->id]) }}" method="POST" class="form-inline">
+                                    <form action="{{ route('booking.destroy', ['id' => $booking->id]) }}" method="POST" class="inline">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE')}}
 

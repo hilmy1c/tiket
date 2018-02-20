@@ -7,6 +7,7 @@ use App\Flight;
 use App\Booking;
 use App\BankAccount;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
@@ -33,7 +34,7 @@ class BookingController extends Controller
     {
         Booking::create([
             'booking_code' => $request->booking_code,
-            'user_id' => Auth::user()->id,
+            'user_id' => Auth::id(),
             'booking_date' => date('Y-m-d'),
             'is_paid' => false,
         ]);
@@ -112,7 +113,7 @@ class BookingController extends Controller
             'payment_status' => 'Menunggu Konfirmasi'
         ]);
 
-        return redirect('/');
+        return redirect()->route('user.booking_history', ['id' => Auth::id()]);
     }
 
     public function delete($id)
@@ -134,5 +135,31 @@ class BookingController extends Controller
         $data['booking'] = Booking::find($id);
 
         return view('user-booking-detail', $data);
+    }
+
+    public function confirmPayment($id)
+    {
+        Booking::find($id)->update([
+            'payment_status' => 'Sudah Dibayar'
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function unconfirmPayment($id)
+    {
+        Booking::find($id)->update([
+            'payment_status' => 'Belum Dibayar'
+        ]);
+
+        return redirect()->back();
+    }
+
+    public function cetakTiket($id)
+    {
+        // $pdf = PDF::setOptions(['isRemoteEnabled' => true]);
+        // $pdf->loadView('e-tiket');
+        // $pdf->setPaper('A4', 'potrait');
+        // return $pdf->stream();
     }
 }

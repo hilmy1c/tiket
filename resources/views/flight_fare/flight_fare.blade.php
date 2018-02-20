@@ -9,6 +9,7 @@
                 <thead>
                     <th>Id</th>
                     <th>Kelas</th>
+                    <th>Jenis Penumpang</th>
                     <th>No. Penerbangan</th>
                     <th>Tarif</th>
                     <th class="text-center">Aksi</th>
@@ -18,6 +19,7 @@
                     <tr>
                         <td>{{ $flight_fare->id }}</td>
                         <td>{{ $flight_fare->class }}</td>
+                        <td>{{ $flight_fare->passenger }}</td>
                         <td>{{ $flight_fare->flight->flight_number }}</td>
                         <td>Rp. {{ $flight_fare->fare }}</td>
                         <td>

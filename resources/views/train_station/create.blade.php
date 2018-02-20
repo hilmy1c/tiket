@@ -27,7 +27,7 @@
                     <div class="col-md-6">
                         <select name="city" id="city" class="form-control">
                             @foreach ($cities as $city)
-                                <option value="{{ $city->city }}">{{ $city->city }}</option>
+                                <option value="{{ $city->id }}">{{ $city->city }}</option>
                             @endforeach
                         </select>
                     </div>

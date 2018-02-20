@@ -37,6 +37,13 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="locomotive_type" class="col-md-4 control-label">Lokomotif</label>
+                    <div class="col-md-6">
+                        <input id="locomotive_type" type="text" class="form-control" name="locomotive_type" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <div class="col-md-6 col-md-offset-4">
                         <button type="submit" class="btn btn-primary">Tambah</button>
                     </div>

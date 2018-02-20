@@ -5,14 +5,13 @@
     <h4><strong>Tarif Kereta</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('train_fare.create') }}" class="btn btn-default" style="margin-bottom: 15px">Create</a>
-
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <th>Id</th>
                         <th>Kelas</th>
-                        <th>Nomer Kereta</th>
+                        <th>Jenis Penumpang</th>
+                        <th>Jalur</th>
                         <th>Tarif</th>
                         <th class="text-center">Aksi</th>
                     </thead>
@@ -21,7 +20,8 @@
                         <tr>
                             <td>{{ $train_fare->id }}</td>
                             <td>{{ $train_fare->class }}</td>
-                            <td>{{ $train_fare->train_number }}</td>
+                            <td>{{ $train_fare->passenger }}</td>
+                            <td>{{ $train_fare->trainJourney->startStation->city->city }} ({{ $train_fare->trainJourney->startStation->code }}) - {{ $train_fare->trainJourney->endStation->city->city }} ({{ $train_fare->trainJourney->endStation->code }})</td>
                             <td>{{ $train_fare->fare }}</td>
                             <td>
                                 <a href="{{ route('train_fare.edit', ['id' => $train_fare->id]) }}" class="btn btn-sm btn-default">Edit</a>

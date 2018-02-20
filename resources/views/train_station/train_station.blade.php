@@ -5,7 +5,7 @@
     <h4><strong>Stasiun Kereta</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('train.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
+            <a href="{{ route('train_station.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
 
             <table class="table table-bordered">
                 <thead>
@@ -21,7 +21,7 @@
                         <td>{{ $train_station->id }}</td>
                         <td>{{ $train_station->name }}</td>
                         <td>{{ $train_station->code }}</td>
-                        <td>{{ $train_station->city }}</td>
+                        <td>{{ $train_station->city->city }}</td>
                         <td>
                             <a href="{{ route('train_station.edit', ['id' => $train_station->id]) }}" class="btn btn-sm btn-default">Edit</a>
                             <form action="{{ route('train_station.destroy', ['id' => $train_station->id]) }}" method="POST" class="inline">

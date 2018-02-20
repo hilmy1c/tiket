@@ -270,7 +270,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .banner {
 	background: url('/img/banner.jpg') no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	position: relative;
@@ -306,11 +306,6 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 	display: block;
 	text-align: center;
 	font-size: 13px;
-}
-
-.main-search-sidebar {
-	position: absolute;
-	transform: translateY(50%);
 }
 
 .title-border {
@@ -358,7 +353,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .banner2 {
 	background: url('/img/banner2.jpg') no-repeat;
-	background-size: 100%;
+	background-size: cover;
 	color: #fff;
 }
 
@@ -736,8 +731,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 	padding-right: 15px;
 	padding-left: 15px;
 	width: 100%;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .popover-text:hover {
@@ -757,8 +752,6 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .popover-content {
 	padding: 0;
-	padding-top: 15px;
-	padding-bottom: 15px;
 }
 
 .label-warning {
@@ -809,4 +802,38 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .popover-text.text-black:hover {
 	color: #333;
+}
+
+.sidebar-search-menu {
+	background-color: #f7f7f7;
+	height: 215px;
+	margin-top: -15px;
+	margin-bottom: -15px;
+	padding-top: 60px;
+}	
+
+.sidebar-search-menu a {
+	color: #777;
+	text-decoration: none;
+	width: 100%;
+	display: inline-block;
+	padding: 10px 15px 10px 15px;
+}
+
+.sidebar-search-menu .active {
+	background-color: #fff;
+	border-left: 3px solid #2196f3;
+}
+
+.train-banner {
+	background: url('/img/train-banner.jpg') no-repeat;
+	background-size: cover;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+.text-white {
+	color: #fff;
 }

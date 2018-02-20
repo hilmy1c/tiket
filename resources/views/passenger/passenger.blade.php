@@ -19,7 +19,7 @@
                         <td>{{ $passenger->id }}</td>
                         <td>{{ $passenger->name }}</td>
                         <td>{{ $passenger->status }}</td>
-                        <td></td>
+                        <td>{{ $passenger->booking_code }}</td>
                         <td>
                             <a href="{{ route('passenger.edit', ['id' => $passenger->id]) }}" class="btn btn-sm btn-default">Edit</a>
                             <form action="{{ route('passenger.destroy', ['id' => $passenger->id]) }}" method="POST" class="inline">

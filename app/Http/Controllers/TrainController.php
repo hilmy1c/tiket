@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Train;
+use App\TrainStation;
+use Illuminate\Http\Request;
 
 class TrainController extends Controller
 {
@@ -41,7 +42,8 @@ class TrainController extends Controller
             'name' => $request->name,
             'economy_seat_number' => $request->economy_seat_number,
             'business_seat_number' => $request->business_seat_number,
-            'executive_seat_number' => $request->executive_seat_number
+            'executive_seat_number' => $request->executive_seat_number,
+            'locomotive_type' => $request->locomotive_type
         ]);
 
         return redirect()->route('train.index');
@@ -73,7 +75,8 @@ class TrainController extends Controller
             'name' => $request->name,
             'economy_seat_number' => $request->economy_seat_number,
             'business_seat_number' => $request->business_seat_number,
-            'executive_seat_number' => $request->executive_seat_number
+            'executive_seat_number' => $request->executive_seat_number,
+            'locomotive_type' => $request->locomotive_type
         ]);
 
         return redirect()->route('train.index');

@@ -178,12 +178,16 @@
                                     <img src="/img/icons/sidebar/train-track.png" class="my-icon" alt="">Perjalanan Kereta</a>
                             </li>
                             <li>
+                                <a href="{{ route('train_route.index') }}">
+                                    <img src="/img/icons/sidebar/track.png" class="my-icon" alt="">Rute Kereta</a>
+                            </li>
+                            <li>
                                 <a href="{{ route('train_station.index') }}">
                                     <img src="/img/icons/sidebar/railway-station.png" class="my-icon" alt="">Stasiun Kereta</a>
                             </li>
                             <li>
                                 <a href="{{ route('bank_account.index') }}">
-                                    <img src="/img/icons/sidebar/bank.png" class="my-icon" alt="">Akun Bank</a>
+                                    <img src="/img/icons/sidebar/bank.png" class="my-icon" alt="">Rekening Bank</a>
                             </li>
                         </ul>
                     </nav>

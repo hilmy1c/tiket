@@ -5,22 +5,16 @@
     <div class="my-container">
         <h1 class="welcome-message">Selamat Datang</h1>
         <p class="welcome-message">Temukan harga terbaik untuk setiap produk yang anda inginkan.</p>
-        <div class="panel panel-default">
+        <div class="panel panel-default" style="border: none;">
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-md-2" style="position: relative">
-                        <ul class="nav my-nav-pills nav-stacked main-search-sidebar">
-                            <li>
-                                <a href="">
-                                    <img src="/img/icons/airplane.png" alt="" class="my-icon">&nbsp;Pesawat
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="/img/icons/train.png" alt="" class="my-icon">&nbsp;Kereta Api
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="col-md-2 sidebar-search-menu" style="position: relative">
+                        <div class="row active">
+                            <a href="/" class="bold"><img src="/img/icons/airplane.png" alt="" class="my-icon">&nbsp;&nbsp;Pesawat</a>
+                        </div>
+                        <div class="row">    
+                            <a href="{{ route('train_journey.search_index') }}" class="bold"><img src="/img/icons/train.png" alt="" class="my-icon">&nbsp;&nbsp;Kereta Api</a>
+                        </div>
                     </div>
                     <div class="col-md-10">
                         <strong class="text-primary" style="margin-bottom: 15px; display: inline-block;"><img src="\img\icons\search-blue.png" alt="" class="my-icon">&nbsp;Cari tiket pesawat</strong>
