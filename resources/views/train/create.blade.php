@@ -16,6 +16,20 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="train_number" class="col-md-4 control-label">No. KA, Mulai & Sampai</label>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input id="start_train_number" type="text" class="form-control" name="start_train_number" required autofocus>
+                            </div>
+                            <div class="col-md-6">
+                                <input id="end_train_number" type="text" class="form-control" name="end_train_number" required autofocus>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="economy_seat_number" class="col-md-4 control-label">Jumlah Kursi Ekonomi</label>
                     <div class="col-md-6">
                         <input id="economy_seat_number" type="number" class="form-control" name="economy_seat_number" required>

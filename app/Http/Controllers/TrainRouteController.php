@@ -28,7 +28,7 @@ class TrainRouteController extends Controller
      */
     public function create()
     {
-        $data['trains'] = Train::all();
+        $data['trains'] = Train::distinct()->get(['name']);
         $data['train_stations'] = TrainStation::all();
 
         return view('train_route.create', $data);
@@ -157,6 +157,13 @@ class TrainRouteController extends Controller
     public function getStation()
     {
         $trains = TrainStation::with('city')->get();
+
+        echo json_encode($trains);
+    }
+
+    public function getTrainNumber($id)
+    {
+        $trains = Train::where('name', $id)->get();
 
         echo json_encode($trains);
     }

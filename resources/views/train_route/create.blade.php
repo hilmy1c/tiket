@@ -9,13 +9,23 @@
                 {{ csrf_field() }}
 
                 <div class="form-group">
-                    <label for="train" class="col-md-4 control-label">Kereta</label>
+                    <label for="train" class="col-md-4 control-label">Kereta & No. KA</label>
                     <div class="col-md-6">
-                        <select class="form-control" name="train" id="train">
-                            @foreach ($trains as $train)
-                            <option value="{{ $train->id }}">{{ $train->name }}</option>
-                            @endforeach
-                        </select>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <select class="form-control" name="train" id="train">
+                                    <option value="">---- Pilih Kereta ----</option>
+                                    @foreach ($trains as $train)
+                                    <option value="{{ $train->name }}">{{ $train->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control" name="train_number" id="train_number">
+
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -73,6 +83,22 @@
 
 <script>
     var i = 2;
+
+    $("#train").change(function(event) {
+        var id = $(this).val();
+
+        $.ajax({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "{{ url('train_route/get_train_number') . '/' }}" + id,
+            type: "POST",
+            dataType: "json",
+            success: function (res) {
+                console.log(res);
+            }
+        });
+    });
 
     $("#add_input").click(function(event) {
         var optionEl = '';

@@ -10,6 +10,7 @@
             <table class="table table-bordered">
                 <thead>
                     <th>Id</th>
+                    <th>No. KA</th>
                     <th>Nama</th>
                     <th>Jumlah Kursi Ekonomi</th>
                     <th>Jumlah Kursi Bisnis</th>
@@ -21,6 +22,7 @@
                     @foreach ($trains as $train)
                     <tr>
                         <td>{{ $train->id }}</td>
+                        <td>{{ $train->train_number }}</td>
                         <td>{{ $train->name }}</td>
                         <td>{{ $train->economy_seat_number }}</td>
                         <td>{{ $train->business_seat_number }}</td>

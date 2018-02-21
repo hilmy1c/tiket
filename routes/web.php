@@ -127,4 +127,5 @@ Route::group(['prefix' => 'train_route'], function () {
     Route::put('/{id}', 'TrainRouteController@update')->name('train_route.update');
     Route::delete('/{id}', 'TrainRouteController@destroy')->name('train_route.destroy');
     Route::post('/get_station', 'TrainRouteController@getStation')->name('train_route.get_station');
+    Route::post('/get_train_number/{id}', 'TrainRouteController@getTrainNumber')->name('train_route.get_train_number');
 });
