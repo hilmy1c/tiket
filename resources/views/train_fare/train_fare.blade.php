@@ -19,7 +19,7 @@
                         @foreach ($train_fares as $train_fare)
                         <tr>
                             <td>{{ $train_fare->id }}</td>
-                            <td>{{ $train_fare->class }}</td>
+                            <td>{{ ucwords($train_fare->trainJourney->sub_class) }} ({{ $train_fare->trainJourney->sub_class_code }})</td>
                             <td>{{ $train_fare->passenger }}</td>
                             <td>{{ $train_fare->trainJourney->startStation->city->city }} ({{ $train_fare->trainJourney->startStation->code }}) - {{ $train_fare->trainJourney->endStation->city->city }} ({{ $train_fare->trainJourney->endStation->code }})</td>
                             <td>{{ $train_fare->fare }}</td>

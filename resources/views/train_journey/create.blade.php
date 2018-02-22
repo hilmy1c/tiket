@@ -2,28 +2,59 @@
 
 @section('content')
 <div class="col-md-9">
-    <h4><strong>Tambah</strong></h4>
+    <h4><strong>Tambah Perjalanan Kereta</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
             <form class="form-horizontal" method="POST" action="{{ route('train_journey.store') }}">
                 {{ csrf_field() }}
 
-                 <div class="form-group">
+                <div class="form-group">
                     <label for="train_id" class="col-md-4 control-label">Kereta</label>
                     <div class="col-md-6">
-                        <select class="form-control" name="train_id" id="train_id">
-                            <option value="">---- Pilih Kereta ----</option>
-                            @foreach ($trains as $train)
-                            <option value="{{ $train->id }}">{{ $train->name }}</option>
-                            @endforeach
-                        </select>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <select class="form-control" name="train_id" id="train_id">
+                                    <option value="" id="not">---- Pilih Kereta ----</option>
+                                    @foreach ($trains as $train)
+                                    <option value="{{ $train->name }}">{{ $train->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-md-5">
+                                <select class="form-control" name="train_number" id="train_number">
+                                    <option value="" id="not">---- Pilih No. KA ----</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="form-group" style="display: none;">
+                    <label for="sub_class" class="col-md-4 control-label">Sub Kelas</label>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <select class="form-control" name="sub_class" id="sub_class">
+                                    <option value="" id="not">---- Pilih Kelas ----</option>
+
+                                </select>
+                            </div>
+                            <div class="col-md-5">
+                                <select class="form-control" name="sub_class_code" id="sub_class_code">
+                                    <option value="" id="not">---- Pilih Kode ----</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="form-group" style="display: none;">
-                    <label for="pilih_rute" class="col-md-4 control-label">Pilih Rute</label>
+                    <label for="pilih_rute" class="col-md-4 control-label">Rute</label>
                     <div class="col-md-6">
                         <select class="form-control" name="pilih_rute" id="pilih_rute">
+                            <option value="" id="not">---- Pilih Rute ----</option>
                             
                         </select>
                     </div>
@@ -33,6 +64,7 @@
                     <label for="departure_station" class="col-md-4 control-label">Stasiun Keberangkatan</label>
                     <div class="col-md-6">
                         <select class="form-control" name="departure_station" id="departure_station">
+                            <option value="" id="not">---- Pilih Stasiun Keberangkatan ----</option>
                             
                         </select>
                     </div>
@@ -42,6 +74,7 @@
                     <label for="arrival_station" class="col-md-4 control-label">Stasiun Kedatangan</label>
                     <div class="col-md-6">
                         <select class="form-control" name="arrival_station" id="arrival_station">
+                            <option value="" id="not">---- Pilih Stasiun Kedatangan ----</option>
                             
                         </select>
                     </div>
@@ -74,10 +107,63 @@
 </div>
 
 <script>
+    if ($("#sub_class").val() == "executive") {
+        $("#sub_class_code").append('<option value="A">A</option><option value="H">H</option><option value="I">I</option><option value="J">J</option><option value="X">X</option>');
+    }
+    if ($("#sub_class").val() == "business") {
+        $("#sub_class_code").append('<option value="B">B</option><option value="K">K</option><option value="N">N</option><option value="O">O</option><option value="Y">Y</option>');
+    }
+
+    if ($("#sub_class").val() == "economy") {
+        $("#sub_class_code").append('<option value="C">C</option><option value="P">P</option><option value="Q">Q</option><option value="S">S</option><option value="Z">Z</option>');
+    }
+
+    $("#sub_class").change(function(event) {
+        $("#sub_class_code option").not("#not").remove();
+
+        if ($(this).val() == "executive") {
+            $("#sub_class_code").append('<option value="A">A</option><option value="H">H</option><option value="I">I</option><option value="J">J</option><option value="X">X</option>');
+        }
+        if ($(this).val() == "business") {
+            $("#sub_class_code").append('<option value="B">B</option><option value="K">K</option><option value="N">N</option><option value="O">O</option><option value="Y">Y</option>');
+        }
+
+        if ($(this).val() == "economy") {
+            $("#sub_class_code").append('<option value="C">C</option><option value="P">P</option><option value="Q">Q</option><option value="S">S</option><option value="Z">Z</option>');
+        }
+    });
+
     $("#train_id").change(function(event) {
-        $("#pilih_rute").empty();
-        $("#departure_station").empty();
-        $("#arrival_station").empty();
+        $("#pilih_rute option").not("#not").remove();
+        $("#departure_station option").not("#not").remove();
+        $("#arrival_station option").not("#not").remove();
+        $("#train_number option").not("#not").remove();
+        $("#sub_class option").not("#not").remove();
+        $("#sub_class_code option").not("#not").remove();
+
+        var id = $(this).val();
+
+        $.ajax({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "{{ url('train_route/get_train_number') . '/' }}" + id,
+            type: "POST",
+            dataType: "json",
+            success: function (res) {
+                $.each(res, function (index, val) {
+                    $("#train_number").append('<option value="' + val.id + '">' + val.train_number + '</option>');
+                });
+
+                getTrainSubClass(id);
+            }
+        });
+    });
+
+    $("#train_number").change(function(event) {
+        $("#pilih_rute option").not("#not").remove();
+        $("#departure_station option").not("#not").remove();
+        $("#arrival_station option").not("#not").remove();
 
         var id = $(this).val();
 
@@ -87,17 +173,41 @@
     });
 
     $("#pilih_rute").change(function(event) {
-        $("#departure_station").empty();
-        $("#arrival_station").empty();
+        $("#departure_station option").not("#not").remove();
+        $("#arrival_station option").not("#not").remove();
 
-        getRoute($("#train_id").val());
+        getStartStation($("#pilih_rute").val());
     });
 
     $("#departure_station").change(function(event) {
-        $("#arrival_station").empty();
+        $("#arrival_station option").not("#not").remove();
 
         getEndStation($("#pilih_rute").val(), $(this).val());
     });
+
+    function getTrainSubClass(id) {
+        return $.ajax({
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content')
+            },
+            url: "{{ url('train_journey/get_train_seat_number') . '/' }}" + id,
+            type: "POST",
+            dataType: "json",
+            success: function (res) {
+                if (res.economy_seat_number != 0) {
+                    $("#sub_class").append('<option value="economy">Ekonomi</option>');
+                }
+
+                if (res.business_seat_number != 0) {
+                    $("#sub_class").append('<option value="business">Bisnis</option>');
+                }
+
+                if (res.executive_seat_number != 0) {
+                    $("#sub_class").append('<option value="executive">Eksekutif</option>');
+                }
+            }
+        });
+    }
 
     function getRoute(id) {
         return $.ajax({
@@ -112,7 +222,7 @@
                     $("#pilih_rute").append('<option value="' + val.id + '">' + val.start_station.city.city + ' (' + val.start_station.code + ')  - ' + val.end_station.city.city + ' (' + val.end_station.code + ')</option>');
                 });
 
-                getStartStation($("#pilih_rute").val());
+                getTrainSubClass($("#train_id").val());
             }
         });
     }

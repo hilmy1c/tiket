@@ -61,7 +61,7 @@ class TrainRouteController extends Controller
         $full_arrival_time[$request->route_number+1] = $request->arrival_time;
 
         TrainRoute::create([
-            'train_id' => $request->train,
+            'train_id' => $request->train_number,
             'start_route' => $request->start_route,
             'end_route' => $request->end_route,
             'departure_time' => $request->departure_time,
@@ -128,7 +128,7 @@ class TrainRouteController extends Controller
         $full_arrival_time[$request->route_number] = $request->arrival_time;
 
         TrainRoute::find($id)->update([
-            'train_id' => $request->train,
+            'train_id' => $request->train_number,
             'start_route' => $request->start_route,
             'end_route' => $request->end_route,
             'departure_time' => $request->departure_time,

@@ -12,7 +12,7 @@
                     <label for="train" class="col-md-4 control-label">Kereta & No. KA</label>
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-md-7">
                                 <select class="form-control" name="train" id="train">
                                     <option value="">---- Pilih Kereta ----</option>
                                     @foreach ($trains as $train)
@@ -20,7 +20,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                                 <select class="form-control" name="train_number" id="train_number">
 
                                 </select>
@@ -85,6 +85,8 @@
     var i = 2;
 
     $("#train").change(function(event) {
+        $("#train_number").empty();
+
         var id = $(this).val();
 
         $.ajax({
@@ -95,7 +97,9 @@
             type: "POST",
             dataType: "json",
             success: function (res) {
-                console.log(res);
+                $.each(res, function (index, val) {
+                    $("#train_number").append('<option value="' + val.id + '">' + val.train_number + '</option>');
+                });
             }
         });
     });

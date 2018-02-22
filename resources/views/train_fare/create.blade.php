@@ -11,7 +11,8 @@
 
                 <input type="hidden" name="train_journey_id" value="{{ $train_journey->id }}">
 
-                <h4 class="text-center">Kelas Ekonomi</h4>
+                @if ($train_journey->trainRoute->train->economy_seat_number != 0)
+                <h4 class="text-center">Kelas {{ ucwords($train_journey->sub_class) . ' ' . $train_journey->sub_class_code }}</h4>
                 <div class="divider"></div>
 
                 <div class="form-group">
@@ -23,7 +24,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="economy_baby" class="col-md-4 control-label">Bayi</label>
                     <div class="col-md-6">
@@ -33,7 +33,9 @@
                         </div>
                     </div>
                 </div>
-
+                @endif
+                
+                @if ($train_journey->trainRoute->train->business_seat_number != 0)
                 <h4 class="text-center">Kelas Bisnis</h4>
                 <div class="divider"></div>
 
@@ -56,7 +58,9 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
+                @if ($train_journey->trainRoute->train->executive_seat_number != 0)
                 <h4 class="text-center">Kelas Eksekutif</h4>
                 <div class="divider"></div>
 
@@ -79,6 +83,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
 
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-4">

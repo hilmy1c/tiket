@@ -30,7 +30,7 @@ class TrainJourneyController extends Controller
      */
     public function create()
     {
-        $data['trains'] = Train::all();
+        $data['trains'] = Train::distinct()->get(['name']);
 
         return view('train_journey.create', $data);
     }
@@ -53,6 +53,8 @@ class TrainJourneyController extends Controller
         TrainJourney::create([
             'train_route_id' => $request->pilih_rute,
             'start_station_id' => $request->departure_station,
+            'sub_class' => $request->sub_class,
+            'sub_class_code' => $request->sub_class_code,
             'end_station_id' => $request->arrival_station,
             'departure_time' => date('Y-m-d H:i:s', strtotime($request->departure_time . $departureTime)),
             'arrival_time' => date('Y-m-d H:i:s', strtotime($request->arrival_time . $arrivalTime)),
@@ -72,7 +74,7 @@ class TrainJourneyController extends Controller
     public function edit($id)
     {
         $data['train_journey'] = TrainJourney::find($id);
-        $data['trains'] = Train::all();
+        $data['trains'] = Train::distinct()->get(['name']);
 
         return view('train_journey.edit', $data);
     }
@@ -96,6 +98,8 @@ class TrainJourneyController extends Controller
         TrainJourney::find($id)->update([
             'train_route_id' => $request->pilih_rute,
             'start_station_id' => $request->departure_station,
+            'sub_class' => $request->sub_class,
+            'sub_class_code' => $request->sub_class_code,
             'end_station_id' => $request->arrival_station,
             'departure_time' => date('Y-m-d H:i:s', strtotime($request->departure_time . $departureTime)),
             'arrival_time' => date('Y-m-d H:i:s', strtotime($request->arrival_time . $arrivalTime)),
@@ -249,5 +253,12 @@ class TrainJourneyController extends Controller
     public function startStation($id)
     {
         return TrainStation::find($id);
+    }
+
+    public function getTrainSeatNumber($id)
+    {
+        $train = Train::where('name', $id)->first();
+
+        echo json_encode($train);
     }
 }

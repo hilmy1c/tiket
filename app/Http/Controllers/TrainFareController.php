@@ -15,7 +15,7 @@ class TrainFareController extends Controller
      */
     public function index()
     {
-        $data['train_fares'] = TrainFare::all();
+        $data['train_fares'] = TrainFare::with('trainJourney')->get();
         return view('train_fare.train_fare', $data);
     }
 
@@ -39,44 +39,58 @@ class TrainFareController extends Controller
      */
     public function store(Request $request)
     {
-        TrainFare::insert([
-            [
-                'train_journey_id' => $request->train_journey_id,
-                'class' => 'economy',
-                'passenger' => 'adult',
-                'fare' => $request->economy_adult,
-            ],
-            [
-                'train_journey_id' => $request->train_journey_id,
-                'class' => 'economy',
-                'passenger' => 'baby',
-                'fare' => $request->economy_baby,
-            ],
-            [
-                'train_journey_id' => $request->train_journey_id,
-                'class' => 'business',
-                'passenger' => 'adult',
-                'fare' => $request->business_adult,
-            ],
-            [
-                'train_journey_id' => $request->train_journey_id,
-                'class' => 'business',
-                'passenger' => 'baby',
-                'fare' => $request->business_baby,
-            ],
-            [
-                'train_journey_id' => $request->train_journey_id,
-                'class' => 'executive',
-                'passenger' => 'adult',
-                'fare' => $request->executive_adult,
-            ],
-            [
-                'train_journey_id' => $request->train_journey_id,
-                'class' => 'executive',
-                'passenger' => 'baby',
-                'fare' => $request->executive_baby,
-            ],
-        ]); 
+        $array = [];
+        $i = 0;
+
+        if ($request->economy_adult != "") {
+            $array[$i]['train_journey_id'] = $request->train_journey_id;
+            $array[$i]['class'] = 'economy';
+            $array[$i]['passenger'] = 'adult';
+            $array[$i]['fare'] = $request->economy_adult;
+            $i++;
+        }
+
+        if ($request->economy_baby != "") {
+            $array[$i]['train_journey_id'] = $request->train_journey_id;
+            $array[$i]['class'] = 'economy';
+            $array[$i]['passenger'] = 'baby';
+            $array[$i]['fare'] = $request->economy_baby;
+            $i++;
+        }
+
+        if ($request->business_adult != "") {
+            $array[$i]['train_journey_id'] = $request->train_journey_id;
+            $array[$i]['class'] = 'business';
+            $array[$i]['passenger'] = 'adult';
+            $array[$i]['fare'] = $request->business_adult;
+            $i++;
+        }
+
+        if ($request->business_baby != "") {
+            $array[$i]['train_journey_id'] = $request->train_journey_id;
+            $array[$i]['class'] = 'business';
+            $array[$i]['passenger'] = 'baby';
+            $array[$i]['fare'] = $request->business_baby;
+            $i++;
+        }
+
+        if ($request->executive_adult != "") {
+            $array[$i]['train_journey_id'] = $request->train_journey_id;
+            $array[$i]['class'] = 'executive';
+            $array[$i]['passenger'] = 'adult';
+            $array[$i]['fare'] = $request->executive_adult;
+            $i++;
+        }
+
+        if ($request->executive_baby != "") {
+            $array[$i]['train_journey_id'] = $request->train_journey_id;
+            $array[$i]['class'] = 'executive';
+            $array[$i]['passenger'] = 'baby';
+            $array[$i]['fare'] = $request->executive_baby;
+            $i++;
+        }
+
+        TrainFare::insert($array); 
 
         return redirect()->route('train_fare.index');
     }
@@ -103,8 +117,6 @@ class TrainFareController extends Controller
     public function update(Request $request, $id)
     {
         TrainFare::find($id)->update([
-            'class'=>$request->class,
-            'train_number'=>$request->train_number,
             'fare'=>$request->fare
         ]); 
 

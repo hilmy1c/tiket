@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TrainJourney extends Model
 {
     protected $fillable = [
-        'train_route_id', 'start_station_id', 'end_station_id', 'departure_time', 'arrival_time'
+        'train_route_id', 'start_station_id', 'end_station_id', 'departure_time', 'arrival_time', 'sub_class', 'sub_class_code'
     ];
 
     public function trainRoute()

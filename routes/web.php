@@ -52,6 +52,7 @@ Route::group(['prefix' => 'train_fare'], function () {
     Route::get('/create/{id}', 'TrainFareController@create')->name('train_fare.create');
     Route::post('/store', 'TrainFareController@store')->name('train_fare.store');
     Route::get('/{id}/edit', 'TrainFareController@edit')->name('train_fare.edit');
+    Route::put('/{id}', 'TrainFareController@update')->name('train_fare.update');
     Route::delete('/{id}', 'TrainFareController@destroy')->name('train_fare.destroy');
 });
 
@@ -116,6 +117,7 @@ Route::group(['prefix' => 'train_journey'], function () {
     Route::post('/get_start_station/{id}', 'TrainJourneyController@getStartStation')->name('train_journey.get_start_station');
     Route::post('/edit_start_station/{id}', 'TrainJourneyController@editStartStation')->name('train_journey.edit_start_station');
     Route::put('/{id}', 'TrainJourneyController@update')->name('train_journey.update');
+    Route::post('/get_train_seat_number/{id}', 'TrainJourneyController@getTrainSeatNumber')->name('train_journey.get_train_seat_number');
 });
 
 Route::resource('/train_route', 'TrainRouteController');
