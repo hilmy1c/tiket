@@ -9,9 +9,6 @@
                 {{ csrf_field() }}
 
                 <input type="hidden" name="booking_code" value="{{ $booking_code }}">
-                <input type="hidden" name="adult_number" value="{{ $adult_number }}">
-                <input type="hidden" name="child_number" value="{{ $child_number }}">
-                <input type="hidden" name="baby_number" value="{{ $baby_number }}">
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <input type="hidden" name="fare" value="{{ $fare_total }}">
                 <input type="hidden" name="flight_number" value="{{ $flight_number }}">

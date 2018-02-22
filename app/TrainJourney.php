@@ -24,4 +24,9 @@ class TrainJourney extends Model
     {
     	return $this->belongsTo('App\TrainStation', 'end_station_id');
     }
+
+    public function trainFares()
+    {
+        return $this->hasMany('App\TrainFare');
+    }
 }

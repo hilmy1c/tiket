@@ -129,12 +129,52 @@ class TrainJourneyController extends Controller
         return view('kereta-api', $data);
     }
 
+    public function unformatNumber($text)
+    {
+        $array = explode('.', $text);
+
+        return intval(join('', $array));
+    }
+
     public function search(Request $request)
     {
         $data['train_journeys'] = TrainJourney::where([
             ['start_station_id', $request->start_station],
-            ['end_station_id', $request->end_station]
+            ['end_station_id', $request->end_station],
+            ['departure_time', $request->departure_date]
         ])->get();
+
+        foreach ($data['train_journeys'] as $train_journey) {
+            $prevVal = 0;
+            foreach ($train_journey->trainFares as $train_fare) {
+                switch ($train_fare->passenger) {
+                    case 'adult':
+                        $prevVal = $this->unformatNumber($train_fare->fare) * intval($request->adult_number) + $prevVal;
+                        $train_journey->adult_fare = $this->unformatNumber($train_fare->fare) * intval($request->adult_number);
+                        break;
+
+                    case 'baby':
+                        $prevVal = $this->unformatNumber($train_fare->fare) * intval($request->baby_number) + $prevVal;
+                        $train_journey->baby_fare = $this->unformatNumber($train_fare->fare) * intval($request->baby_number);
+                        break;
+                }
+            }
+
+            $train_journey->fare = number_format($prevVal, 0, '', '.');
+
+            $date1 = date_create($train_journey->departure_time." ".$train_journey->trainRoute->departure_time);
+            $date2 = date_create($train_journey->arrival_time." ".$train_journey->trainRoute->arrival_time);
+            $interval = date_diff($date1, $date2);
+            $train_journey->timeRange = $interval->format('%h')." Jam ".$interval->format('%i')." Menit"; 
+        }
+
+        $data['adult_number'] = $request->adult_number;
+        $data['baby_number'] = $request->baby_number;
+        $data['departure_date'] = $request->departure_date;
+        $data['start_station'] = TrainStation::find($request->start_station);
+        $data['end_station'] = TrainStation::find($request->end_station);
+        $data['stations'] = TrainStation::all();
+        $data['islands'] = City::distinct()->get(['island']);
 
         return view('journey-list', $data);
     }

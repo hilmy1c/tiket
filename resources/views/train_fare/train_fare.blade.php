@@ -22,7 +22,7 @@
                             <td>{{ ucwords($train_fare->trainJourney->sub_class) }} ({{ $train_fare->trainJourney->sub_class_code }})</td>
                             <td>{{ $train_fare->passenger }}</td>
                             <td>{{ $train_fare->trainJourney->startStation->city->city }} ({{ $train_fare->trainJourney->startStation->code }}) - {{ $train_fare->trainJourney->endStation->city->city }} ({{ $train_fare->trainJourney->endStation->code }})</td>
-                            <td>{{ $train_fare->fare }}</td>
+                            <td>Rp. {{ $train_fare->fare }}</td>
                             <td>
                                 <a href="{{ route('train_fare.edit', ['id' => $train_fare->id]) }}" class="btn btn-sm btn-default">Edit</a>
                                 <form action="{{ route('train_fare.destroy', ['id' => $train_fare->id]) }}" method="POST" class="inline">

@@ -96,6 +96,14 @@ class BookingController extends Controller
         return view('booking-payment', $data);
     }
 
+    public function trainPayment($id)
+    {
+        $data['booking'] = Booking::find($id);
+        $data['bank_accounts'] = BankAccount::all();
+
+        return view('train-booking-payment', $data);
+    }
+
     public function getBankAccount(Request $request, $id)
     {
         Booking::find($id)->update([

@@ -71,6 +71,7 @@ Route::group(['prefix' => 'booking'], function () {
     Route::get('/', 'BookingController@index')->name('booking.index');
     Route::get('/{id}/create', 'BookingController@create')->name('booking.create');
     Route::get('/{id}/payment', 'BookingController@payment')->name('booking.payment');
+    Route::get('/{id}/train_payment', 'BookingController@trainPayment')->name('booking.train_payment');
     Route::get('/{id}/bank_account', 'BookingController@getBankAccount')->name('booking.bank_account');
     Route::put('/{id}/update_payment', 'BookingController@updatePaymentStatus')->name('booking.update_payment');
     Route::get('/{id}', 'BookingController@delete')->name('booking.delete');
@@ -87,9 +88,11 @@ Route::post('/flight/get_flight_number/{id}', 'FlightController@getFlightNumber'
 Route::group(['prefix' => 'passenger'], function () {
     Route::get('/', 'PassengerController@index')->name('passenger.index');
     Route::get('/{id}/create', 'PassengerController@create')->name('passenger.create');
+    Route::get('/{id}/train_create', 'PassengerController@trainCreate')->name('passenger.train_create');
     Route::get('/{id}/edit', 'PassengerController@edit')->name('passenger.edit');
     Route::delete('/{id}', 'PassengerController@destroy')->name('passenger.destroy');
     Route::post('/store', 'PassengerController@store')->name('passenger.store');
+    Route::post('/train_store', 'PassengerController@trainStore')->name('passenger.train_store');
 });
 
 Route::group(['prefix' => 'bank_account'], function () {
@@ -104,6 +107,7 @@ Route::group(['prefix' => 'bank_account'], function () {
 Route::group(['prefix' => 'train_journey'], function () {
     Route::get('/search', 'TrainJourneyController@searchIndex')->name('train_journey.search_index');
     Route::post('/search', 'TrainJourneyController@search')->name('train_journey.search');
+    Route::post('/search2', 'TrainJourneyController@search')->name('train_journey.search2');
     Route::get('/', 'TrainJourneyController@index')->name('train_journey.index');
     Route::get('/create', 'TrainJourneyController@create')->name('train_journey.create');
     Route::post('/', 'TrainJourneyController@store')->name('train_journey.store');
