@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
+use App\Booking;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -41,8 +42,23 @@ class UserController extends Controller
 
     public function bookingHistory($id)
     {
-        $data['user'] = User::find($id);
+        $userId = User::find($id);
+
+        $data['train_bookings'] = Booking::whereHas('bookingDetail', function ($query) {
+            $query->where('train_journey_id', '!=', null);
+        })->where('user_id', $userId->id)->get();
+
+        $data['flight_bookings'] = Booking::whereHas('bookingDetail', function ($query) {
+            $query->where('flight_number', '!=', null);
+        })->where('user_id', $userId->id)->get();
 
         return view('user-booking-list', $data);
+    }
+
+    public function account($id)
+    {
+        $data['user'] = User::find($id);
+
+        return view('my-account', $data);
     }
 }

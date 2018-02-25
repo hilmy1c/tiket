@@ -22,6 +22,8 @@ Route::group(['prefix' => 'user'], function () {
     Route::delete('/{id}/delete', 'UserController@destroy')->name('user.destroy');
     Route::get('/{id}/booking_history', 'UserController@bookingHistory')->name('user.booking_history');
     Route::get('/{id}/history_detail', 'BookingController@historyDetail')->name('user.history_detail');
+    Route::get('/{id}/train_history_detail', 'BookingController@trainHistoryDetail')->name('user.train_history_detail');
+    Route::get('/{id}/account', 'UserController@account')->name('user.account');
 });
 
 Route::resource('/airplane', 'AirplaneController');
@@ -73,12 +75,16 @@ Route::group(['prefix' => 'booking'], function () {
     Route::get('/{id}/payment', 'BookingController@payment')->name('booking.payment');
     Route::get('/{id}/train_payment', 'BookingController@trainPayment')->name('booking.train_payment');
     Route::get('/{id}/bank_account', 'BookingController@getBankAccount')->name('booking.bank_account');
+    Route::get('/{id}/train_bank_account', 'BookingController@getTrainBankAccount')->name('booking.train_bank_account');
     Route::put('/{id}/update_payment', 'BookingController@updatePaymentStatus')->name('booking.update_payment');
     Route::get('/{id}', 'BookingController@delete')->name('booking.delete');
     Route::delete('/{id}', 'BookingController@destroy')->name('booking.destroy');
     Route::post('/{id}/confirm_payment', 'BookingController@confirmPayment')->name('booking.confirm_payment');
     Route::post('/{id}/unconfirm_payment', 'BookingController@unconfirmPayment')->name('booking.unconfirm_payment');
     Route::get('/{id}/cetak_tiket', 'BookingController@cetakTiket')->name('booking.cetak_tiket');
+    Route::get('/{id}/upload_pembayaran', 'BookingController@uploadPembayaran')->name('booking.upload_pembayaran');
+    Route::get('/{id}/train_upload_pembayaran', 'BookingController@trainUploadPembayaran')->name('booking.train_upload_pembayaran');
+    Route::post('/{id}/simpan_file', 'BookingController@simpanFileBuktiPembayaran')->name('booking.simpan_file');
 });
 
 Route::post('/flight/search', 'FlightController@search')->name('flight.search');

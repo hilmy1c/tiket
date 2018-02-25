@@ -89,6 +89,12 @@
 
                                 <ul class="dropdown-menu user-dropdown-menu" style="width: 250px">
                                     <li>
+                                        <a href="{{ route('user.account', ['id' => Auth::id()]) }}">
+                                            <img src="/img/icons/user.png" alt="" class="my-icon">&nbsp;&nbsp;
+                                            Ubah Profil
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="{{ route('user.booking_history', ['id' => Auth::id()]) }}">
                                             <img src="/img/icons/sidebar/purchase-order.png" alt="" class="my-icon">&nbsp;&nbsp;
                                             Pesanan Saya

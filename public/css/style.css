@@ -837,3 +837,14 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 .text-white {
 	color: #fff;
 }
+
+.circle-notif {
+	background-color: #F34646;
+	position: absolute;
+	height: 10px;
+	width: 10px;
+	right: 8px;
+	bottom: 15px;
+	border-radius: 50%;
+	display: inline-block;
+}

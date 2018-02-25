@@ -10,7 +10,7 @@
             		<strong class="text-primary">Selesaikan pembayaran dalam 00:42:34</strong>
             	</div>
             	<div class="panel-body">
-                    <form action="{{ route('booking.bank_account', ['id' => $booking->id]) }}" method="GET">
+                    <form action="{{ route('booking.train_bank_account', ['id' => $booking->id]) }}" method="GET">
                         {{ csrf_field() }}
 
                 		<div class="alert alert-info" style="position: relative">

@@ -164,6 +164,8 @@
         $("#pilih_rute option").not("#not").remove();
         $("#departure_station option").not("#not").remove();
         $("#arrival_station option").not("#not").remove();
+        $("#sub_class option").not("#not").remove();
+        $("#sub_class_code option").not("#not").remove();
 
         var id = $(this).val();
 

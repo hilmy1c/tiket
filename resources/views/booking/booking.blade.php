@@ -13,6 +13,7 @@
                     <th>Tanggal Pesan</th>
                     <th>Status Pembayaran</th>
                     <th>Bank</th>
+                    <th>Bukti Pembayaran</th>
                     <th>Aksi</th>
                 </thead>
                 <tbody>
@@ -26,6 +27,7 @@
                             <div class="label {{ ($booking->payment_status == 'Belum Dibayar') ? 'label-danger' : (($booking->payment_status == 'Menunggu Konfirmasi') ? 'label-warning' : 'label-success') }} bold">{{ $booking->payment_status }}</div>
                         </td>
                         <td><img src="{{ Storage::url($booking->bankAccount->image) }}" alt="" width="50px"></td>
+                        <td><img src="{{ Storage::url($booking->image) }}" alt="" width="100px"></td>
                         <td>
                             @switch ($booking->payment_status)
                                 @case ('Menunggu Konfirmasi')

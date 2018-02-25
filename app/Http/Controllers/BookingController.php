@@ -115,6 +115,17 @@ class BookingController extends Controller
         return view('bank-account-detail', $data);
     }
 
+    public function getTrainBankAccount(Request $request, $id)
+    {
+        Booking::find($id)->update([
+            'bank_account_id' => $request->bank_id
+        ]);
+
+        $data['booking'] = Booking::find($id);
+
+        return view('train-bank-account-detail', $data);
+    }
+
     public function updatePaymentStatus($id)
     {
         Booking::find($id)->update([
@@ -145,6 +156,13 @@ class BookingController extends Controller
         return view('user-booking-detail', $data);
     }
 
+    public function trainHistoryDetail($id)
+    {
+        $data['booking'] = Booking::find($id);
+
+        return view('train-user-booking-detail', $data);
+    }
+
     public function confirmPayment($id)
     {
         Booking::find($id)->update([
@@ -165,9 +183,42 @@ class BookingController extends Controller
 
     public function cetakTiket($id)
     {
-        // $pdf = PDF::setOptions(['isRemoteEnabled' => true]);
-        // $pdf->loadView('e-tiket');
+        $data['booking'] = Booking::with('bookingDetail.trainJourney.trainRoute.train')->find($id);
+
+        // $pdf = PDF::setOptions(['isRemoteEnabled' => false]);
+        // $pdf->loadView('train-etiket', $data);
         // $pdf->setPaper('A4', 'potrait');
         // return $pdf->stream();
+
+        return view('train-etiket', $data);
+    }
+
+    public function uploadPembayaran($id)
+    {
+        $data['booking'] = Booking::find($id);
+
+        return view('upload-pembayaran', $data);
+    }
+
+    public function trainUploadPembayaran($id)
+    {
+        $data['booking'] = Booking::find($id);
+
+        return view('train-upload-pembayaran', $data);
+    }
+
+    public function simpanFileBuktiPembayaran(Request $request, $id)
+    {
+        $request->validate([
+            'image' => 'required|mimes:jpeg,jpg,png|max:1000'
+        ]);
+
+        $path = $request->file('image')->store('public/img');
+
+        Booking::find($id)->update([
+            'image' => $path
+        ]);
+
+        return redirect()->route('user.booking_history', ['id' => Auth::user()->id]);
     }
 }
