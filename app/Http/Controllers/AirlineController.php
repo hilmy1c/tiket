@@ -75,10 +75,20 @@ class AirlineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Airline::find($id)->update([
-            'code' => $request->code,
-            'name' => $request->name
-        ]);
+        $path = $request->file('image')->store('public/img');
+
+        if ($request->file('image') != null) {
+            Airline::find($id)->update([
+                'code' => $request->code,
+                'name' => $request->name,
+                'image' => $path
+            ]);
+        } else {
+            Airline::find($id)->update([
+                'code' => $request->code,
+                'name' => $request->name
+            ]);
+        }
 
         return redirect()->route('airline.index');
     }
