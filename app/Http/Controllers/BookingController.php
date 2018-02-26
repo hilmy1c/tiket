@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Flight;
 use App\Booking;
+use App\FlightFare;
 use App\BankAccount;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade as PDF;
+use Barryvdh\Snappy\Facades\SnappyPdf;
 use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
@@ -183,14 +184,19 @@ class BookingController extends Controller
 
     public function cetakTiket($id)
     {
+        $data['booking'] = Booking::with('bookingDetail.flight.airplane')->find($id);
+        $data['class'] = FlightFare::where('flight_id', $data['booking']->bookingDetail->flight->id)->first()->class;
+
+        $pdf = SnappyPdf::loadView('etiket', $data);
+        return $pdf->download('tiket-pesawat-' . date('YMdHis') . '-' . $data['booking']->user->name);
+    }
+
+    public function trainCetakTiket($id)
+    {
         $data['booking'] = Booking::with('bookingDetail.trainJourney.trainRoute.train')->find($id);
 
-        // $pdf = PDF::setOptions(['isRemoteEnabled' => false]);
-        // $pdf->loadView('train-etiket', $data);
-        // $pdf->setPaper('A4', 'potrait');
-        // return $pdf->stream();
-
-        return view('train-etiket', $data);
+        $pdf = SnappyPdf::loadView('train-etiket', $data);
+        return $pdf->download('tiket-kereta-' . date('YMdHis') . '-' . $data['booking']->user->name);
     }
 
     public function uploadPembayaran($id)

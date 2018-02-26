@@ -82,6 +82,7 @@ Route::group(['prefix' => 'booking'], function () {
     Route::post('/{id}/confirm_payment', 'BookingController@confirmPayment')->name('booking.confirm_payment');
     Route::post('/{id}/unconfirm_payment', 'BookingController@unconfirmPayment')->name('booking.unconfirm_payment');
     Route::get('/{id}/cetak_tiket', 'BookingController@cetakTiket')->name('booking.cetak_tiket');
+    Route::get('/{id}/train_cetak_tiket', 'BookingController@trainCetakTiket')->name('booking.train_cetak_tiket');
     Route::get('/{id}/upload_pembayaran', 'BookingController@uploadPembayaran')->name('booking.upload_pembayaran');
     Route::get('/{id}/train_upload_pembayaran', 'BookingController@trainUploadPembayaran')->name('booking.train_upload_pembayaran');
     Route::post('/{id}/simpan_file', 'BookingController@simpanFileBuktiPembayaran')->name('booking.simpan_file');

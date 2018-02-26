@@ -848,3 +848,12 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 	border-radius: 50%;
 	display: inline-block;
 }
+
+.label-profile {
+	font-weight: lighter;
+}
+
+.input-readonly {
+	background-color: transparent;
+	border: none;
+}

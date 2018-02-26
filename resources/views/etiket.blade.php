@@ -104,7 +104,7 @@
 		}
 
 		.background-image {
-			width: 200px;
+			width: 130px;
 			position: absolute;
 			z-index: -99999;
 			top: 0;
@@ -137,40 +137,41 @@
 		{{-- Judul --}}
 		<div class="row">
 			<div class="col-md-12">
-				<img src="{{ base_path() }}/public/img/partners/pt_kai2.jpg" alt="" width="190px" style="margin-bottom: 15px">
 				{{-- <img src="/img/partners/pt_kai2.jpg" alt="" width="190px" style="margin-bottom: 15px"> --}}
-				<h3 class="border-bottom-dotted" style="padding-bottom: 15px; font-weight: lighter">E-Tiket (Kereta Api)</h3>
+				<h2 class="border-bottom-dotted" style="padding-bottom: 15px; font-weight: lighter">E-Tiket (Pesawat)</h2>
 			</div>
 		</div>
 
 		{{-- Booking Detail --}}
 		<div class="row border-bottom-solid" style="margin-bottom: 20px">
 			<div class="col-md-4">
-				<h4 class="booking-detail-title">{{ $booking->bookingDetail->trainJourney->trainRoute->train->name }}</h4>
-				<small>{{ ucwords($booking->bookingDetail->trainJourney->sub_class) }} ({{ $booking->bookingDetail->trainJourney->sub_class_code }})</small>
+				<img src="{{ base_path() }}/public/{{ Storage::url($booking->bookingDetail->flight->airplane->airline->image) }}" alt="" width="180px" style="margin-bottom: 15px">
+				<h4 class="booking-detail-title">{{ $booking->bookingDetail->flight->airplane->airline->name }}</h4>
+				<h4 class="booking-detail-title">{{ $booking->bookingDetail->flight->flight_number }}</h4>
+				<small>{{ ucwords($class) }}</small>
 			</div>
 			<div class="col-md-4" style="margin-bottom: 20px;">
-				<h4 class="booking-detail-title">{{ date('l, d F Y', strtotime($booking->bookingDetail->trainJourney->departure_time)) }}</h4>
+				<h4 class="booking-detail-title">{{ date('l, d F Y', strtotime($booking->bookingDetail->flight->departure_time)) }}</h4>
 				<div class="col-md-12" style="position: relative">
 					<img src="{{ base_path() }}/public/img/range.png" alt="" height="80px" class="separator-range-time">
 					<div class="col-md-12" style="margin-bottom: 25px">
 						<div class="col-md-5">
-							<h4 class="booking-detail-title">{{ date('H:i', strtotime($booking->bookingDetail->trainJourney->trainRoute->departure_time)) }}</h4>
-							<small class="text-grey">{{ date('d F', strtotime($booking->bookingDetail->trainJourney->departure_time)) }}</small>
+							<h4 class="booking-detail-title">{{ date('H:i', strtotime($booking->bookingDetail->flight->departure_time)) }}</h4>
+							<small class="text-grey">{{ date('d F', strtotime($booking->bookingDetail->flight->departure_time)) }}</small>
 						</div>
 						<div class="col-md-7">
-							<h4 class="booking-detail-title">{{ $booking->bookingDetail->trainJourney->startStation->city->city }}</h4>
-							<small class="text-grey">Stasiun {{ $booking->bookingDetail->trainJourney->startStation->name }}</small>
+							<h4 class="booking-detail-title">{{ $booking->bookingDetail->flight->fromAirport->city->city }}</h4>
+							<small class="text-grey">Bandara {{ $booking->bookingDetail->flight->fromAirport->name }}</small>
 						</div>
 					</div>
 					<div class="col-md-12">
 						<div class="col-md-5">
-							<h4 class="booking-detail-title">{{ date('H:i', strtotime($booking->bookingDetail->trainJourney->trainRoute->arrival_time)) }}</h4>
-							<small class="text-grey">{{ date('d F', strtotime($booking->bookingDetail->trainJourney->arrival_time)) }}</small>
+							<h4 class="booking-detail-title">{{ date('H:i', strtotime($booking->bookingDetail->flight->arrival_time)) }}</h4>
+							<small class="text-grey">{{ date('d F', strtotime($booking->bookingDetail->flight->arrival_time)) }}</small>
 						</div>
 						<div class="col-md-7">
-							<h4 class="booking-detail-title">{{ $booking->bookingDetail->trainJourney->endStation->city->city }}</h4>
-							<small class="text-grey">Stasiun {{ $booking->bookingDetail->trainJourney->endStation->name }}</small>
+							<h4 class="booking-detail-title">{{ $booking->bookingDetail->flight->destinationAirport->city->city }}</h4>
+							<small class="text-grey">Bandara {{ $booking->bookingDetail->flight->destinationAirport->name }}</small>
 						</div>
 					</div>
 				</div>
@@ -232,7 +233,7 @@
 						<td>{{ $i }}</td>
 						<td>{{ $passenger->appellation }} {{ $passenger->name }}</td>
 						<td>{{ $passenger->status }}</td>
-						<td>{{ ucwords($booking->bookingDetail->trainJourney->sub_class) }} ({{ $booking->bookingDetail->trainJourney->sub_class_code }})</td>
+						<td>{{ ucwords($class) }}</td>
 					</tr>
 					<?php $i++ ?>
 					@endforeach

@@ -25,7 +25,18 @@
     	</div>
 		<div class="col-md-8">
             <div class="panel panel-default">
-                <div class="panel-body"></div>
+                <div class="panel-body">
+                    <div class="alert alert-default" style="padding: 10px">
+                        <div class="form-group">
+                            <small>Nama Lengkap</small>
+                        </div>
+                    </div>
+                    <div class="alert alert-default" style="padding: 10px">
+                        <div class="form-group">
+                            <small>Alamat Email</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
