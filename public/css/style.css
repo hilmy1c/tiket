@@ -1,26 +1,26 @@
 /* Override Bootstrap */
 .btn-primary {
 	color: #fff;
-	background-color: #2196f3;
-	border-color: #2196f3;
+	background-color: #FF4081;
+	border-color: #FF4081;
 }
 .btn-primary:focus,
 .btn-primary.focus {
 	color: #fff;
-	background-color: #2196f3;
-	border-color: #2196f3;
+	background-color: #FF4081;
+	border-color: #FF4081;
 }
 .btn-primary:hover {
 	color: #fff;
-	background-color: #2196f3;
-	border-color: #2196f3;
+	background-color: #FF4081;
+	border-color: #FF4081;
 }
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
 	color: #fff;
-	background-color: #2196f3;
-	border-color: #2196f3;
+	background-color: #FF4081;
+	border-color: #FF4081;
 }
 .btn-primary:active:hover,
 .btn-primary.active:hover,
@@ -32,8 +32,8 @@
 .btn-primary.active.focus,
 .open > .dropdown-toggle.btn-primary.focus {
 	color: #fff;
-	background-color: #2196f3;
-	border-color: #2196f3;
+	background-color: #FF4081;
+	border-color: #FF4081;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -49,11 +49,11 @@ fieldset[disabled] .btn-primary:focus,
 .btn-primary.disabled.focus,
 .btn-primary[disabled].focus,
 fieldset[disabled] .btn-primary.focus {
-	background-color: #2196f3;
-	border-color: #2196f3;
+	background-color: #FF4081;
+	border-color: #FF4081;
 }
 .btn-primary .badge {
-	color: #2196f3;
+	color: #FF4081;
 	background-color: #fff;
 }
 
@@ -117,26 +117,26 @@ fieldset[disabled] .btn-danger.focus {
 
 .btn-warning {
 	color: #fff;
-	background-color: #ffa000;
-	border-color: #ffa000;
+	background-color: #64FFDA;
+	border-color: #64FFDA;
 }
 .btn-warning:focus,
 .btn-warning.focus {
 	color: #fff;
-	background-color: #ffa000;
-	border-color: #ffa000;
+	background-color: #64FFDA;
+	border-color: #64FFDA;
 }
 .btn-warning:hover {
 	color: #fff;
-	background-color: #ffa000;
-	border-color: #ffa000;
+	background-color: #64FFDA;
+	border-color: #64FFDA;
 }
 .btn-warning:active,
 .btn-warning.active,
 .open > .dropdown-toggle.btn-warning {
 	color: #fff;
-	background-color: #ffa000;
-	border-color: #ffa000;
+	background-color: #64FFDA;
+	border-color: #64FFDA;
 }
 .btn-warning:active:hover,
 .btn-warning.active:hover,
@@ -148,8 +148,8 @@ fieldset[disabled] .btn-danger.focus {
 .btn-warning.active.focus,
 .open > .dropdown-toggle.btn-warning.focus {
 	color: #fff;
-	background-color: #ffa000;
-	border-color: #ffa000;
+	background-color: #64FFDA;
+	border-color: #64FFDA;
 }
 .btn-warning:active,
 .btn-warning.active,
@@ -165,21 +165,21 @@ fieldset[disabled] .btn-warning:focus,
 .btn-warning.disabled.focus,
 .btn-warning[disabled].focus,
 fieldset[disabled] .btn-warning.focus {
-	background-color: #ffa000;
-	border-color: #ffa000;
+	background-color: #64FFDA;
+	border-color: #64FFDA;
 }
 .btn-warning .badge {
-	color: #ffa000;
+	color: #64FFDA;
 	background-color: #fff;
 }
 .bg-primary {
 	color: #fff;
-	background-color: #2196f3;
+	background-color: #FF4081;
 }
 
 a.bg-danger:hover,
 a.bg-danger:focus {
-	background-color: #2196f3;
+	background-color: #FF4081;
 }
 .bg-danger {
 	color: #fff;
@@ -227,21 +227,21 @@ a.bg-danger:focus {
 }
 
 .text-primary {
-	color: #2196f3;
+	color: #FF4081;
 }
 
 a.text-primary:hover,
 a.text-primary:focus {
-	color: #2196f3;
+	color: #FF4081;
 }
 
 .text-warning {
-	color: #ffa000;
+	color: #64FFDA;
 }
 
 a.text-warning:hover,
 a.text-warning:focus {
-	color: #ffa000;
+	color: #64FFDA;
 }
 
 .form-control {
@@ -249,7 +249,7 @@ a.text-warning:focus {
 }
 
 table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
-	background-color: #2196f3;
+	background-color: #FF4081;
 }
 
 table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
@@ -269,7 +269,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 }
 
 .banner {
-	background: url('/img/banner.jpg') no-repeat;
+	background: url('/img/ferdi-banner.jpg') no-repeat;
 	background-size: cover;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -310,7 +310,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .title-border {
 	width: 100px;
-	border: 2px solid #ffa000;
+	border: 2px solid #64FFDA;
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
@@ -352,7 +352,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 }
 
 .banner2 {
-	background: url('/img/banner2.jpg') no-repeat;
+	background: url('/img/ferdi-banner2.jpg') no-repeat;
 	background-size: cover;
 	color: #fff;
 }
@@ -467,7 +467,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 }
 
 .dropdown-sidebar li.active {
-	background-color: #2196f3;
+	background-color: #FF4081;
 }
 
 .dropdown-sidebar li.active a {
@@ -509,11 +509,11 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 .btn-white {
 	background-color: #fff;
 	border-color: #fff;
-	color: #2196f3;
+	color: #FF4081;
 }
 
 .divider {
-	border: 1px solid #ffa000;
+	border: 1px solid #64FFDA;
 	width: 100px;
 	margin: 0 auto;
 	margin-bottom: 15px;
@@ -592,13 +592,13 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 }
 
 .circle-invert {
-	border: 1px solid #2196f3;
+	border: 1px solid #FF4081;
 	background-color: #fff;
 }
 
 .circle-blue {
-	border: 1px solid #2196f3;
-	background-color: #2196f3;
+	border: 1px solid #FF4081;
+	background-color: #FF4081;
 }
 
 .circle-blue, .circle-invert {
@@ -627,7 +627,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 .alert-info {
 	background-color: #E3F2FD;
 	color: #777;
-	border-color: #2196f3;
+	border-color: #FF4081;
 }
 
 .booking-sub-title {
@@ -687,13 +687,13 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .custom-grey-btn {
 	background-color: #f7f7f7;
-	color: #2196f3;
+	color: #FF4081;
 	border-color: #f7f7f7;
 	font-weight: bold;
 }
 
 .custom-grey-btn:hover {
-	color: #2196f3;
+	color: #FF4081;
 }
 
 .num-payment-guide {
@@ -755,7 +755,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 }
 
 .label-warning {
-	background-color: #ffa000;
+	background-color: #64FFDA;
 }
 
 .label-success {
@@ -789,7 +789,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .user-sidebar-menu li a.active {
 	background-color: #fff;
-	border-left: 3px solid #2196f3;
+	border-left: 3px solid #FF4081;
 }
 
 .text-danger {
@@ -822,7 +822,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .sidebar-search-menu .active {
 	background-color: #fff;
-	border-left: 3px solid #2196f3;
+	border-left: 3px solid #FF4081;
 }
 
 .train-banner {

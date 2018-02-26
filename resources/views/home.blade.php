@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="col-md-10">
-                        <strong class="text-primary" style="margin-bottom: 15px; display: inline-block;"><img src="\img\icons\search-blue.png" alt="" class="my-icon">&nbsp;Cari tiket pesawat</strong>
+                        <strong class="text-primary" style="margin-bottom: 15px; display: inline-block;"><img src="\img\icons\ferdi-search-blue.png" alt="" class="my-icon">&nbsp;Cari tiket pesawat</strong>
                         <form action="{{ route('flight.search') }}" method="POST">
                             {{ csrf_field() }}
 
@@ -304,15 +304,15 @@
         <h3 class="text-center">Kenapa Memilih Rajatiket?</h3>
         <div class="title-border"></div>
         <div class="col-md-4 text-center">
-            <img src="/img/icons/why_choose/24_hours.png" alt=""><br>
+            <img src="/img/icons/why_choose/ferdi-24_hours.png" alt=""><br>
             <h4>Layanan Pelanggan 24 Jam</h4>
         </div>
         <div class="col-md-4 text-center">
-            <img src="/img/icons/why_choose/asia.png" alt=""><br>
+            <img src="/img/icons/why_choose/ferdi-asia.png" alt=""><br>
             <h4>Pesan Tiket Pesawat dan Kereta Api Terlengkap</h4>
         </div>
         <div class="col-md-4 text-center">
-            <img src="/img/icons/why_choose/card_payment.png" alt=""><br>
+            <img src="/img/icons/why_choose/ferdi-card_payment.png" alt=""><br>
             <h4>Kemudahan dalam Pembayaran</h4>
         </div>
     </div>
