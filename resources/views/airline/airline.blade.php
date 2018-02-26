@@ -5,7 +5,7 @@
     <h4><strong>Maskapai Penerbangan</strong></h4>
     <div class="panel panel-default">
         <div class="panel-body">
-            <a href="{{ route('airline.create') }}" class="btn btn-default" style="margin-bottom: 15px">Tambah</a>
+            <a href="{{ route('airline.create') }}" class="btn btn-success" style="margin-bottom: 15px">Tambah</a>
                 
             <table class="table table-bordered">
                 <thead>

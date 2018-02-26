@@ -4,12 +4,12 @@
 
 <div class="banner" style="height: 300px; overflow: visible;">
     <div class="my-container" style="position: relative;">
-        <h2 class="welcome-message">Bergabung jadi member Rajatiket dan nikmati beragam keuntungannya!</h2>
+        <h2 class="welcome-message">Bergabung jadi member ZeeberTicket dan nikmati beragam keuntungannya!</h2>
         <p class="welcome-message">Daftar via registrasi yang mudah dan aman</p>
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h3 class="panel-title">Gabung Jadi Member Rajatiket!</h3>
+                    <h3 class="panel-title">Gabung Jadi Member ZeeberTicket!</h3>
                     <form method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
@@ -71,8 +71,8 @@
                     <p class="text-center" style="margin-top: 70px">Sudah memiliki akun? <a href="#">Log in</a></p>
                 </div>
             </div>
-            <p class="text-center">Dengan melakukan pendaftaran, saya setuju dengan Kebijakan Privasi dan Syarat & Ketentuan Rajatiket.</p>
-            <span class="panel-sign">&copy; {{ date('Y') }} Rajatiket</span>
+            <p class="text-center">Dengan melakukan pendaftaran, saya setuju dengan Kebijakan Privasi dan Syarat & Ketentuan Zeeber.</p>
+            <span class="panel-sign">&copy; {{ date('Y') }} Zeeber</span>
         </div>
     </div>
 </div>

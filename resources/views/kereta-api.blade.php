@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="col-md-6" style="padding-left: 0">
                                     <div class="col-md-4">
-                                        <label for="">Dewasa</label>
+                                        <label style="color: #fff;" for="">Dewasa</label>
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-addon"><img src="\img\icons\adult.png" alt="" class="my-icon-sm"></span>
                                             <select name="adult_number" id="adult" class="input-sm form-control">
@@ -111,7 +111,7 @@
 </div>
 <div class="my-container">
     <div class="row" style="margin-bottom: 30px">
-        <h3 class="text-center">Kenapa Memilih Rajatiket?</h3>
+        <h3 class="text-center">Kenapa Memilih Zeeber?</h3>
         <div class="title-border"></div>
         <div class="col-md-4 text-center">
             <img src="/img/icons/why_choose/24_hours.png" alt=""><br>
@@ -128,7 +128,7 @@
     </div>
     <div class="row" style="margin-bottom: 30px">
         <div class="col-md-4">
-            <h3>Partner Rajatiket</h3>
+            <h3>Partner Zeeber</h3>
             <div class="title-border" style="margin-left: 0px"></div>
             <p>Kami bekerja sama dengan berbagai maskapai penerbangan & PT KAI untuk membawa Anda ke mana pun Anda inginkan!</p>
         </div>

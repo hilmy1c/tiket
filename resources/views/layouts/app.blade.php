@@ -42,7 +42,7 @@
 
                     <!-- Branding Image -->
                     <a href="/" class="navbar-brand">
-                        <img src="{{ asset('img/logo.png') }}" alt="Rajatiket">
+                        <img src="{{ asset('img/zeeber.png') }}" alt="ZeeberTicket">
                     </a>
                 </div>
 
@@ -66,11 +66,11 @@
                                         {{ csrf_field() }}
 
                                         <div class="form-group">
-                                            <label for="email">Email</label>
+                                            <label for="email" style="color: #777;">Email</label>
                                             <input type="text" name="email" id="email" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">Password</label>
+                                            <label for="password" style="color: #777;">Password</label>
                                             <input type="password" name="password" id="password" class="form-control">
                                         </div>
                                         <div class="form-group">
@@ -126,10 +126,10 @@
             <div class="my-container">
                 <div class="row" style="padding-bottom: 30px">
                     <div class="col-md-4 text-center">
-                        <img src="/img/logo.png" alt="" class="footer-icon" width="150px"><br><br>
+                        <img src="/img/zeeber.png" alt="" class="footer-icon" width="150px"><br><br>
                         <img src="/img/icons/24_hours_black.png" alt="" style="vertical-align: middle; transform: translateY(-15%)">
                         <p class="text-left" style="display: inline-block">
-                            <small>Hubungi Costumer Service</small><br>
+                            <small style="color: #fff;">Hubungi Costumer Service</small><br>
                             <strong class="text-warning">+62-852-3223-2097</strong><br>
                             <small class="text-warning">cs@rajatiket.com</small>
                         </p>
@@ -137,29 +137,29 @@
                     <div class="col-md-8">
                         <div class="row">
                             <div class="col-md-3">
-                                <h4>Produk</h4>
+                                <h4 style="color: #fff;">Produk</h4>
                                 <ul class="footer-menu">
-                                    <li><a href="">Tiket</a></li>
-                                    <li><a href="">Pesawat</a></li>
-                                    <li><a href="">Kereta Api</a></li>
+                                    <li><a href="" style="color: #fff;">Tiket</a></li>
+                                    <li><a href="" style="color: #fff;">Pesawat</a></li>
+                                    <li><a href="" style="color: #fff;">Kereta Api</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3">
-                                <h4>Tentang</h4>
+                                <h4 style="color: #fff;">Tentang</h4>
                                 <ul class="footer-menu">
-                                    <li><a href="">Cara Pesan</a></li>
-                                    <li><a href="">Hubungi Kami</a></li>
+                                    <li><a href="" style="color: #fff;">Cara Pesan</a></li>
+                                    <li><a href="" style="color: #fff;">Hubungi Kami</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3">
-                                <h4>Lainnya</h4>
+                                <h4 style="color: #fff;">Lainnya</h4>
                                 <ul class="footer-menu">
-                                    <li><a href="">Cek Pesanan</a></li>
-                                    <li><a href="">Syarat & Ketentuan</a></li>
+                                    <li><a href="" style="color: #fff;">Cek Pesanan</a></li>
+                                    <li><a href="" style="color: #fff;">Syarat & Ketentuan</a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3">
-                                <h4>Follow Kami di</h4>
+                                <h4 style="color: #fff;">Follow Kami di</h4>
                                 <ul class="footer-menu">
                                     <li></li>
                                 </ul>
@@ -168,7 +168,7 @@
                     </div>
                 </div>
                 <div class="footer-sign">
-                    Copyright &copy; PT. Rajatiket Jaya. All Rights Reserved
+                    Copyright &copy; PT. Zeeber Sentosa. All Rights Reserved
                 </div>
             </div>
         </div>

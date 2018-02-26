@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="col-md-10">
-                        <strong class="text-primary" style="margin-bottom: 15px; display: inline-block;"><img src="\img\icons\search-blue.png" alt="" class="my-icon">&nbsp;Cari tiket pesawat</strong>
+                        <strong class="text-primary" style="margin-bottom: 15px; display: inline-block; color: #fff;"><img src="\img\icons\search-blue.png" alt="" class="my-icon">&nbsp;Cari tiket pesawat</strong>
                         <form action="{{ route('flight.search') }}" method="POST">
                             {{ csrf_field() }}
 
@@ -301,7 +301,7 @@
 </div>
 <div class="my-container">
     <div class="row" style="margin-bottom: 30px">
-        <h3 class="text-center">Kenapa Memilih Rajatiket?</h3>
+        <h3 class="text-center">Kenapa Memilih Zeeber?</h3>
         <div class="title-border"></div>
         <div class="col-md-4 text-center">
             <img src="/img/icons/why_choose/24_hours.png" alt=""><br>
@@ -318,7 +318,7 @@
     </div>
     <div class="row" style="margin-bottom: 30px">
         <div class="col-md-4">
-            <h3>Partner Rajatiket</h3>
+            <h3>Partner Zeeber</h3>
             <div class="title-border" style="margin-left: 0px"></div>
             <p>Kami bekerja sama dengan berbagai maskapai penerbangan & PT KAI untuk membawa Anda ke mana pun Anda inginkan!</p>
         </div>
@@ -395,11 +395,11 @@
                         <input type="email" class="form-control" placeholder="Masukkan email anda" style="width: 250px">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-warning">Langganan</button>
+                         <button class="btn btn-warning">Langganan</button>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
+   </div>
 </div>
 @endsection

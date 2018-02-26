@@ -34,7 +34,7 @@
     <script type="text/javascript" src="/plugins/datatables/js/jquery.highlight.js"></script>
     <script type="text/javascript" src="/plugins/select2/select2.min.js"></script>
 </head>
-<body>
+<body style="background: url('img/banner_fadil.jpg') no-repeat cover">
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
@@ -50,7 +50,7 @@
 
                     <!-- Branding Image -->
                     <a href="/" class="navbar-brand">
-                        <img src="{{ asset('img/logo.png') }}" alt="Rajatiket">
+                        <img src="{{ asset('img/zeeber.png') }}" alt="Rajatiket">
                     </a>
                 </div>
 
@@ -198,9 +198,10 @@
             </div>
         </div>
         <div class="footer" style="padding-top: 0">
+            <img src="/img/zeeberman.png" alt="" class="my-zeeber-man">
             <div class="my-container">
                 <div class="footer-sign" style="border-top: none">
-                    Copyright &copy; PT. Rajatiket Jaya. All Rights Reserved
+                    Copyright &copy; PT. Zeeber Sentosa. All Rights Reserved
                 </div>
             </div>
         </div>
