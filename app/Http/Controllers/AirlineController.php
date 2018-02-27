@@ -75,6 +75,7 @@ class AirlineController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         if ($request->file('image') != null) {
             $path = $request->file('image')->store('public/img');
             
