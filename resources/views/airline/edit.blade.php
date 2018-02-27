@@ -8,6 +8,19 @@
             <form class="form-horizontal" method="POST" action="{{ route('airline.update', ['id' => $airline->id]) }}">
                 {{ csrf_field() }}
                 {{ method_field('PUT') }}
+                
+                <div class="form-group">
+                    <label for="image" class="col-md-4 control-label">Gambar</label>
+                    <div class="col-md-6">
+                        <input id="image" type="file" class="form-control" name="image" autofocus>
+
+                        @if ($errors->has('image'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('image') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <label for="code" class="col-md-4 control-label">Kode</label>
