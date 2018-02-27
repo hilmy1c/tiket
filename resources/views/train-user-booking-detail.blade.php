@@ -58,7 +58,7 @@
                     <strong class="text-black booking-sub-title">Detail Perjalanan</strong>
                 </div>
                 <div class="panel-body" style="padding-top: 0">
-                    <div class="row bg-default" style="margin-bottom: 15px">
+                    <div class="row bg-default" style="margin-bottom: 15px; color: #777">
                         <div class="col-md-8">
                             {{ $booking->bookingDetail->trainJourney->trainRoute->train->name }} {{ $booking->bookingDetail->trainJourney->trainRoute->train->train_number }}
                         </div>
@@ -95,7 +95,7 @@
                     </div>
                     <?php $i = 1 ?>
                     @foreach ($booking->passengers as $passenger)
-                    <div class="row booking-passenger-list">
+                    <div class="row booking-passenger-list" style="color: #bbb">
                         <div class="col-md-12">
                             {{ $i }}. <strong>{{ $passenger->appellation .' '. $passenger->name }}</strong>  
                         </div>

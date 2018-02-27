@@ -23,11 +23,11 @@
                 		</div>
                 		<h4 class="booking-sub-title">Pilih Rekening Tujuan</h4>
                         @foreach ($bank_accounts as $bank_account)
-                		<div class="alert alert-default alert-list">
+                		<div class="alert alert-default alert-list" style="color: #777">
     						<input type="radio" name="bank_id" value="{{ $bank_account->id }}" class="radio-bank">&nbsp;&nbsp;&nbsp;{{ $bank_account->bank_name }} <img src="{{ Storage::url($bank_account->image) }}" alt="" class="bank-icon pull-right">
                 		</div>
                         @endforeach
-                		<div class="row bg-default" style="border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin-bottom: 10px">
+                		<div class="row bg-default" style="border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin-bottom: 10px; color: #777">
                 			<div class="col-md-12" style="margin-bottom: 15px">
                 				<h4 class="booking-sub-title">Rincian Harga</h4>
                 			</div>
@@ -76,7 +76,7 @@
         			<div class="row" style="margin-top: 15px; margin-bottom: 15px"><div class="horizontal-line"></div></div>
         			<strong class="text-grey booking-sub-title2">DAFTAR PENUMPANG</strong><br>
 					@foreach ($booking->passengers as $passenger)
-						<div class="row booking-passenger-list">
+						<div class="row booking-passenger-list" style="color: #aaa;">
 							<div class="col-md-8">
 								{{ $passenger->appellation . " " . $passenger->name }}
 							</div>

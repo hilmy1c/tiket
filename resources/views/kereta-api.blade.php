@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="col-md-10">
-                        <strong class="text-primary" style="margin-bottom: 15px; display: inline-block;"><img src="\img\icons\search-blue.png" alt="" class="my-icon">&nbsp;Cari tiket kereta api</strong>
+                        <strong class="text-primary" style="margin-bottom: 15px; display: inline-block; color: #fff;"><img src="\img\icons\search-blue.png" alt="" class="my-icon">&nbsp;Cari tiket kereta api</strong>
                         <form action="{{ route('train_journey.search') }}" method="POST">
                             {{ csrf_field() }}
 

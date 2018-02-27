@@ -3,9 +3,9 @@
 @section('content')
 <div class="train-banner" style="height: 250px">
     <div class="my-container">
-        <h2 class="text-white">Pesan tiket dari mana saja, dimana saja</h2>
+        <h2 class="text-white">Pesan tiket dari mana saja, kapan saja</h2>
         <p class="text-white" style="font-size: 17px">Mulai dari mencari jadwal, memesan tiket kereta api, sampai melakukan pembayaran<br>
-        &mdash;sekarang semuanya bisa Anda lakukan dengan mudah melalui Rajatiket</p>
+       sekarang semuanya bisa Anda lakukan dengan mudah melalui Zeeber</p>
     </div>
 </div>
 <div class="bg-default">

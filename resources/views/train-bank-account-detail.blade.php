@@ -11,7 +11,7 @@
 						<span class="num-payment-guide">1</span>
 						<strong>Selesaikan Pembayaran Sebelum</strong>
 					</h4>
-					<div class="alert alert-default">
+					<div class="alert alert-default" style="color: #777">
 						<h4 class="booking-sub-title"><strong>Hari ini {{ date('H:i') }}</strong></h4>
 						Selesaikan pembayaran dalam <span id="countdown"></span>
 					</div>
@@ -19,7 +19,7 @@
 						<span class="num-payment-guide">2</span>
 						<strong>Mohon Transfer ke:</strong>
 					</h4>
-					<div class="alert alert-default" style="padding-top: 0">
+					<div class="alert alert-default" style="padding-top: 0; color: #777">
 						<div class="row bg-default" style="margin-bottom: 10px">
 							<h4 class="booking-sub-title col-md-8"><strong>{{ $booking->bankAccount->bank_name }}</strong></h4>
 							<div class="col-md-4 text-right"><img src="{{ Storage::url($booking->bankAccount->image) }}" alt="" width="50px" style="vertical-align: middle;"></div>
@@ -48,7 +48,7 @@
 						<span class="num-payment-guide">3</span>
 						<strong>Anda Sudah Membayar?</strong>
 					</h4>
-					<div class="alert alert-default">
+					<div class="alert alert-default" style="color: #777">
 						<p style="line-height: 30px">Setelah pembayaran Anda dikonfirmasi, kami akan mengirim e-tiket penerbangan ke alamat email Anda.</p>
 						<form action="{{ route('booking.update_payment', ['id' => $booking->id]) }}" method="POST">
 							{{ csrf_field() }}
@@ -76,7 +76,7 @@
         			<div class="row" style="margin-top: 15px; margin-bottom: 15px"><div class="horizontal-line"></div></div>
         			<strong class="text-grey booking-sub-title2">DAFTAR PENUMPANG</strong><br>
 					@foreach ($booking->passengers as $passenger)
-						<div class="row booking-passenger-list">
+						<div class="row booking-passenger-list" style="color: #aaa">
 							<div class="col-md-8">
 								{{ $passenger->appellation . " " . $passenger->name }}
 							</div>

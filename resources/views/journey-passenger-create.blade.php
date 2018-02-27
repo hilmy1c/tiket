@@ -151,7 +151,7 @@
             
         
         <div class="col-md-4">
-            <div class="panel panel-default" style="background-color: #f7f7f7">
+            <div class="panel panel-default" style="background-color: #f7f7f7; color: #777;">
                 <div class="panel-heading" style="background-color: #ddd;color: #000">
                     <h4 class="bold">Perjalanan Kereta</h4>
                     <span class="text-grey">{{ date('l, d F Y', strtotime($departure_time)) }}</span>
