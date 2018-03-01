@@ -12,8 +12,8 @@
 						<strong>Selesaikan Pembayaran Sebelum</strong>
 					</h4>
 					<div class="alert alert-default">
-						<h4 class="booking-sub-title"><strong>Hari ini {{ date('H:i') }}</strong></h4>
-						Selesaikan pembayaran dalam <span id="countdown"></span>
+						<h4 class="booking-sub-title"><strong>Hari ini <span id="now"></span></strong></h4>
+						Selesaikan pembayaran dalam <span id="countdown">1 Jam</span>
 					</div>
 					<h4 class="booking-sub-title">
 						<span class="num-payment-guide">2</span>
@@ -92,11 +92,7 @@
 
 <script>
 	$(document).ready(function () {
-		var date = moment().format('YYYY/MM/DD');
-
-		$("#countdown").countdown(date, function(event) {
-    		$(this).text(event.strftime('%H jam %M menit'));
-  		});
+		$("#now").text(moment().format('hh:mm'));
 	});
 </script>
 @endsection

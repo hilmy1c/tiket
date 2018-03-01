@@ -101,8 +101,8 @@ Route::group(['prefix' => 'booking', 'middleware' => 'auth:admin'], function () 
 });
 
 Route::post('/flight/search', 'FlightController@search')->name('flight.search');
-
 Route::post('/flight/get_flight_number/{id}', 'FlightController@getFlightNumber');
+Route::post('/flight/get_quota/{id}', 'FlightController@getQuota');
 
 Route::group(['prefix' => 'passenger'], function () {
     Route::get('/', 'PassengerController@index')->name('passenger.index');

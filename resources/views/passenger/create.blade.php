@@ -18,6 +18,7 @@
                 <input type="hidden" name="adult_fare" value="{{ $adult_fare }}">
                 <input type="hidden" name="child_fare" value="{{ $child_fare }}">
                 <input type="hidden" name="baby_fare" value="{{ $baby_fare }}">
+                <input type="hidden" name="class" value="{{ $class }}">
 
                 <div class="panel panel-default">
                     <div class="panel-heading"><strong>Data Pemesan</strong></div>
@@ -271,7 +272,7 @@
                         <img src="{{ Storage::url($flight->airplane->airline->image) }}" alt="" width="70px" style="margin-right: 20px;">
                         <p style="display: inline-block;">
                             <strong>{{ $flight->airplane->airline->name }}</strong><br>
-                            <small class="text-grey">{{ $class }}</small>
+                            <small class="text-grey">{{ ucwords($class) }}</small>
                         </p>
                     </div>
                     <div class="row" style="position: relative;">

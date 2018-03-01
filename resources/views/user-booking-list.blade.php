@@ -90,7 +90,7 @@
 								<img src="/img/icons/more.png" class="my-icon" alt="">
 							</a>
 							@elseif($booking->payment_status == 'Sudah Dibayar')
-							<a href="javascript:" data-toggle="popover" data-content="<a href='{{ route('booking.cetak_tiket', ['id' => $booking->id]) }}' class='popover-text bold text-black'>Cetak Tiket</a>" style="margin-left: 15px">
+							<a href="javascript:" data-toggle="popover" data-content="<a href='{{ route('booking.cetak_tiket', ['id' => $booking->id]) }}' class='popover-text bold text-black'>Cetak Tiket</a><a href='{{ route('booking.delete', ['id' => $booking->id]) }}' class='popover-text bold text-danger'>Hapus Pesanan</a>" style="margin-left: 15px">
 								<img src="/img/icons/more.png" class="my-icon" alt="">
 							</a>
 							@endif

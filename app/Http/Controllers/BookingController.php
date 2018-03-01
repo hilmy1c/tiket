@@ -166,6 +166,26 @@ class BookingController extends Controller
 
     public function confirmPayment($id)
     {
+        $booking = Booking::find($id);
+
+        if ($booking->bookingDetail->flight_number != null) {
+            $flight_id = $booking->bookingDetail->flight->id;
+            $class = $booking->passengers->first()->class;
+            $passenger_number = (int) $booking->bookingDetail->adult_number + (int) $booking->bookingDetail->child_number + (int) $booking->bookingDetail->baby_number;
+
+            dd($class);
+
+            if ($class == 'economy') {
+                Flight::find($flight_id)->update([
+                    'economy_quota' => abs((int) $passenger_number - (int) Flight::find($flight_id)->economy_quota)
+                ]);
+            } else {
+                Flight::find($flight_id)->update([
+                    'business_quota' => abs((int) $passenger_number - (int) Flight::find($flight_id)->business_quota)
+                ]);
+            }
+        }
+
         Booking::find($id)->update([
             'payment_status' => 'Sudah Dibayar'
         ]);
@@ -185,8 +205,7 @@ class BookingController extends Controller
     public function cetakTiket($id)
     {
         $data['booking'] = Booking::with('bookingDetail.flight.airplane')->find($id);
-        $data['class'] = FlightFare::where('flight_id', $data['booking']->bookingDetail->flight->id)->first()->class;
-
+        $data['class'] = Booking::find($id)->passengers->first()->class;
         $pdf = SnappyPdf::loadView('etiket', $data);
         return $pdf->download('tiket-pesawat-' . date('YMdHis') . '-' . $data['booking']->user->name);
     }

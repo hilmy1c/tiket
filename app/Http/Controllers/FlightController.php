@@ -61,13 +61,17 @@ class FlightController extends Controller
      */
     public function store(Request $request)
     {
+        $quota = Airplane::find($request->airplane_id);
+
         Flight::create([
             'flight_number' => $request->flight_number,
             'from_airport_id' => $request->from_airport_id,
             'destination_airport_id' => $request->destination_airport_id,
             'departure_time' => $request->departure_time,
             'arrival_time' => $request->arrival_time,
-            'airplane_id' => $request->airplane_id
+            'airplane_id' => $request->airplane_id,
+            'economy_quota' => $quota->economy_seat_number,
+            'business_quota' => $quota->business_seat_number
         ]);
 
         return redirect()->route('flight_fare.create', ['id' => $request->flight_number]);
@@ -127,10 +131,19 @@ class FlightController extends Controller
         $data['jawa'] = Airport::all();
         $data['sumatera'] = Airport::all();
         
-        $data['flights'] = Flight::where([
-            ['from_airport_id', $request->from],
-            ['destination_airport_id', $request->destination],
-        ])->whereDate('departure_time', $request->departure_time)->get();
+        if ($request->class == 'economy') {
+            $data['flights'] = Flight::where([
+                ['from_airport_id', $request->from],
+                ['destination_airport_id', $request->destination],
+                ['economy_quota', '!=', 0]
+            ])->whereDate('departure_time', $request->departure_time)->get();
+        } else {
+            $data['flights'] = Flight::where([
+                ['from_airport_id', $request->from],
+                ['destination_airport_id', $request->destination],
+                ['business_quota', '!=', 0]
+            ])->whereDate('departure_time', $request->departure_time)->get();
+        }
 
         foreach ($data['flights'] as $flight) {
             $prevVal = 0;
@@ -218,5 +231,12 @@ class FlightController extends Controller
         }
 
         return $acak;
+    }
+
+    public function getQuota($id)
+    {
+        $airplane = Airplane::find($id);
+
+        echo (int) $airplane->economy_seat_number + (int) $airplane->business_seat_number;
     }
 }
