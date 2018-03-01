@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rajatiket</title>
+    <title>ZeeberTicket</title>
     <style>
     	body {
     		max-width: 896px;
@@ -182,7 +182,7 @@
 					<h2 class="text-blue bold" style="margin: 0">{{ $booking->booking_code }}</h2>
 				</div>
 				<div class="col-md-12">
-					<small>No. Pesanan Rajatiket</small><br>
+					<small>No. Pesanan ZeeberTicket</small><br>
 					<strong>{{ $booking->id }}</strong>
 				</div>
 			</div>

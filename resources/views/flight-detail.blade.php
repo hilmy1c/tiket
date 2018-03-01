@@ -77,7 +77,7 @@
 						@endif
 					</div>
 					<div class="row" style="background-color: #f7f7f7; padding-bottom: 15px">
-						<div class="harga-total">
+						<div class="harga-total" style="color: #777;">
 							<div class="col-md-7">
 								Harga yang Anda bayar
 							</div>

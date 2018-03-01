@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zeeber - Mudah dan Aman</title>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -57,7 +58,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="dropdown">
-                                <a style="color: #aaa; font-weight: bold;" href="#" class="dropdown-toggle" data-toggle="dropdown" id="login" role="button" aria-expanded="false" aria-haspopup="true">
+                                <a style="color: #ccc; font-weight: bold;" href="#" class="dropdown-toggle" data-toggle="dropdown" id="login" role="button" aria-expanded="false" aria-haspopup="true">
                                     Login</span>
                                 </a>
                                 <div class="dropdown-menu my-dropdown-menu" aria-labelledby="login">
@@ -75,15 +76,15 @@
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-warning col-md-4">Sign In</button>
-                                            <p class="col-md-8" style="font-size: 13px; margin-bottom: 0">Belum punya akun? <a href="{{ route('register') }}" style="line-height: 5px">Daftar</a></p>
+                                            <p class="col-md-8" style="font-size: 13px; margin-bottom: 0; color: #777;">Belum punya akun? <a href="{{ route('register') }}" style="line-height: 5px">Daftar</a></p>
                                         </div>
                                     </form>
                                 </div>
                             </li>
-                            <li><a style="color: #aaa; font-weight: bold;" href="{{ route('register') }}">Daftar</a></li>
+                            <li><a style="color: #ccc; font-weight: bold;" href="{{ route('register') }}">Daftar</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" style="color: #ccc;">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 

@@ -65,7 +65,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="login" role="button" aria-expanded="false" aria-haspopup="true">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="login" role="button" aria-expanded="false" aria-haspopup="true" style="color: #ccc;">
                                     Login</span>
                                 </a>
                                 <div class="dropdown-menu my-dropdown-menu" aria-labelledby="login">
@@ -88,10 +88,10 @@
                                     </form>
                                 </div>
                             </li>
-                            <li><a href="{{ route('register') }}">Daftar</a></li>
+                            <li><a href="{{ route('register') }}" style="color: #ccc;">Daftar</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" style="color: #ccc;">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
