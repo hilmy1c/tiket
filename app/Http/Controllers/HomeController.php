@@ -15,8 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$data['jawa'] = Airport::all();
-        $data['sumatera'] = Airport::all();
+    	$data['airports'] = Airport::all();
         $data['startAirport'] = Airport::where('code', 'HLP')->first();
         $data['endAirport'] = Airport::where('code', 'BDO')->first();
 

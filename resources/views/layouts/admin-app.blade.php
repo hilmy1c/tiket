@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Rajatiket') }} Admin - @yield('title')</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -50,7 +50,7 @@
 
                     <!-- Branding Image -->
                     <a href="/" class="navbar-brand">
-                        <img src="{{ asset('img/logo.png') }}" alt="Rajatiket">
+                        <img src="{{ asset('img/logo_admin.png') }}" alt="Rajatiket">
                     </a>
                 </div>
 
@@ -92,18 +92,18 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::guard('admin')->user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a href="{{ route('logout') }}"
+                                        <a href="{{ route('admin.logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             <img src="/img/icons/logout.png" alt="" class="my-icon">&nbsp;&nbsp;Logout
                                         </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
@@ -120,7 +120,8 @@
                     <nav class="sidebar-menu-container">
                         <ul class="sidebar-menu">
                             <li>
-                                <a href="{{ route('admin.home') }}"><img src="/img/icons/sidebar/combo-chart.png" class="my-icon" alt="">Dashboard</a>
+                                <a href="{{ route('user.index') }}">
+                                    <img src="/img/icons/user.png" class="my-icon" alt="">User</a>
                             </li>
                             <li>
                                 <a href="{{ route('airline.index') }}">
@@ -135,17 +136,9 @@
                                     <img src="/img/icons/sidebar/runway.png" class="my-icon" alt="">Bandara</a>
                             </li>
                             <li>
-                                <a href="javascript:" data-toggle="collapse" data-target="#sub-menu">
-                                    <img src="/img/icons/sidebar/booking.png" class="my-icon" alt="">Bookings <span class="pull-right"><i class="caret"></i></span>
+                                <a href="{{ route('booking.index') }}">
+                                    <img src="/img/icons/sidebar/booking.png" class="my-icon" alt="">Booking</span>
                                 </a>
-                                <ul class="sidebar-menu collapse my-collapse" id="sub-menu">
-                                    <li>
-                                        <a href="{{ route('booking.index') }}">Data</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('booking.detail') }}">Details</a>
-                                    </li>
-                                </ul>
                             </li>
                             <li>
                                 <a href="{{ route('city.index') }}">

@@ -75,8 +75,11 @@ class AirlineController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if ($request->image != "") {
+            $request->validate([
+                'image' => 'required|mimes:jpeg,jpg,png|max:1000'
+            ]);
 
-        if ($request->file('image') != null) {
             $path = $request->file('image')->store('public/img');
             
             Airline::find($id)->update([

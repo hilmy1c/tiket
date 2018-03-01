@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     	<img src="/img/icons/logout.png" class="my-icon" alt="">&nbsp;&nbsp;&nbsp;Logout
                     </a>
                 </li>
@@ -27,8 +27,8 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="header-account">
-                        <a href="javascript:void(0)" class="booking-sub-title text-primary active" id="heading1"><strong>Login ID</strong></a>
-                        <a href="javascript:void(0)" class="booking-sub-title text-primary" id="heading2"><strong>Ganti Password</strong></a>
+                        <a href="" class="booking-sub-title text-primary active" id="heading1"><strong>Login ID</strong></a>
+                        <a href="{{ route('user.reset_password', ['id' => Auth::id()]) }}" class="booking-sub-title text-primary" id="heading2"><strong>Ganti Password</strong></a>
                     </div>
                     <div class="loginid">
                         <div class="alert alert-default" style="padding: 10px 20px 10px 20px; margin-bottom: 15px">
@@ -44,28 +44,8 @@
                         <div class="alert alert-default" style="padding: 10px 20px 10px 20px; margin-bottom: 15px">
                             <small>Password</small><br>
                             <input type="password" class="input-hidden" value="{{ Auth::user()->password }}" readonly>
-                            <a href="javascript:void(0)" class="pull-right text-primary" id="ubahPassword">Ubah</a>
+                            <a href="{{ route('user.reset_password', ['id' => Auth::id()]) }}" class="pull-right text-primary" id="ubahPassword">Ubah</a>
                         </div>
-                    </div>
-                    <div class="change-password" style="display: none;">
-                        <form action="{{ route('user.reset_password', ['id' => Auth::id()]) }}">
-                            {{ csrf_field() }}
-
-                            <i style="margin-bottom: 15px; display: inline-block;">Gunakan password yang belum pernah Anda pakai di situs web lain</i>
-                            <div class="alert alert-default" style="padding: 10px 20px 10px 20px; margin-bottom: 15px">
-                                <small>Password Lama</small><br>
-                                <input type="password" class="input-hidden" name="old_password" autofocus>
-                            </div>
-                            <div class="alert alert-default" style="padding: 10px 20px 10px 20px; margin-bottom: 15px">
-                                <small>Password Baru</small><br>
-                                <input type="password" class="input-hidden" name="new_password">
-                            </div>
-                            <div class="alert alert-default" style="padding: 10px 20px 10px 20px; margin-bottom: 15px">
-                                <small>Konfirmasi Password</small><br>
-                                <input type="password" class="input-hidden" name="password_confirmation">
-                            </div>
-                            <button type="submit" class="btn btn-warning bold editpassword-btn">Ganti Password</button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -74,28 +54,7 @@
 </div>
 
 <script>
-    var id = "{{ Auth::id() }}";
-
-    $("#heading1").click(function(event) {
-        $(this).addClass('active');
-        $("#heading2").removeClass('active');
-        $(".loginid").css('display', 'block');
-        $(".change-password").css('display', 'none');
-    });
-
-    $("#heading2").click(function(event) {
-        $(this).addClass('active');
-        $("#heading1").removeClass('active');
-        $(".change-password").css('display', 'block');
-        $(".loginid").css('display', 'none');
-    });
-
-    $("#ubahPassword").click(function(event) {
-        $("#heading2").addClass('active');
-        $("#heading1").removeClass('active');
-        $(".change-password").css('display', 'block');
-        $(".loginid").css('display', 'none');
-    });
+    var id = {{ Auth::id() }}
 
     $(".edit").click(function(event) {
         var field = $(this).closest('.alert').find('.input-hidden');

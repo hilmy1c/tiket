@@ -13,7 +13,7 @@ class AdminLoginController extends Controller
 {
 	use RedirectsUsers;
 
-	protected $redirectTo = '/admin/home';
+	protected $redirectTo = '/user';
 
     public function __construct()
     {
@@ -33,7 +33,7 @@ class AdminLoginController extends Controller
     	]);
 
     	if (Auth::guard('admin')->attempt($request->only('email', 'password'))) {
-    		return redirect()->intended($this->redirectPath());
+    		return redirect()->intended($this->redirectPath())->with('status', 'Anda berhasil login.');
     	}
 
     	throw ValidationException::withMessages([
@@ -45,6 +45,11 @@ class AdminLoginController extends Controller
     {
         Auth::guard('admin')->logout();
 
-        return redirect('/');
+        return redirect('/admin/login');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        return redirect()->route('user.index');
     }
 }

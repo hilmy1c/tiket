@@ -1,5 +1,7 @@
 @extends('layouts.admin-app')
 
+@section('title', 'Booking')
+
 @section('content')
 <div class="col-md-9">
     <h4><strong>Booking</strong></h4>

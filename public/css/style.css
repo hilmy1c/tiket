@@ -627,8 +627,14 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 
 .alert-info {
 	background-color: #E3F2FD;
-	color: #777;
+	color: #000;
 	border-color: #2196f3;
+}
+
+.alert-success {
+	background-color: #C8E6C9;
+	color: #000;
+	border-color: #00A651;
 }
 
 .booking-sub-title {
@@ -895,4 +901,9 @@ button {
 
 .editpassword-btn {
 	padding: 10px 20px 10px 20px;
+}
+
+.img-wrapper {
+	text-align: center;
+	margin-bottom: 15px;
 }

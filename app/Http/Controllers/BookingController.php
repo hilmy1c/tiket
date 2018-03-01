@@ -35,7 +35,7 @@ class BookingController extends Controller
     {
         Booking::create([
             'booking_code' => $request->booking_code,
-            'user_id' => Auth::id(),
+            'user_id' => Auth::guard('web')->id(),
             'booking_date' => date('Y-m-d'),
             'is_paid' => false,
         ]);
@@ -133,7 +133,7 @@ class BookingController extends Controller
             'payment_status' => 'Menunggu Konfirmasi'
         ]);
 
-        return redirect()->route('user.booking_history', ['id' => Auth::id()]);
+        return redirect()->route('user.booking_history', ['id' => Auth::guard('web')->id()]);
     }
 
     public function delete($id)
@@ -225,6 +225,6 @@ class BookingController extends Controller
             'image' => $path
         ]);
 
-        return redirect()->route('user.booking_history', ['id' => Auth::user()->id]);
+        return redirect()->route('user.booking_history', ['id' => Auth::guard('web')->user()->id]);
     }
 }

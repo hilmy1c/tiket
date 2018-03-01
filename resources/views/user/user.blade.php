@@ -1,43 +1,51 @@
 @extends('layouts.admin-app')
 
+@section('title', 'User')
+
 @section('content')
-<div class="container" style="margin-top: 20px">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Users</div>
-
-                <div class="panel-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>E-mail</th>
-                            <th>Phone</th>
-                            <th class="text-center">Action</th>
-                        </thead>
-                        <tbody>
-                            @foreach ($users as $user)
-                            <tr>
-                                <td>{{ $user->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ $user->phone }}</td>
-                                <td>
-                                    <a href="{{ route('user.edit', ['id' => $user->id]) }}" class="btn btn-default">Edit</a>
-                                    <form action="{{ route('user.destroy', ['id' => $user->id]) }}" method="POST">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
-
-                                        <button type="submit" class="btn btn-danger">Delete</a>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+<div class="col-md-9">
+    <h4><strong>User</strong></h4>
+    <div class="panel panel-default">
+        
+        <div class="panel-body">
+            @if (session('status'))
+                <div class="alert alert-success" style="position: relative"`>
+                    <div class="row">
+                        <img src="/img/icons/checkmark.png" alt="" class="my-icon" style="position: absolute; top: 50%; transform: translateY(-50%); left: 22px">
+                        <div class="col-md-11 pull-right">
+                            {{ session('status') }}
+                        </div>
+                    </div>
                 </div>
-            </div>
+            @endif
+
+            <table class="table table-bordered">
+                <thead>
+                    <th>Id</th>
+                    <th>Nama</th>
+                    <th>E-mail</th>
+                    <th>Telepon</th>
+                    <th class="text-center">Aksi</th>
+                </thead>
+                <tbody>
+                    @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->phone }}</td>
+                        <td>
+                            <form action="{{ route('user.destroy', ['id' => $user->id]) }}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+
+                                <button type="submit" class="btn btn-sm btn-danger">Delete</a>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
