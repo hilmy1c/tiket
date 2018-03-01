@@ -24,6 +24,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/{id}/history_detail', 'BookingController@historyDetail')->name('user.history_detail');
     Route::get('/{id}/train_history_detail', 'BookingController@trainHistoryDetail')->name('user.train_history_detail');
     Route::get('/{id}/account', 'UserController@account')->name('user.account');
+    Route::post('update_profile/{id}', 'UserController@updateProfile')->name('user.update_profile');
 });
 
 Route::resource('/airplane', 'AirplaneController');

@@ -233,6 +233,7 @@ a.bg-danger:focus {
 a.text-primary:hover,
 a.text-primary:focus {
 	color: #2196f3;
+	text-decoration: none;
 }
 
 .text-warning {
@@ -856,4 +857,42 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 .input-readonly {
 	background-color: transparent;
 	border: none;
+}
+
+.input-hidden {
+	border: none;
+	background-color: transparent;
+	font-weight: bold;
+}
+
+.header-account a {
+	display: inline-block;
+	margin: 0;
+	margin-right: 20px;
+	padding-bottom: 20px;
+	color: #89cafe;
+}
+
+.header-account a.active {
+	border-bottom: 3px solid #2196f3;
+	cursor: pointer;
+	color: #2196f3;
+}
+
+.header-account {
+	margin-bottom: 20px;
+	border-bottom: 1px solid #ddd;
+	margin-top: 10px;
+}
+
+input {
+	outline: none;
+}
+
+button {
+	outline: none;
+}
+
+.editpassword-btn {
+	padding: 10px 20px 10px 20px;
 }

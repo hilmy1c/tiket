@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 
 class UserController extends Controller
 {
@@ -60,5 +61,23 @@ class UserController extends Controller
         $data['user'] = User::find($id);
 
         return view('my-account', $data);
+    }
+
+    public function updateProfile(Request $request, $id)
+    {
+        User::find($id)->update($request->all());
+
+        echo json_encode('Ubah');
+    }
+
+    public function resetPassword(Request $request, $id)
+    {
+        $request->validate([
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|confirmed|min:6',
+        ]);
+
+        Password::broker()->reset($request->only(''));
     }
 }
