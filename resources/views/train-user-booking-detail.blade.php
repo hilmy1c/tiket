@@ -13,7 +13,7 @@
                     <a href="{{ route('user.booking_history', ['id' => Auth::id()]) }}" class="active"><img src="/img/icons/sidebar/purchase-order.png" class="my-icon" alt="">&nbsp;&nbsp;&nbsp;Pesanan Saya</a>
                 </li>
                 <li>
-                    <a href=""><img src="/img/icons/logout.png" class="my-icon" alt="">&nbsp;&nbsp;&nbsp;Logout</a>
+                    <a href="{{ route('logout') }}"" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="/img/icons/logout.png" class="my-icon" alt="">&nbsp;&nbsp;&nbsp;Logout</a>
                 </li>
             </ul>
     	</div>

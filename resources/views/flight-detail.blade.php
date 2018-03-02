@@ -101,6 +101,7 @@
                 <input type="hidden" name="child_fare" value="{{ $child_fare }}">
                 <input type="hidden" name="baby_fare" value="{{ $baby_fare }}">
                 <input type="hidden" name="fare_total" value="{{ $fare }}">
+                <input type="hidden" name="class" value="{{ strtolower($class) }}">
 
 				<button type="submit" class="btn btn-warning col-md-12" style="margin-bottom: 20px;">Lanjut Pembayaran</button>
 			</form>

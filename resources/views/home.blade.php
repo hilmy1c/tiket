@@ -58,7 +58,7 @@
                                                         </div>
                                                         <div class="col-md-9" style="padding-top: 5px; padding-bottom: 5px">
                                                             <div class="row cities" style="display: block">
-                                                                @foreach ($jawa as $airport)
+                                                                @foreach ($airports as $airport)
                                                                     @foreach ($airport->city()->where('island', 'Jawa')->get() as $city)
                                                                     <div class="col-md-3 cities-list">
                                                                         <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
@@ -67,7 +67,7 @@
                                                                 @endforeach
                                                             </div>
                                                             <div class="row cities">
-                                                                @foreach ($sumatera as $airport)
+                                                                @foreach ($airports as $airport)
                                                                     @foreach ($airport->city()->where('island', 'Sumatera')->get() as $city)
                                                                     <div class="col-md-3 cities-list">
                                                                         <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
@@ -76,23 +76,45 @@
                                                                 @endforeach
                                                             </div>
                                                             <div class="row cities">
+                                                                @foreach ($airports as $airport)
+                                                                    @foreach ($airport->city()->where('island', 'Kalimantan')->get() as $city)
+                                                                    <div class="col-md-3 cities-list">
+                                                                        <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
+                                                                    </div>
+                                                                    @endforeach
+                                                                @endforeach
+                                                            </div>
+                                                            <div class="row cities">
                                                                 <div class="col-md-3 cities-list">
-                                                                    Kalimantan
+                                                                    @foreach ($airports as $airport)
+                                                                        @foreach ($airport->city()->where('island', 'Sulawesi')->get() as $city)
+                                                                        <div class="col-md-3 cities-list">
+                                                                            <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
+                                                                        </div>
+                                                                        @endforeach
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                             <div class="row cities">
                                                                 <div class="col-md-3 cities-list">
-                                                                    Sulawesi
+                                                                    @foreach ($airports as $airport)
+                                                                        @foreach ($airport->city()->where('island', 'Bali & Nusa Tenggara')->get() as $city)
+                                                                        <div class="col-md-3 cities-list">
+                                                                            <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
+                                                                        </div>
+                                                                        @endforeach
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                             <div class="row cities">
                                                                 <div class="col-md-3 cities-list">
-                                                                    Bali & Nusa Tenggara
-                                                                </div>
-                                                            </div>
-                                                            <div class="row cities">
-                                                                <div class="col-md-3 cities-list">
-                                                                    Maluku & Papua
+                                                                    @foreach ($airports as $airport)
+                                                                        @foreach ($airport->city()->where('island', 'Maluku')->orWhere('island', 'Papua')->get() as $city)
+                                                                        <div class="col-md-3 cities-list">
+                                                                            <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
+                                                                        </div>
+                                                                        @endforeach
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -138,7 +160,7 @@
                                                         </div>
                                                         <div class="col-md-9" style="padding-top: 5px; padding-bottom: 5px">
                                                             <div class="row cities" style="display: block">
-                                                                @foreach ($jawa as $airport)
+                                                                @foreach ($airports as $airport)
                                                                     @foreach ($airport->city()->where('island', 'Jawa')->get() as $city)
                                                                     <div class="col-md-3 cities-list">
                                                                         <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
@@ -147,7 +169,7 @@
                                                                 @endforeach
                                                             </div>
                                                             <div class="row cities">
-                                                                @foreach ($sumatera as $airport)
+                                                                @foreach ($airports as $airport)
                                                                     @foreach ($airport->city()->where('island', 'Sumatera')->get() as $city)
                                                                     <div class="col-md-3 cities-list">
                                                                         <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
@@ -156,23 +178,45 @@
                                                                 @endforeach
                                                             </div>
                                                             <div class="row cities">
+                                                                @foreach ($airports as $airport)
+                                                                    @foreach ($airport->city()->where('island', 'Kalimantan')->get() as $city)
+                                                                    <div class="col-md-3 cities-list">
+                                                                        <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
+                                                                    </div>
+                                                                    @endforeach
+                                                                @endforeach
+                                                            </div>
+                                                            <div class="row cities">
                                                                 <div class="col-md-3 cities-list">
-                                                                    Kalimantan
+                                                                    @foreach ($airports as $airport)
+                                                                        @foreach ($airport->city()->where('island', 'Sulawesi')->get() as $city)
+                                                                        <div class="col-md-3 cities-list">
+                                                                            <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
+                                                                        </div>
+                                                                        @endforeach
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                             <div class="row cities">
                                                                 <div class="col-md-3 cities-list">
-                                                                    Sulawesi
+                                                                    @foreach ($airports as $airport)
+                                                                        @foreach ($airport->city()->where('island', 'Bali & Nusa Tenggara')->get() as $city)
+                                                                        <div class="col-md-3 cities-list">
+                                                                            <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
+                                                                        </div>
+                                                                        @endforeach
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                             <div class="row cities">
                                                                 <div class="col-md-3 cities-list">
-                                                                    Bali & Nusa Tenggara
-                                                                </div>
-                                                            </div>
-                                                            <div class="row cities">
-                                                                <div class="col-md-3 cities-list">
-                                                                    Maluku & Papua
+                                                                    @foreach ($airports as $airport)
+                                                                        @foreach ($airport->city()->where('island', 'Maluku')->orWhere('island', 'Papua')->get() as $city)
+                                                                        <div class="col-md-3 cities-list">
+                                                                            <a href="javascript:" data-input="{{ $city->city }} ({{ $airport->code }})" data-id="{{ $airport->id }}">{{ $city->city }}</a>
+                                                                        </div>
+                                                                        @endforeach
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                         </div>

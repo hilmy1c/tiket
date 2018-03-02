@@ -15,6 +15,15 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
+use App\City;
+
+Route::get('/coba', function ()
+{
+    $cities = City::where('island', 'Jawa')->orWhere('island', 'Sumatera')->get();
+
+    dd($cities);
+});
+
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', 'UserController@index')->name('user.index');
     Route::get('/{id}/edit', 'UserController@edit')->name('user.edit');
@@ -24,6 +33,9 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/{id}/history_detail', 'BookingController@historyDetail')->name('user.history_detail');
     Route::get('/{id}/train_history_detail', 'BookingController@trainHistoryDetail')->name('user.train_history_detail');
     Route::get('/{id}/account', 'UserController@account')->name('user.account');
+    Route::get('/{id}/reset_password', 'UserController@resetPassword')->name('user.reset_password');
+    Route::post('update_profile/{id}', 'UserController@updateProfile')->name('user.update_profile');
+    Route::post('{id}/reset', 'UserController@reset')->name('user.reset');
 });
 
 Route::resource('/airplane', 'AirplaneController');
@@ -66,31 +78,31 @@ Route::group(['prefix' => 'admin'], function () {
 	Route::get('/home', 'AdminHomeController@index')->name('admin.home');
 	Route::get('/login', 'Auth\AdminLoginController@index')->name('admin.login');
 	Route::post('/login', 'Auth\AdminLoginController@login');
-	Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+	Route::post('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 });
 
-Route::group(['prefix' => 'booking'], function () {
+Route::group(['prefix' => 'booking', 'middleware' => 'auth:admin'], function () {
     Route::get('/', 'BookingController@index')->name('booking.index');
     Route::get('/{id}/create', 'BookingController@create')->name('booking.create');
-    Route::get('/{id}/payment', 'BookingController@payment')->name('booking.payment');
-    Route::get('/{id}/train_payment', 'BookingController@trainPayment')->name('booking.train_payment');
-    Route::get('/{id}/bank_account', 'BookingController@getBankAccount')->name('booking.bank_account');
-    Route::get('/{id}/train_bank_account', 'BookingController@getTrainBankAccount')->name('booking.train_bank_account');
+    Route::get('/{id}/payment', 'BookingController@payment')->name('booking.payment')->middleware('web');
+    Route::get('/{id}/train_payment', 'BookingController@trainPayment')->name('booking.train_payment')->middleware('web');
+    Route::get('/{id}/bank_account', 'BookingController@getBankAccount')->name('booking.bank_account')->middleware('web');
+    Route::get('/{id}/train_bank_account', 'BookingController@getTrainBankAccount')->name('booking.train_bank_account')->middleware('web');
     Route::put('/{id}/update_payment', 'BookingController@updatePaymentStatus')->name('booking.update_payment');
-    Route::get('/{id}', 'BookingController@delete')->name('booking.delete');
+    Route::get('/{id}', 'BookingController@delete')->name('booking.delete')->middleware('web');
     Route::delete('/{id}', 'BookingController@destroy')->name('booking.destroy');
     Route::post('/{id}/confirm_payment', 'BookingController@confirmPayment')->name('booking.confirm_payment');
     Route::post('/{id}/unconfirm_payment', 'BookingController@unconfirmPayment')->name('booking.unconfirm_payment');
-    Route::get('/{id}/cetak_tiket', 'BookingController@cetakTiket')->name('booking.cetak_tiket');
-    Route::get('/{id}/train_cetak_tiket', 'BookingController@trainCetakTiket')->name('booking.train_cetak_tiket');
+    Route::get('/{id}/cetak_tiket', 'BookingController@cetakTiket')->name('booking.cetak_tiket')->middleware('web');
+    Route::get('/{id}/train_cetak_tiket', 'BookingController@trainCetakTiket')->name('booking.train_cetak_tiket')->middleware('web');
     Route::get('/{id}/upload_pembayaran', 'BookingController@uploadPembayaran')->name('booking.upload_pembayaran');
-    Route::get('/{id}/train_upload_pembayaran', 'BookingController@trainUploadPembayaran')->name('booking.train_upload_pembayaran');
-    Route::post('/{id}/simpan_file', 'BookingController@simpanFileBuktiPembayaran')->name('booking.simpan_file');
+    Route::get('/{id}/train_upload_pembayaran', 'BookingController@trainUploadPembayaran')->name('booking.train_upload_pembayaran')->middleware('web');
+    Route::post('/{id}/simpan_file', 'BookingController@simpanFileBuktiPembayaran')->name('booking.simpan_file')->middleware('web');
 });
 
 Route::post('/flight/search', 'FlightController@search')->name('flight.search');
-
 Route::post('/flight/get_flight_number/{id}', 'FlightController@getFlightNumber');
+Route::post('/flight/get_quota/{id}', 'FlightController@getQuota');
 
 Route::group(['prefix' => 'passenger'], function () {
     Route::get('/', 'PassengerController@index')->name('passenger.index');

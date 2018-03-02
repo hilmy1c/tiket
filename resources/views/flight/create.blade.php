@@ -19,10 +19,18 @@
                     <label for="airplane_id" class="col-md-4 control-label">Pesawat</label>
                     <div class="col-md-6">
                         <select class="form-control" name="airplane_id" id="airplane_id">
+                            <option value="">---- Pilih ----</option>
                             @foreach ($airplanes as $airplane)
                             <option value="{{ $airplane->id }}">{{ $airplane->airline->name }} - {{ $airplane->aircraft_type }}</option>
                             @endforeach
                         </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-md-4 control-label">Kuota Penumpang</label>
+                    <div class="col-md-6">
+                        <input id="quota" type="text" class="form-control" name="" value="" readonly>
                     </div>
                 </div>
 
@@ -84,6 +92,17 @@
             type: "POST",
             success: function (res) {
                 $("#flight_number").val(res);
+
+                $.ajax({
+                    headers: {
+                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: "{{ url('flight/get_quota') . '/' }}" + id,
+                    type: "POST",
+                    success: function (res) {
+                        $("#quota").val(res);
+                    }
+                });
             },
         });
     });

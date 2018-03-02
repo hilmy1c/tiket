@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Rajatiket') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -84,19 +84,19 @@
                             <li><a style="color: #ccc; font-weight: bold;" href="{{ route('register') }}">Daftar</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" style="color: #ccc;">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    {{ Auth::guard('web')->user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu user-dropdown-menu" style="width: 250px">
                                     <li>
-                                        <a href="{{ route('user.account', ['id' => Auth::id()]) }}">
+                                        <a href="{{ route('user.account', ['id' => Auth::guard('web')->id()]) }}">
                                             <img src="/img/icons/user.png" alt="" class="my-icon">&nbsp;&nbsp;
                                             Ubah Profil
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('user.booking_history', ['id' => Auth::id()]) }}">
+                                        <a href="{{ route('user.booking_history', ['id' => Auth::guard('web')->id()]) }}">
                                             <img src="/img/icons/sidebar/purchase-order.png" alt="" class="my-icon">&nbsp;&nbsp;
                                             Pesanan Saya
                                         </a>

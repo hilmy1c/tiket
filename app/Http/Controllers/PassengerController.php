@@ -81,7 +81,8 @@ class PassengerController extends Controller
             		'booking_code' => $request->booking_code,
                     'appellation' => $request->{'adult_appellation_' . $i},
                     'name' => $request->{'adult_fullname_' . $i},
-                    'status' => 'Dewasa'
+                    'status' => 'Dewasa',
+                    'class' => $request->class
             	]);
             }
         }
@@ -94,6 +95,7 @@ class PassengerController extends Controller
                     'name' => $request->{'child_fullname_' . $i},
                     'status' => 'Anak',
                     'birthday' => $request->{'child_year_' . $i} . '-' .$request->{'child_month_' . $i} . '-' . $request->{'child_day_' . $i},
+                    'class' => $request->class
                 ]);
             }
         }
@@ -106,6 +108,7 @@ class PassengerController extends Controller
                     'name' => $request->{'baby_fullname_' . $i},
                     'status' => 'Bayi',
                     'birthday' => $request->{'baby_year_' . $i} . '-' . $request->{'baby_month_' . $i} . '-' . $request->{'baby_day_' . $i},
+                    'class' => $request->class
                 ]);
             }
         }

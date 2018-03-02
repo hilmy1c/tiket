@@ -7,7 +7,7 @@
         <div class="col-md-7">
             <div class="panel panel-default">
             	<div class="panel-heading text-center" style="background-color: #E3F2FD; border-color: #E3F2FD">
-            		<strong class="text-primary">Selesaikan pembayaran dalam 00:42:34</strong>
+            		<strong class="text-primary">Selesaikan pembayaran dalam <span id="countdown">1 Jam</span></strong>
             	</div>
             	<div class="panel-body">
                     <form action="{{ route('booking.bank_account', ['id' => $booking->id]) }}" method="GET">
@@ -98,6 +98,18 @@
 
 <script>
     $(".radio-bank").eq(0).prop('checked', true);
+
+    var date = moment().format('YYYY/MM/DD');
+
+    // if (new Date() >= new Date(startdate) && new Date() <= new Date(enddate)) {
+    //     $("#countdown").countdown(moment().add(1, 'hours').format('YYYY/MM/DD hh:mm:ss'), function (event) {
+    //         $(this).text(event.strftime('%H:%M:%S'));
+    //     }).on('update.countdown', function () {
+    //         localStorage.setItem('countdown', $(this).text().substr(3));
+    //     }).on('finish.countdown', function () {
+            
+    //     });
+    // }
 </script>
 @endsection
 

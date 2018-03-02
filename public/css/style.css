@@ -236,6 +236,7 @@ a.bg-danger:focus {
 a.text-primary:hover,
 a.text-primary:focus {
 	color: #2196f3;
+	text-decoration: none;
 }
 
 .text-warning {
@@ -638,8 +639,14 @@ color: #fff;
 
 .alert-info {
 	background-color: #E3F2FD;
-	color: #777;
+	color: #000;
 	border-color: #2196f3;
+}
+
+.alert-success {
+	background-color: #C8E6C9;
+	color: #000;
+	border-color: #00A651;
 }
 
 .booking-sub-title {

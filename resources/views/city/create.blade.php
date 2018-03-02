@@ -1,5 +1,7 @@
 @extends('layouts.admin-app')
 
+@section('title', 'Tambah Kota')
+
 @section('content')
     <div class="col-md-9">
         <h4><strong>Tambah Kota</strong></h4>
@@ -78,7 +80,7 @@
                                 <option value="Sumatera">Sumatera</option>
                                 <option value="Kalimantan">Kalimantan</option>
                                 <option value="Sulawesi">Sulawesi</option>
-                                <option value="Bali & Nusa Tenggara">Bali</option>
+                                <option value="Bali & Nusa Tenggara">Bali & Nusa Tenggara</option>
                                 <option value="Maluku">Maluku</option>
                                 <option value="Papua">Papua</option>
                             </select>

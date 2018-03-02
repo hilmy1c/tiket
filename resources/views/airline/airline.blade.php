@@ -1,5 +1,7 @@
 @extends('layouts.admin-app')
 
+@section('title', 'Maskapai')
+
 @section('content')
 <div class="col-md-9">
     <h4><strong>Maskapai Penerbangan</strong></h4>
