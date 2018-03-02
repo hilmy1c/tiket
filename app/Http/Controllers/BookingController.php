@@ -173,8 +173,6 @@ class BookingController extends Controller
             $class = $booking->passengers->first()->class;
             $passenger_number = (int) $booking->bookingDetail->adult_number + (int) $booking->bookingDetail->child_number + (int) $booking->bookingDetail->baby_number;
 
-            dd($class);
-
             if ($class == 'economy') {
                 Flight::find($flight_id)->update([
                     'economy_quota' => abs((int) $passenger_number - (int) Flight::find($flight_id)->economy_quota)

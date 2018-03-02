@@ -15,15 +15,6 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-use App\City;
-
-Route::get('/coba', function ()
-{
-    $cities = City::where('island', 'Jawa')->orWhere('island', 'Sumatera')->get();
-
-    dd($cities);
-});
-
 Route::group(['prefix' => 'user'], function () {
     Route::get('/', 'UserController@index')->name('user.index');
     Route::get('/{id}/edit', 'UserController@edit')->name('user.edit');
@@ -114,7 +105,7 @@ Route::group(['prefix' => 'passenger'], function () {
     Route::post('/train_store', 'PassengerController@trainStore')->name('passenger.train_store');
 });
 
-Route::group(['prefix' => 'bank_account'], function () {
+Route::group(['prefix' => 'bank_account', 'middleware' => 'auth:admin'], function () {
     Route::get('/', 'BankAccountController@index')->name('bank_account.index');
     Route::get('/create', 'BankAccountController@create')->name('bank_account.create');
     Route::post('/store', 'BankAccountController@store')->name('bank_account.store');

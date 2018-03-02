@@ -18,6 +18,8 @@
                         <th>Tujuan</th>
                         <th>Waktu Keberangkatan</th>
                         <th>Waktu TIba</th>
+                        <th>Kuota Ekonomi</th>
+                        <th>Kuota Bisnis</th>
                         <th class="text-center">Aksi</th>
                     </thead>
                     <tbody>
@@ -31,6 +33,8 @@
                             <td>{{ $flight->destinationAirport->city->city }} - ({{ $flight->destinationAirport->code }}){{ $flight->destinationAirport->name }}</td>
                             <td>{{ date('Y-m-d H:i', strtotime($flight->departure_time)) }}</td>
                             <td>{{ date('Y-m-d H:i', strtotime($flight->arrival_time)) }}</td>
+                            <td>{{ $flight->economy_quota }}</td>
+                            <td>{{ $flight->business_quota }}</td>
                             <td>
                                 <a href="{{ route('flight.edit', ['id' => $flight->id]) }}" class="btn btn-sm btn-default">Edit</a>
                                 <form action="{{ route('flight.destroy', ['id' => $flight->id]) }}" method="POST" class="inline">

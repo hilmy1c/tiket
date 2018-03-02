@@ -145,7 +145,8 @@ class PassengerController extends Controller
                     'booking_code' => $request->booking_code,
                     'appellation' => $request->{'adult_appellation_' . $i},
                     'name' => $request->{'adult_fullname_' . $i},
-                    'status' => 'Dewasa'
+                    'status' => 'Dewasa',
+                    'class' => $request->class
                 ]);
             }
         }
@@ -156,7 +157,8 @@ class PassengerController extends Controller
                     'booking_code' => $request->booking_code,
                     'appellation' => $request->{'baby_appellation_' . $i},
                     'name' => $request->{'baby_fullname_' . $i},
-                    'status' => 'Bayi'
+                    'status' => 'Bayi',
+                    'class' => $request->class
                 ]);
             }
         }

@@ -158,6 +158,7 @@
                         <input type="hidden" name="baby_fare" value="{{ $train_journey->baby_fare }}">
                         <input type="hidden" name="departure_time" value="{{ $train_journey->departure_time }}">
                         <input type="hidden" name="fare_total" value="{{ $train_journey->fare }}">
+                        <input type="hidden" name="class" value="{{ $train_journey->sub_class }}">
 
                         <button type="submit" class="btn btn-sm btn-warning col-md-12">Pilih</button>
                     </form>

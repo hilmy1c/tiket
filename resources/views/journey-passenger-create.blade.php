@@ -17,6 +17,7 @@
                 <input type="hidden" name="train_journey_id" value="{{ $train_journey->id }}">
                 <input type="hidden" name="adult_fare" value="{{ $adult_fare }}">
                 <input type="hidden" name="baby_fare" value="{{ $baby_fare }}">
+                <input type="hidden" name="class" value="{{ $class }}">
 
                 <div class="panel panel-default" style="box-sizing: border-box; border-left: 3px solid #2196f3">
                     <div class="panel-body">
