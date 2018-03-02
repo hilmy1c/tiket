@@ -1,7 +1,5 @@
 @extends('layouts.admin-app')
 
-@section('title', 'Pesawat')
-
 @section('content')
 <div class="col-md-9">
     <h4><strong>Pesawat</strong></h4>

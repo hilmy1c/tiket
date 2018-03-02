@@ -1,7 +1,5 @@
 @extends('layouts.admin-app')
 
-@section('title', 'Tambah Kota')
-
 @section('content')
     <div class="col-md-9">
         <h4><strong>Tambah Kota</strong></h4>

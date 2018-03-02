@@ -1,7 +1,5 @@
 @extends('layouts.admin-app')
 
-@section('title', 'Edit Maskapai')
-
 @section('content')
 <div class="col-md-9">
     <h4><strong>Edit Airlpane</strong></h4>
