@@ -91,13 +91,8 @@
                             <li><a href="{{ route('register') }}" style="color: #ccc;">Daftar</a></li>
                         @else
                             <li class="dropdown">
-<<<<<<< HEAD
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" style="color: #ccc;">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-=======
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::guard('admin')->user()->name }} <span class="caret"></span>
->>>>>>> master
                                 </a>
 
                                 <ul class="dropdown-menu">
